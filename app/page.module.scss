@@ -37,11 +37,57 @@
       line-height: 3rem;
     }
   }
+}
 
-  .containerMainButton {
+.containerSectionAboutUs {
+  display: flex;
+  margin-top: 590px;
+
+  div {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 70px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: var(--color-span);
+    }
+
+    h3 {
+      margin-top: 10px;
+      font-size: 2.188rem;
+      font-weight: 600;
+      line-height: 40px;
+      margin-bottom: 30px;
+      color: var(--color-h);
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: var(--color-par);
+    }
+  }
+
+  .imageMakeCoffee {
+    flex: 0 0 50%;
+    max-width: 50%;
+    vertical-align: middle;
+    padding: 130px 50px 70px 50px;
+    border-style: none;
+    border-radius: var(--border-radius);
+    object-fit: cover;
   }
 }
 
+.containerSectionBenefits {
+  background: var(--background-color-benefits);
+}
 .containerSectionProducts {
   margin-top: 700px;
 

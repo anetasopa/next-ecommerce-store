@@ -1,7 +1,14 @@
 'use client';
 import styles from './GenerateButton.module.scss';
 
-export default function GenerateButton({ backgroundColor, color, name, left }) {
+export default function GenerateButton({
+  backgroundColor,
+  color,
+  name,
+  left,
+  border,
+  marginTop
+}) {
   return (
     <button
       className={styles.generateButton}
@@ -9,6 +16,8 @@ export default function GenerateButton({ backgroundColor, color, name, left }) {
         backgroundColor: backgroundColor,
         color: color,
         left: left,
+        border: border,
+        marginTop: marginTop
       }}
     >
       {name}
