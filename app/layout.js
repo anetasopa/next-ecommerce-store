@@ -49,13 +49,13 @@ export default function RootLayout({ children }) {
               </li>
               <li>
                 <Link
-                  href="/product"
+                  href="/products"
                   style={{
                     color: 'black',
                     textDecoration: 'none',
                   }}
                 >
-                  Product
+                  Products
                 </Link>
               </li>
               <li>
@@ -99,15 +99,15 @@ export default function RootLayout({ children }) {
           <div>
             <h5>Contact Us</h5>
             <div>
-              <FontAwesomeIcon className={styles.icon} icon={faLocationDot} />
+              {/* <FontAwesomeIcon className={styles.icon} icon={faLocationDot} /> */}
               <p>Lorem ipsum viverra feugiat tesque libero ut</p>
             </div>
             <div>
-              <FontAwesomeIcon className={styles.icon} icon={faPhone} />
+              {/* <FontAwesomeIcon className={styles.icon} icon={faPhone} /> */}
               <p>+ 48 5854995838</p>
             </div>
             <div>
-              <FontAwesomeIcon className={styles.icon} icon={faEnvelope} />
+              {/* <FontAwesomeIcon className={styles.icon} icon={faEnvelope} /> */}
               <p>cofee@gmail.com</p>
             </div>
           </div>
