@@ -1,14 +1,10 @@
-// import beans from '../public/images/beans.png';
-// import capsules from '../public/images/capsules.png';
-import { faCoffeeBeans, faMugSaucer } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faMugSaucer } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import { products } from '../database/products';
 import coffee from '../public/images/coffee.png';
 import makeCoffee from '../public/images/makeCoffee.png';
 import GenerateButton from './GenerateButton';
-// import ground from '../public/images/ground.png';
-// import instant from '../public/images/instant.png';
 import styles from './page.module.scss';
 
 export default function HomePage() {
@@ -20,22 +16,21 @@ export default function HomePage() {
           <h1>
             Enjoy your moment with <span>coffee</span>.
           </h1>
-          <span className={styles.containerMainText}>
+          <p className={styles.containerMainText}>
             When an unknown printer took a galley of type and scrambled it to
             galley of type and.
-          </span>
-          s{' '}
+          </p>
           <GenerateButton
             name="Go to product"
             backgroundColor="#d17721"
             color="white"
-            left="850px"
+            left="950px"
           />
           <GenerateButton
             name="About Us"
             backgroundColor="#fffff"
             color="#d17721"
-            left="1065px"
+            left="1165px"
           />
         </div>
       </main>
@@ -87,23 +82,50 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       <section className={styles.containerSectionProducts}>
-        <h3>PRODUCTS</h3>
-        <div className={styles.grid}>
-          {products.map((product) => {
-            return (
-              <div key={`product-div-${product.id}`}>
+        {products.map((product) => {
+          return (
+            <div className={styles.product} key={`product-div-${product.id}`}>
+              <div className={styles.textContainer}>
+                <h3>We make the delicious coffee for the coffee lovers.</h3>
+                <p>
+                  Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
+                  ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor
+                </p>
+                <div>
+                  <FontAwesomeIcon
+                    className={styles.icon}
+                    icon={faChevronDown}
+                  />
+                  <span>Lorem ipsum viverra feugiat.</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon
+                    className={styles.icon}
+                    icon={faChevronDown}
+                  />
+                  <span>Lorem ipsum viverra feugiat.</span>
+                </div>
+                <div>
+                  <FontAwesomeIcon
+                    className={styles.icon}
+                    icon={faChevronDown}
+                  />
+                  <span>Lorem ipsum viverra feugiat.</span>
+                </div>
+              </div>
+              <div className={styles.imageContainer}>
                 <Image
+                  className={styles.img}
                   alt="productName"
                   width={200}
                   height={200}
                   src={`/images/${product.name}.png`}
                 />
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </section>
     </>
   );

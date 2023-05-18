@@ -1,4 +1,10 @@
-import { faCoffeeBeans } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEnvelope,
+  faLocation,
+  faLocationDot,
+  faMugSaucer,
+  faPhone,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
@@ -28,7 +34,6 @@ export default function RootLayout({ children }) {
               >
                 Cofeez
               </Link>
-              <FontAwesomeIcon icon={faCoffeeBeans} />
             </div>
             <ul>
               <li>
@@ -92,35 +97,36 @@ export default function RootLayout({ children }) {
         {children}
         <footer>
           <div>
+            <h5>Contact Us</h5>
             <div>
-              <a className={styles.logo} href="/#">
-                Cofeez
-              </a>
+              <FontAwesomeIcon className={styles.icon} icon={faLocationDot} />
+              <p>Lorem ipsum viverra feugiat tesque libero ut</p>
             </div>
             <div>
-              <h5>FEATURES</h5>
-              <a href="/#">Rewards</a>
-              <a href="/#">Giveaways</a>
-              <a href="/#">Referral Hub</a>
-              <a href="/#">Analytics</a>
-              <a href="/#">Integrations</a>
+              <FontAwesomeIcon className={styles.icon} icon={faPhone} />
+              <p>+ 48 5854995838</p>
             </div>
             <div>
-              <h5>FEATURES</h5>
-              <a href="/#">Rewards</a>
-              <a href="/#">Giveaways</a>
-              <a href="/#">Referral Hub</a>
-              <a href="/#">Analytics</a>
-              <a href="/#">Integrations</a>
+              <FontAwesomeIcon className={styles.icon} icon={faEnvelope} />
+              <p>cofee@gmail.com</p>
             </div>
-            <div>
-              <h5>FEATURES</h5>
-              <a href="/#">Rewards</a>
-              <a href="/#">Giveaways</a>
-              <a href="/#">Referral Hub</a>
-              <a href="/#">Analytics</a>
-              <a href="/#">Integrations</a>
-            </div>
+          </div>
+
+          <div>
+            <h5>FEATURES</h5>
+            <a href="/#">Rewards</a>
+            <a href="/#">Giveaways</a>
+            <a href="/#">Referral Hub</a>
+            <a href="/#">Analytics</a>
+            <a href="/#">Integrations</a>
+          </div>
+          <div>
+            <h5>FEATURES</h5>
+            <a href="/#">Rewards</a>
+            <a href="/#">Giveaways</a>
+            <a href="/#">Referral Hub</a>
+            <a href="/#">Analytics</a>
+            <a href="/#">Integrations</a>
           </div>
         </footer>
       </body>
