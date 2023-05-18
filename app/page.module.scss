@@ -87,6 +87,41 @@
 
 .containerSectionBenefits {
   background: var(--background-color-benefits);
+  padding: 50px 0;
+
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 30px;
+
+    div {
+      display: block;
+      text-align: center;
+
+      .icon {
+        color: var(--button-color);
+        width: 50px;
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        margin: 0;
+        padding: 0;
+        color: var(--color-h);
+        font-size: 1.563rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        width: 80%;
+        margin: auto;
+        font-size: 1.125rem;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+        color: var(--color-par);
+      }
+    }
+  }
 }
 .containerSectionProducts {
   margin-top: 700px;

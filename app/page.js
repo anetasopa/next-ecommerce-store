@@ -1,7 +1,9 @@
-import Image from 'next/image';
-import { products } from '../database/products';
 // import beans from '../public/images/beans.png';
 // import capsules from '../public/images/capsules.png';
+import { faCoffeeBeans, faMugSaucer } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
+import { products } from '../database/products';
 import coffee from '../public/images/coffee.png';
 import makeCoffee from '../public/images/makeCoffee.png';
 import GenerateButton from './GenerateButton';
@@ -62,7 +64,28 @@ export default function HomePage() {
         />
       </section>
       <section className={styles.containerSectionBenefits}>
-        <div>nvjf</div>
+        <div>
+          <div>
+            <FontAwesomeIcon className={styles.icon} icon={faMugSaucer} />
+            <h4>Types of Coffee</h4>
+            <p>Choose amount of cups you drink.</p>
+          </div>
+          <div>
+            <FontAwesomeIcon className={styles.icon} icon={faMugSaucer} />
+            <h4>Types of Coffee</h4>
+            <p>Select the Brews that suits you best.</p>
+          </div>
+          <div>
+            <FontAwesomeIcon className={styles.icon} icon={faMugSaucer} />
+            <h4>Types of Coffee</h4>
+            <p>choose the drink that suits you best</p>
+          </div>
+          <div>
+            <FontAwesomeIcon className={styles.icon} icon={faMugSaucer} />
+            <h4>Types of Coffee</h4>
+            <p>Enjoy a cup of coffee every morning.</p>
+          </div>
+        </div>
       </section>
 
       <section className={styles.containerSectionProducts}>
