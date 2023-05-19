@@ -8,6 +8,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import GenerateButton from './GenerateButton';
 import styles from './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -113,8 +114,17 @@ export default function RootLayout({ children }) {
           </div>
 
           <div>
-            <h5>FEATURES</h5>
-            <a href="/#">Rewards</a>
+            <h5>Newsletter</h5>
+            <div>
+              {/* <FontAwesomeIcon className={styles.icon} icon={faLocationDot} /> */}
+              <p>Get in your inbox the latest News and</p>
+              <form>
+                <input />
+                <button>
+                  <FontAwesomeIcon className={styles.icon} icon={faEnvelope} />
+                </button>
+              </form>
+            </div>
             <a href="/#">Giveaways</a>
             <a href="/#">Referral Hub</a>
             <a href="/#">Analytics</a>

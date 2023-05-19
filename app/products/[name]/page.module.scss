@@ -5,6 +5,7 @@
 
   .product {
     display: flex;
+    flex-direction: row-reverse;
 
     .textContainer {
       width: 50%;
@@ -46,6 +47,21 @@
         line-height: 28px;
         letter-spacing: 0.5px;
         color: var(--color-par);
+      }
+
+      .price {
+        font-size: 1.125rem;
+        line-height: 28px;
+        letter-spacing: 0.5px;
+        color: var(--color-par);
+        margin-top: 30px;
+        margin-left: 30px;
+
+        span {
+          color: var(--button-color);
+          font-size: 2rem;
+          font-weight: bolder;
+        }
       }
     }
 

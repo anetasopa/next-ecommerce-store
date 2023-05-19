@@ -1,6 +1,7 @@
 import { faChevronDown, faMugSaucer } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
+import Link from 'next/link';
 import { products } from '../database/products';
 import coffee from '../public/images/coffee.png';
 import makeCoffee from '../public/images/makeCoffee.png';
@@ -25,12 +26,14 @@ export default function HomePage() {
             backgroundColor="#d17721"
             color="white"
             left="950px"
+            top="350px"
           />
           <GenerateButton
             name="About Us"
             backgroundColor="#fffff"
             color="#d17721"
             left="1165px"
+            top="350px"
           />
         </div>
       </main>
@@ -115,14 +118,6 @@ export default function HomePage() {
                 </div>
               </div>
               <div className={styles.imageContainer}>
-                {/* <Image
-                  className={styles.img}
-                  alt="productName"
-                  width={200}
-                  height={200}
-                  src={`/images/${product.name}.png`}
-                /> */}
-
                 <div className={styles.container}>
                   <Image
                     className={styles.img}
@@ -131,14 +126,19 @@ export default function HomePage() {
                     height={200}
                     src={`/images/${product.name}.png`}
                   />
-                  {/* <img
-                    src="https://images.unsplash.com/photo-1488628075628-e876f502d67a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=&bg="
-                    alt=""
-                  /> */}
                   <p className={styles.title}>card title</p>
                   <div className={styles.overlay}></div>
                   <div className={styles.button}>
-                    <a href={`/products/${product.name}`}> BUTTON </a>
+                    <Link
+                      className={styles.a}
+                      href={`/products/${product.name}`}
+                      style={{
+                        color: 'black',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      BUTTON
+                    </Link>
                   </div>
                 </div>
               </div>

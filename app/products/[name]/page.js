@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductByName } from '../../../database/products';
+import GenerateButton from '../../GenerateButton';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
@@ -37,6 +38,15 @@ export default function NamePage({ params }) {
             <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
             <span>Lorem ipsum viverra feugiat.</span>
           </div>
+          <p className={styles.price}>
+            Price: <span>{singleProduct.price}</span> Euro
+          </p>
+          <GenerateButton
+            name="Card"
+            backgroundColor="#d17721"
+            color="white"
+            top="700px"
+          />
         </div>
         <div className={styles.imageContainer}>
           <Image

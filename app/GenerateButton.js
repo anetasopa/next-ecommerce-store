@@ -7,7 +7,8 @@ export default function GenerateButton({
   name,
   left,
   border,
-  marginTop
+  marginTop,
+  top,
 }) {
   return (
     <button
@@ -17,7 +18,8 @@ export default function GenerateButton({
         color: color,
         left: left,
         border: border,
-        marginTop: marginTop
+        marginTop: marginTop,
+        top,
       }}
     >
       {name}
