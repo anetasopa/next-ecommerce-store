@@ -15,11 +15,31 @@ export default function ProductPage() {
               className={styles.productCard}
             >
               {' '}
-              <Image
+              {/* <Image
                 src={`/images/${product.name}.png`}
                 width={250}
                 height={200}
-              />
+              /> */}
+              <div className={styles.container}>
+                <Image
+                  src={`/images/${product.name}.png`}
+                  width={250}
+                  height={200}
+                />
+                <div className={styles.overlay}></div>
+                <div className={styles.button}>
+                  <Link
+                    className={styles.a}
+                    href={`/products/${product.id}`}
+                    style={{
+                      color: 'black',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    OPEN
+                  </Link>
+                </div>
+              </div>
               <Link
                 className={styles.productName}
                 href={`/products/${product.id}`}

@@ -80,7 +80,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.containerSectionProducts}>
+      {/* <section className={styles.containerSectionProducts}>
         {products.map((product) => {
           return (
             <div className={styles.product} key={`product-div-${product.id}`}>
@@ -137,12 +137,10 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-
-              {/* 000000000000000 */}
             </div>
           );
         })}
-      </section>
+      </section> */}
     </main>
   );
 }

@@ -21,6 +21,29 @@
       flex-direction: column;
       justify-content: center;
 
+      .flex {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .button {
+        padding: 10px 25px;
+        border: none;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        letter-spacing: 0.5px;
+        background-color: #d17721;
+        color: white !important;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 20px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: var(--button-color-hover);
+        }
+      }
+
       div {
         display: flex;
 
@@ -59,15 +82,15 @@
       .price {
         font-size: 1.125rem;
         line-height: 28px;
+
         letter-spacing: 0.5px;
         color: var(--color-par);
         margin-top: 30px;
-        margin-left: 30px;
 
         span {
-          color: var(--button-color);
+          color: #d17721;
           font-size: 2rem;
-          font-weight: bolder;
+          font-weight: bold;
         }
       }
     }
@@ -78,6 +101,7 @@
       align-items: center;
       justify-content: center;
       padding: 70px 50px 70px 50px;
+      border-radius: 5px;
 
       .img {
         height: 500px;

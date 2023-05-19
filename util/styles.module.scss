@@ -1,0 +1,27 @@
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.quantityInput {
+  width: 50px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  color: var(--color-span);
+  text-align: center;
+}
+
+.quantityButton {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  background-color: #d17721;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}

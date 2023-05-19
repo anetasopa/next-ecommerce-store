@@ -4,14 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
+import QuantityCounter from '../../../util/counter';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
 export default function NamePage({ params }) {
   const singleProduct = getProductById(Number(params.productId));
-
-  console.log(singleProduct);
 
   if (!singleProduct) {
     notFound();
@@ -43,10 +42,15 @@ export default function NamePage({ params }) {
             <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
             <span>Lorem ipsum viverra feugiat.</span>
           </div>
-          <p className={styles.price}>
-            Price: <span>{singleProduct.price}</span> Euro
-          </p>
+          <div className={styles.flex}>
+            <p data-test-id="product-price" className={styles.price}>
+              Price: <span>{singleProduct.price}</span> Euro
+            </p>
+            <QuantityCounter />
+          </div>
           <Link
+            data-test-id="product-add-to-cart"
+            className={styles.button}
             href="/card/"
             style={{
               color: 'black',
@@ -58,6 +62,7 @@ export default function NamePage({ params }) {
         </div>
         <div className={styles.imageContainer}>
           <Image
+            data-test-id="product-image"
             className={styles.img}
             alt="productName"
             width={200}
