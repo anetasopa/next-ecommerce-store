@@ -53,13 +53,13 @@ export default function RootLayout({ children }) {
               </li>
               <li>
                 <Link
-                  href="/product"
+                  href="/products"
                   style={{
                     color: 'black',
                     textDecoration: 'none',
                   }}
                 >
-                  Product
+                  Products
                 </Link>
               </li>
               <li>

@@ -5,22 +5,28 @@ import styles from './page.module.scss';
 
 export default function ProductPage() {
   return (
-    <main className={styles.container}>
-      This are my products
-      {products.map((product) => {
-        console.log({ product });
-        return (
-          <div key={`product-div-${product.id}`}>
-            <Link href={`/products/${product.id}`}>{product.name}</Link>
-            <br />
-            <Image
-              src={`/images/${product.name}.png`}
-              width={100}
-              height={100}
-            />
-          </div>
-        );
-      })}
+    <main className={styles.containerOverview}>
+      <h1>this is my title</h1>
+      <div className={styles.productsCardsContainer}>
+        {products.map((product) => {
+          console.log({ product });
+          return (
+            <div
+              key={`product-div-${product.id}`}
+              className={styles.productCard}
+            >
+              {' '}
+              <Image
+                src={`/images/${product.name}.png`}
+                width={250}
+                height={200}
+              />
+              <Link href={`/products/${product.id}`}>{product.name}</Link>
+              <Link href={`/products/${product.id}`}>{product.price}</Link>
+            </div>
+          );
+        })}
+      </div>
     </main>
   );
 }
