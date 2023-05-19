@@ -22,6 +22,8 @@ export default function NamePage({ params }) {
       data-test-id={`cart-product-${singleProduct.id}`}
       className={styles.containerSectionProducts}
     >
+      <h1>Product</h1>
+
       <div className={styles.product} key={`product-div-${singleProduct.id}`}>
         <div className={styles.textContainer}>
           <h3>We make the delicious coffee for the coffee lovers.</h3>

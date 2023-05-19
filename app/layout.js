@@ -70,7 +70,7 @@ export default function RootLayout({ children }) {
                     textDecoration: 'none',
                   }}
                 >
-                  Card
+                  Product card
                 </Link>
               </li>
               <li>
