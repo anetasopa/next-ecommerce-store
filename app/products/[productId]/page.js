@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getProductByName } from '../../../database/products';
+import { getProductById } from '../../../database/products';
 import GenerateButton from '../../GenerateButton';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
 export default function NamePage({ params }) {
-  const singleProduct = getProductByName(params.name);
+  const singleProduct = getProductById(Number(params.id));
 
   console.log(singleProduct);
 

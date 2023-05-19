@@ -1,15 +1,18 @@
-import {
-  faEnvelope,
-  faLocation,
-  faLocationDot,
-  faMugSaucer,
-  faPhone,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './globals.scss';
+// import {
+//   faEnvelope,
+//   faLocation,
+//   faLocationDot,
+//   faMugSaucer,
+//   faPhone,
+// } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import GenerateButton from './GenerateButton';
-import styles from './globals.scss';
+
+// import GenerateButton from './GenerateButton';
+
+// import styles from './layout.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -50,7 +53,7 @@ export default function RootLayout({ children }) {
               </li>
               <li>
                 <Link
-                  href="/product"
+                  href="/products"
                   style={{
                     color: 'black',
                     textDecoration: 'none',
@@ -121,7 +124,7 @@ export default function RootLayout({ children }) {
               <form>
                 <input />
                 <button>
-                  <FontAwesomeIcon className={styles.icon} icon={faEnvelope} />
+                  {/* <FontAwesomeIcon className={styles.icon} icon={faEnvelope} /> */}
                 </button>
               </form>
             </div>

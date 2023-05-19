@@ -25,6 +25,6 @@ export const products = [
   },
 ];
 
-export function getProductByName(name) {
-  return products.find((product) => product.name === name);
+export function getProductById(id) {
+  return products.find((product) => product.id === id);
 }

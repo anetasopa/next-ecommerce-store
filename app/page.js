@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '../database/products';
-import coffee from '../public/images/coffee.png';
 import makeCoffee from '../public/images/makeCoffee.png';
 import GenerateButton from './GenerateButton';
 import styles from './page.module.scss';
@@ -12,7 +11,6 @@ export default function HomePage() {
   return (
     <>
       <main className={styles.containerMain}>
-        <Image alt="coffee" className={styles.imageHeader} src={coffee} />
         <div>
           <h1>
             Enjoy your moment with <span>coffee</span>.
@@ -25,16 +23,11 @@ export default function HomePage() {
             name="Go to product"
             backgroundColor="#d17721"
             color="white"
-            left="950px"
+            left="1080px"
             top="350px"
           />
-          <GenerateButton
-            name="About Us"
-            backgroundColor="#fffff"
-            color="#d17721"
-            left="1165px"
-            top="350px"
-          />
+          <Link className={styles.linkGoToProduct}>Go to product</Link>
+          <Link className={styles.linkAboutUs}>Go to product</Link>
         </div>
       </main>
       <section className={styles.containerSectionAboutUs}>
@@ -124,7 +117,7 @@ export default function HomePage() {
                   <div className={styles.button}>
                     <Link
                       className={styles.a}
-                      href={`/product/${product.name}`}
+                      href={`/products/${product.id}`}
                       style={{
                         color: 'black',
                         textDecoration: 'none',

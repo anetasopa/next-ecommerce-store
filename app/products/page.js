@@ -6,12 +6,12 @@ import styles from './page.module.scss';
 export default function ProductPage() {
   return (
     <main className={styles.container}>
-      This are my product
+      This are my products
       {products.map((product) => {
         console.log({ product });
         return (
           <div key={`product-div-${product.id}`}>
-            <Link href={`/products/${product.name}`}>{product.name}</Link>
+            <Link href={`/products/${product.id}`}>{product.name}</Link>
             <br />
             <Image
               src={`/images/${product.name}.png`}
