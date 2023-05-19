@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
               </li>
               <li>
                 <Link
-                  href="/products"
+                  href="/product"
                   style={{
                     color: 'black',
                     textDecoration: 'none',

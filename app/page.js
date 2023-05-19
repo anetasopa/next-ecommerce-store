@@ -4,32 +4,40 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '../database/products';
 import makeCoffee from '../public/images/makeCoffee.png';
-import GenerateButton from './GenerateButton';
 import styles from './page.module.scss';
 
 export default function HomePage() {
   return (
-    <>
-      <main className={styles.containerMain}>
+    <main>
+      <div className={styles.container}>
+        <h1>
+          Enjoy your moment with <span>coffee</span>.
+        </h1>
+        <p className={styles.containerMainText}>
+          When an unknown printer took a galley of type and scrambled it to
+          galley of type and.
+        </p>
         <div>
-          <h1>
-            Enjoy your moment with <span>coffee</span>.
-          </h1>
-          <p className={styles.containerMainText}>
-            When an unknown printer took a galley of type and scrambled it to
-            galley of type and.
-          </p>
-          <GenerateButton
-            name="Go to product"
-            backgroundColor="#d17721"
-            color="white"
-            left="1080px"
-            top="350px"
-          />
-          <Link className={styles.linkGoToProduct}>Go to product</Link>
-          <Link className={styles.linkAboutUs}>Go to product</Link>
+          <Link
+            className={styles.heroButtons}
+            href="/#"
+            style={{
+              textDecoration: 'none',
+            }}
+          >
+            Go to product
+          </Link>
+          <Link
+            className={styles.heroButtons}
+            href="/#"
+            style={{
+              textDecoration: 'none',
+            }}
+          >
+            Go to product
+          </Link>
         </div>
-      </main>
+      </div>
       <section className={styles.containerSectionAboutUs}>
         <div>
           <span>About Us</span>
@@ -71,6 +79,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
       <section className={styles.containerSectionProducts}>
         {products.map((product) => {
           return (
@@ -103,6 +112,7 @@ export default function HomePage() {
                   <span>Lorem ipsum viverra feugiat.</span>
                 </div>
               </div>
+
               <div className={styles.imageContainer}>
                 <div className={styles.container}>
                   <Image
@@ -112,7 +122,6 @@ export default function HomePage() {
                     height={200}
                     src={`/images/${product.name}.png`}
                   />
-                  <p className={styles.title}>card title</p>
                   <div className={styles.overlay}></div>
                   <div className={styles.button}>
                     <Link
@@ -123,15 +132,17 @@ export default function HomePage() {
                         textDecoration: 'none',
                       }}
                     >
-                      BUTTON
+                      BUTTON, {product.id}
                     </Link>
                   </div>
                 </div>
               </div>
+
+              {/* 000000000000000 */}
             </div>
           );
         })}
       </section>
-    </>
+    </main>
   );
 }

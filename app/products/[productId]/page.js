@@ -4,13 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
-import GenerateButton from '../../GenerateButton';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
 export default function NamePage({ params }) {
-  const singleProduct = getProductById(Number(params.id));
+  const singleProduct = getProductById(Number(params.productId));
 
   console.log(singleProduct);
 
@@ -54,12 +53,6 @@ export default function NamePage({ params }) {
           >
             Add to card
           </Link>
-          <GenerateButton
-            name="Card"
-            backgroundColor="#d17721"
-            color="white"
-            top="720px"
-          />
         </div>
         <div className={styles.imageContainer}>
           <Image
