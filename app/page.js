@@ -47,13 +47,6 @@ export default function HomePage() {
             consectetur adipisicing elit. Non quae, fugiat consequatur
             voluptatem nihil ad. Lorem ipsum dolor sit amet
           </p>
-          <GenerateButton
-            name="Know More"
-            backgroundColor="#FFFFFF"
-            color="#d17721"
-            border="1px solid #d17721"
-            marginTop="800px"
-          />
         </div>
         <Image
           alt="makeCoffee"
@@ -131,7 +124,7 @@ export default function HomePage() {
                   <div className={styles.button}>
                     <Link
                       className={styles.a}
-                      href={`/products/${product.name}`}
+                      href={`/product/${product.name}`}
                       style={{
                         color: 'black',
                         textDecoration: 'none',

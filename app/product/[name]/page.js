@@ -1,6 +1,7 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProductByName } from '../../../database/products';
 import GenerateButton from '../../GenerateButton';
@@ -18,7 +19,10 @@ export default function NamePage({ params }) {
   }
 
   return (
-    <div className={styles.containerSectionProducts}>
+    <main
+      data-test-id={`cart-product-${singleProduct.id}`}
+      className={styles.containerSectionProducts}
+    >
       <div className={styles.product} key={`product-div-${singleProduct.id}`}>
         <div className={styles.textContainer}>
           <h3>We make the delicious coffee for the coffee lovers.</h3>
@@ -41,11 +45,20 @@ export default function NamePage({ params }) {
           <p className={styles.price}>
             Price: <span>{singleProduct.price}</span> Euro
           </p>
+          <Link
+            href="/card/"
+            style={{
+              color: 'black',
+              textDecoration: 'none',
+            }}
+          >
+            Add to card
+          </Link>
           <GenerateButton
             name="Card"
             backgroundColor="#d17721"
             color="white"
-            top="700px"
+            top="720px"
           />
         </div>
         <div className={styles.imageContainer}>
@@ -58,6 +71,6 @@ export default function NamePage({ params }) {
           />
         </div>
       </div>
-    </div>
+    </main>
   );
 }
