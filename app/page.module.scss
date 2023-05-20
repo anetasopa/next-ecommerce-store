@@ -15,7 +15,8 @@
   h1 {
     color: #ffffff;
     font-size: 2rem;
-    margin-bottom: 45px;
+    margin-bottom: 50px;
+    padding-top: 80px;
 
     span {
       font-size: 3rem;
@@ -23,29 +24,49 @@
     }
   }
 
-  .containerMainText {
+  .containerHeroText {
     color: #ffffff;
     font-size: 1.5rem;
     line-height: 3rem;
+    margin-bottom: 50px;
+    padding-right: 50px;
   }
 
   div {
     display: flex;
     gap: 24px;
 
-    .heroButtons {
+    .heroButtonGoToProduct {
       padding: 12px 30px;
       border: none;
       font-size: 1.2rem;
       border-radius: 10px;
       letter-spacing: 0.5px;
       background-color: var(--button-color);
-      color: white;
+      color: var(--color-white);
       font-weight: bold;
 
       &:hover {
         cursor: pointer;
         background-color: var(--button-color-hover);
+        transition: 0.3s ease-in;
+      }
+    }
+
+    .heroButtonAboutUs {
+      padding: 12px 30px;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      background-color: var(--color-white);
+      color: var(--button-color);
+      font-weight: bold;
+
+      &:hover {
+        cursor: pointer;
+        color: var(--background-color-footer);
+        transition: 0.3s ease-in;
       }
     }
   }

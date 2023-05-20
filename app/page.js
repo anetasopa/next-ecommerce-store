@@ -13,13 +13,13 @@ export default function HomePage() {
         <h1>
           Enjoy your moment with <span>coffee</span>.
         </h1>
-        <p className={styles.containerMainText}>
+        <p className={styles.containerHeroText}>
           When an unknown printer took a galley of type and scrambled it to
           galley of type and.
         </p>
         <div>
           <Link
-            className={styles.heroButtons}
+            className={styles.heroButtonGoToProduct}
             href="/#"
             style={{
               textDecoration: 'none',
@@ -28,13 +28,13 @@ export default function HomePage() {
             Go to product
           </Link>
           <Link
-            className={styles.heroButtons}
+            className={styles.heroButtonAboutUs}
             href="/#"
             style={{
               textDecoration: 'none',
             }}
           >
-            Go to product
+            About Us
           </Link>
         </div>
       </div>

@@ -19,6 +19,7 @@
   --color-par: #777777;
   --color-h: #2d2d43;
   --color-icon: #c9c9c9;
+  --color-white: #fff;
   --button-color: #d17721;
   --button-color-hover: #a75f1a;
   --border-radius: 5px;
@@ -72,16 +73,18 @@ header {
       margin: 0;
       text-align: right;
       margin-right: 30px;
+      &:hover {
+        cursor: pointer;
+        color: var(--button-color);
+        transition: all 0.4s ease;
+        -webkit-transition: all 0.4s ease;
+      }
 
       li {
         align-items: center;
         margin-left: 5px;
         padding: 10px 20px;
         display: flex;
-
-        &:hover {
-          cursor: pointer;
-        }
       }
     }
   }
