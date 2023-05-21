@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
                   fontSize: '1.5rem',
                 }}
               >
-                Cofeez <FaCoffee />
+                Cofeez <FaCoffee className={styles.icon} />
               </Link>
             </div>
             <ul>

@@ -11,7 +11,7 @@ export default function HomePage() {
     <main>
       <div className={styles.container}>
         <h1>
-          Enjoy Your Moment With <span>COFFEE</span>.
+          Enjoy Your Moment With <span> Coffee</span>.
         </h1>
         <p className={styles.containerHeroText}>
           When an unknown printer took a galley of type and scrambled it to
@@ -48,6 +48,15 @@ export default function HomePage() {
             consectetur adipisicing elit. Non quae, fugiat consequatur
             voluptatem nihil ad. Lorem ipsum dolor sit amet
           </p>
+          <Link
+            className={styles.knowMoreButtonAboutUs}
+            href="/#"
+            style={{
+              textDecoration: 'none',
+            }}
+          >
+            Know More
+          </Link>
         </div>
         <Image
           alt="makeCoffee"

@@ -83,6 +83,25 @@
     flex-direction: column;
     justify-content: center;
 
+    .knowMoreButtonAboutUs {
+      margin-top: 30px;
+      padding: 12px 30px;
+      width: auto;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      letter-spacing: 0.5px;
+      background-color: var(--color-white);
+      color: var(--button-color);
+      border: 1px solid var(--button-color);
+      font-weight: bold;
+
+      &:hover {
+        cursor: pointer;
+        color: var(--background-color-footer);
+        transition: 0.3s ease-in;
+      }
+    }
+
     span {
       font-size: 1.375rem;
       font-weight: 600;
