@@ -4,8 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProductById } from '../../../database/products';
-import QuantityCounter from '../../../util/counter';
 import styles from './page.module.scss';
+import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,12 +50,12 @@ export default function ProductPage(props: Props) {
             <p data-test-id="product-price" className={styles.price}>
               Price: <span>{singleProduct.price}</span> Euro
             </p>
-            <QuantityCounter />
+            <QuantityCounter productId={singleProduct.id} />
           </div>
           <Link
             data-test-id="product-add-to-cart"
             className={styles.button}
-            href="/card/"
+            href="/card"
             style={{
               color: 'black',
               textDecoration: 'none',

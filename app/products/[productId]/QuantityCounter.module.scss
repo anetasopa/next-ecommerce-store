@@ -1,0 +1,21 @@
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.quantityInput {
+  width: 50px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  color: var(--button-color);
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+.icon {
+  color: #c9c9c9;
+  cursor: pointer;
+}
