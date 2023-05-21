@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import styles from './styles.module.scss';
 
 export default function QuantityCounter() {
@@ -17,18 +18,14 @@ export default function QuantityCounter() {
 
   return (
     <div className={styles.quantity}>
-      <button className={styles.quantityButton} onClick={decrementQuantity}>
-        -
-      </button>
+      <FaArrowLeft onClick={decrementQuantity} className={styles.icon} />
       <input
         type="number"
         className={styles.quantityInput}
         value={quantity}
         onChange={(e) => setQuantity(parseInt(e.target.value))}
       />
-      <button className={styles.quantityButton} onClick={incrementQuantity}>
-        +
-      </button>
+      <FaArrowRight onClick={incrementQuantity} className={styles.icon} />
     </div>
   );
 }

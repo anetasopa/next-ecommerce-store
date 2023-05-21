@@ -49,8 +49,10 @@ export default function ProductPage() {
               >
                 {product.name}
               </Link>
-              <p>{product.type}</p>
-              <p>{product.price}</p>
+              <p className={styles.productType}>{product.type}</p>
+              <p className={styles.productPrice}>
+                {product.price} <span>Euro</span>{' '}
+              </p>
             </div>
           );
         })}

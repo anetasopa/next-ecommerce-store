@@ -9,19 +9,13 @@
   padding: 8px;
   font-size: 16px;
   border-radius: 4px;
-  color: var(--color-span);
-  text-align: center;
-}
-
-.quantityButton {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  font-size: 16px;
+  color: var(--button-color);
   text-align: center;
   border: none;
-  background-color: #d17721;
-  color: #fff;
+  outline: none;
+}
+
+.icon {
+  color: #c9c9c9;
   cursor: pointer;
-  border-radius: 3px;
 }
