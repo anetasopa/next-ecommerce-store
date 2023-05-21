@@ -1,4 +1,12 @@
-export const products = [
+type Products = {
+  id: number;
+  name: string;
+  text: string;
+  type: string;
+  price: number;
+};
+
+export const products: Products[] = [
   {
     id: 1,
     name: 'Fantasia Blend',
@@ -85,6 +93,6 @@ export const products = [
   },
 ];
 
-export function getProductById(id) {
+export function getProductById(id: number) {
   return products.find((product) => product.id === id);
 }

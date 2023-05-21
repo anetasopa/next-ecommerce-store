@@ -9,8 +9,12 @@ import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
-export default function NamePage({ params }) {
-  const singleProduct = getProductById(Number(params.productId));
+type Props = {
+  params: { productId: string };
+};
+
+export default function ProductPage(props: Props) {
+  const singleProduct = getProductById(Number(props.params.productId));
 
   if (!singleProduct) {
     notFound();
