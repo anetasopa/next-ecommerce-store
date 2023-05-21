@@ -15,7 +15,8 @@ export async function createOrUpdateQuantity(productId, quantity) {
   });
 
   if (quantityToUpdate) {
-    quantityToUpdate.quantity = quantity;
+    quantityToUpdate.quantity =
+      Number(quantityToUpdate.quantity) + Number(quantity);
   } else {
     productQuantities.push({
       id: productId,
