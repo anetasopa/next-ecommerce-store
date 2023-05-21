@@ -48,7 +48,7 @@ export default function CardPage() {
               .splice(0, 3)}
           </div>
           <div className={styles.sumContainer}>
-            <h2>Summary of the amount</h2>
+            <h2>Summary Of The Amount</h2>
             <div className={styles.subtotal}>
               <h5>Subtotal</h5>
               <p>18 Euro</p>

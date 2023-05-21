@@ -61,7 +61,7 @@ export default function ProductPage(props: Props) {
               textDecoration: 'none',
             }}
           >
-            Add to card
+            Add To Card
           </Link>
         </div>
         <div className={styles.imageContainer}>

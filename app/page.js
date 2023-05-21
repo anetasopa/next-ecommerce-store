@@ -11,7 +11,7 @@ export default function HomePage() {
     <main>
       <div className={styles.container}>
         <h1>
-          Enjoy your moment with <span>coffee</span>.
+          Enjoy Your Moment With <span>COFFEE</span>.
         </h1>
         <p className={styles.containerHeroText}>
           When an unknown printer took a galley of type and scrambled it to
@@ -25,7 +25,7 @@ export default function HomePage() {
               textDecoration: 'none',
             }}
           >
-            Go to product
+            Go To Product
           </Link>
           <Link
             className={styles.heroButtonAboutUs}

@@ -1,8 +1,8 @@
-import { cookies } from 'next/headers';
-import { getCookie } from '../../../util/cookies';
-import { parseJson } from '../../../util/json';
+// import { cookies } from 'next/headers';
+// import { getCookie } from '../../../util/cookies';
+// import { parseJson } from '../../../util/json';
 
-('use server');
+// ('use server');
 
 // export async function createOrUpdateQuantity(productId, quantity) {
 //   const productQuantityCookie = getCookie('productQuantity');

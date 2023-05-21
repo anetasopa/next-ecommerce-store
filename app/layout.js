@@ -1,6 +1,11 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import { FaArrowLeft, FaArrowRight, FaShoppingCart } from 'react-icons/fa';
+import {
+  FaArrowLeft,
+  FaArrowRight,
+  FaCoffee,
+  FaShoppingCart,
+} from 'react-icons/fa';
 import styles from './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -25,7 +30,7 @@ export default function RootLayout({ children }) {
                   fontSize: '1.5rem',
                 }}
               >
-                Cofeez
+                Cofeez <FaCoffee />
               </Link>
             </div>
             <ul>
@@ -59,7 +64,7 @@ export default function RootLayout({ children }) {
                     textDecoration: 'none',
                   }}
                 >
-                  Product card
+                  Product Card
                 </Link>
               </li>
               <li>

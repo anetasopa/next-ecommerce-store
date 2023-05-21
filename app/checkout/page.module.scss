@@ -19,6 +19,44 @@ main {
 
       div {
         display: flex;
+
+        h2 {
+          margin-right: 10px;
+        }
+      }
+
+      form {
+        display: grid;
+        gap: 24px;
+
+        input {
+          padding: 12px 30px;
+          flex: 50%;
+          margin-right: 10px;
+        }
+
+        .flex {
+          display: flex;
+          margin-top: 24px;
+        }
+
+        .button {
+          padding: 12px 30px;
+          border: none;
+          font-size: 1.2rem;
+          border-radius: 5px;
+          letter-spacing: 0.5px;
+          background-color: var(--button-color);
+          color: var(--color-white) !important;
+          font-weight: bold;
+          width: 100%;
+
+          &:hover {
+            cursor: pointer;
+            background-color: var(--button-color-hover);
+            transition: 0.3s ease-in;
+          }
+        }
       }
     }
 

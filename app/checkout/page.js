@@ -23,12 +23,103 @@ export default function CheckoutPage() {
         <div className={styles.containerCardProducts}>
           <div className={styles.containerCheckout}>
             <div>
-              <h2>Shopping address</h2> <FaQuestionCircle />
+              <h2>Shopping Address</h2> <FaQuestionCircle />
             </div>
+            <form>
+              <div className={styles.flex}>
+                <input
+                  data-test-id="checkout-first-name"
+                  type="text"
+                  id="fname"
+                  name="firstName"
+                  placeholder="First name"
+                />
+                <input
+                  data-test-id="checkout-last-name"
+                  type="text"
+                  id="lname"
+                  name="lastName"
+                  placeholder="Last name"
+                />
+              </div>
+              <input
+                data-test-id="checkout-email"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+              />
+              <input
+                data-test-id="checkout-address"
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Address"
+              />
+              <input
+                data-test-id="checkout-city"
+                type="text"
+                id="city"
+                name="city"
+                placeholder="City"
+              />
+              <input
+                data-test-id="checkout-postal-code"
+                type="text"
+                id="postalCode"
+                name="postalCode"
+                placeholder="Postal code"
+              />
+              <input
+                data-test-id="checkout-country"
+                type="text"
+                id="country"
+                name="country"
+                placeholder="Country"
+              />
+              <input
+                data-test-id="checkout-credit-card"
+                type="number"
+                id="creditCard"
+                name="creditCard"
+                placeholder="Credit card"
+              />
+              <input
+                data-test-id="checkout-expiration-date"
+                type="number"
+                id="expirationDate"
+                name="expirationDate"
+                placeholder="Expiration date"
+              />
+              <input
+                data-test-id="checkout-security-code"
+                type="number"
+                id="securityCode"
+                name="securityCode"
+                placeholder="Security code"
+              />
+              <input
+                data-test-id="checkout-security-code"
+                type="number"
+                id="securityCode"
+                name="securityCode"
+                placeholder="Security code"
+              />
+              <Link
+                data-test-id="checkout-confirm-order"
+                className={styles.button}
+                href="/#"
+                style={{
+                  textDecoration: 'none',
+                }}
+              >
+                Confirm Order
+              </Link>
+            </form>
           </div>
           <div className={styles.sumContainer}>
             <div>
-              <h2>Order summary</h2>
+              <h2>Order Summary</h2>
               <div className={styles.subtotal}>
                 <h5>Subtotal</h5>
                 <p>18 Euro</p>
@@ -48,7 +139,7 @@ export default function CheckoutPage() {
                   textDecoration: 'none',
                 }}
               >
-                Apply a promo code or discount
+                APPLY A PROMO CODE OR DISCOUNT
               </Link>
             </div>
             <div className={styles.productsCardsContainer}>
