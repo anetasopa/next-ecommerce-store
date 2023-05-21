@@ -2,12 +2,12 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { createOrUpdateQuantity } from './actions';
+// import { createOrUpdateQuantity } from './actions';
 import styles from './QuantityCounter.module.scss';
 
 export default function QuantityCounter(props) {
   const [quantity, setQuantity] = useState(1);
-  const router = useRouter();
+  // const router = useRouter();
 
   const decrementQuantity = () => {
     if (quantity > 1) {
@@ -29,14 +29,22 @@ export default function QuantityCounter(props) {
         onChange={(e) => setQuantity(parseInt(e.target.value))}
       />
       <FaArrowRight onClick={incrementQuantity} className={styles.icon} />
-      <button
+
+      {/* <FaArrowRight
+        formAction={async () => {
+          router.refresh();
+          await createOrUpdateQuantity(props.productId, quantity);
+        }}
+        className={styles.icon}
+      /> */}
+      {/* <button
         formAction={async () => {
           router.refresh();
           await createOrUpdateQuantity(props.productId, quantity);
         }}
       >
         Update Quantity
-      </button>
+      </button> */}
     </form>
   );
 }
