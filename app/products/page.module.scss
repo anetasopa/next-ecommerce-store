@@ -48,7 +48,7 @@
     .button {
       border: none;
       font-size: 0.8rem;
-      border-radius: 10px;
+      border-radius: var(--border-radius);
       color: white;
       font-weight: bold;
 
@@ -96,7 +96,7 @@
       width: 250px;
       border: 1px solid var(--color-span);
       flex-direction: column;
-      border-radius: 10px;
+      border-radius: var(--border-radius);
 
       .productName {
         text-decoration: none;

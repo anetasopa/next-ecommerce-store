@@ -17,7 +17,7 @@ main {
         align-items: start;
         justify-content: center;
         padding: 70px 50px 70px 50px;
-        border-radius: 5px;
+        border-radius: var(--border-radius);
         gap: 50px;
 
         h2 {
@@ -62,11 +62,11 @@ main {
         }
 
         .button {
-          padding: 10px 25px;
+          padding: 12px 30px;
           width: 100%;
           float: right;
           border: none;
-          border-radius: 5px;
+          border-radius: var(--border-radius);
           letter-spacing: 0.5px;
           background-color: #d17721;
           color: white !important;
@@ -87,7 +87,7 @@ main {
         align-items: center;
         justify-content: center;
         padding: 70px 50px 70px 50px;
-        border-radius: 5px;
+        border-radius: var(--border-radius);
         // display: grid;
         // grid-template-columns: 1fr;
 
@@ -99,7 +99,7 @@ main {
           // height: 300px;
           // width: 250px;
           border: 1px solid var(--color-span);
-          border-radius: 5px;
+          border-radius: var(--border-radius);
           margin-bottom: 20px;
 
           .img {

@@ -1,18 +1,7 @@
-import './globals.scss';
-// import {
-//   faEnvelope,
-//   faLocation,
-//   faLocationDot,
-//   faMugSaucer,
-//   faPhone,
-// } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-
-// import GenerateButton from './GenerateButton';
-
-// import styles from './layout.module.scss';
+import { FaArrowLeft, FaArrowRight, FaShoppingCart } from 'react-icons/fa';
+import styles from './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -92,7 +81,7 @@ export default function RootLayout({ children }) {
                     textDecoration: 'none',
                   }}
                 >
-                  Thanks
+                  <FaShoppingCart className={styles.icon} />
                 </Link>
               </li>
             </ul>
