@@ -16,6 +16,10 @@ main {
       padding: 70px 50px 70px 50px;
       border-radius: var(--border-radius);
       gap: 50px;
+
+      div {
+        display: flex;
+      }
     }
 
     .containerCardProducts {
@@ -34,7 +38,7 @@ main {
         width: 100%;
         font-weight: bold;
         float: right;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
 
         &:hover {
           cursor: pointer;

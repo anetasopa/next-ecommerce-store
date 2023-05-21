@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaQuestion, FaQuestionCircle } from 'react-icons/fa';
 import { products } from '../../database/products';
 // import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -21,7 +22,9 @@ export default function CheckoutPage() {
         <h1>Checkout</h1>
         <div className={styles.containerCardProducts}>
           <div className={styles.containerCheckout}>
-            <h1>Checkout</h1>
+            <div>
+              <h2>Shopping address</h2> <FaQuestionCircle />
+            </div>
           </div>
           <div className={styles.sumContainer}>
             <div>
