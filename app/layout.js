@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import { FaCoffee, FaShoppingCart } from 'react-icons/fa';
-import BadgePage from './Badge';
+import { FaCoffee, FaLocation, FaMailBulk, FaPhone } from 'react-icons/fa';
 import styles from './globals.scss';
 import ShopCartPage from './ShopCart';
 
@@ -65,15 +64,15 @@ export default function RootLayout({ children }) {
           <div>
             <h5>Contact Us</h5>
             <div>
-              {/* <FontAwesomeIcon className={styles.icon} icon={faLocationDot} /> */}
+              <FaLocation className={styles.icon} />
               <p>Lorem ipsum viverra feugiat tesque libero ut</p>
             </div>
             <div>
-              {/* <FontAwesomeIcon className={styles.icon} icon={faPhone} /> */}
+              <FaPhone className={styles.icon} />
               <p>+ 48 5854995838</p>
             </div>
             <div>
-              {/* <FontAwesomeIcon className={styles.icon} icon={faEnvelope} /> */}
+              <FaMailBulk className={styles.icon} />
               <p>cofee@gmail.com</p>
             </div>
           </div>
