@@ -81,7 +81,7 @@ main {
         }
       }
 
-      .productsCardsContainer {
+      .cardsContainer {
         width: 50%;
         display: block;
         align-items: center;
@@ -97,12 +97,17 @@ main {
           border-radius: var(--border-radius);
           margin-bottom: 20px;
 
+          div {
+            padding-top: 20px;
+          }
+
           .img {
             width: auto;
             height: auto;
           }
 
           .productName {
+            padding-top: 20px;
             text-decoration: none;
             letter-spacing: 0.5px;
             font-size: 1.125rem;

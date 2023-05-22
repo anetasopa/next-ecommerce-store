@@ -10,8 +10,10 @@ export default function BadgePage() {
   const totalQuantity = quantity.reduce((acc, curr) => acc + curr, 0);
 
   return (
-    <h1 className={`${totalQuantity === 0 ? styles.hide : ''}`}>
-      {totalQuantity}
-    </h1>
+    <div>
+      <div className={`${totalQuantity === 0 ? styles.hide : ''}`}>
+        <span className={styles.span}>{totalQuantity}</span>
+      </div>
+    </div>
   );
 }

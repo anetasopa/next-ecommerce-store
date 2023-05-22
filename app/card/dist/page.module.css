@@ -67,7 +67,7 @@ main .container .containerCardProducts .sumContainer .button:hover {
   background-color: var(--button-color-hover);
   transition: 0.3s ease-in;
 }
-main .container .containerCardProducts .productsCardsContainer {
+main .container .containerCardProducts .cardsContainer {
   width: 50%;
   display: block;
   align-items: center;
@@ -75,7 +75,7 @@ main .container .containerCardProducts .productsCardsContainer {
   padding: 70px 50px 70px 50px;
   border-radius: var(--border-radius);
 }
-main .container .containerCardProducts .productsCardsContainer .productCard {
+main .container .containerCardProducts .cardsContainer .productCard {
   overflow: hidden;
   display: flex;
   gap: 20px;
@@ -83,25 +83,29 @@ main .container .containerCardProducts .productsCardsContainer .productCard {
   border-radius: var(--border-radius);
   margin-bottom: 20px;
 }
-main .container .containerCardProducts .productsCardsContainer .productCard .img {
+main .container .containerCardProducts .cardsContainer .productCard div {
+  padding-top: 20px;
+}
+main .container .containerCardProducts .cardsContainer .productCard .img {
   width: auto;
   height: auto;
 }
-main .container .containerCardProducts .productsCardsContainer .productCard .productName {
+main .container .containerCardProducts .cardsContainer .productCard .productName {
+  padding-top: 20px;
   text-decoration: none;
   letter-spacing: 0.5px;
   font-size: 1.125rem;
   font-weight: bolder;
   color: var(--color-h);
 }
-main .container .containerCardProducts .productsCardsContainer .productCard .productType {
+main .container .containerCardProducts .cardsContainer .productCard .productType {
   text-transform: uppercase;
   font-size: 0.8rem;
   line-height: 28px;
   letter-spacing: 0.5px;
   color: var(--color-par);
 }
-main .container .containerCardProducts .productsCardsContainer .productCard .productPrice {
+main .container .containerCardProducts .cardsContainer .productCard .productPrice {
   text-transform: uppercase;
   font-size: 1.5rem;
   line-height: 28px;
@@ -110,7 +114,7 @@ main .container .containerCardProducts .productsCardsContainer .productCard .pro
   font-weight: bold;
   padding-bottom: 6px;
 }
-main .container .containerCardProducts .productsCardsContainer .productCard .productPrice span {
+main .container .containerCardProducts .cardsContainer .productCard .productPrice span {
   color: var(--color-par);
   text-transform: none;
   font-size: 1rem;

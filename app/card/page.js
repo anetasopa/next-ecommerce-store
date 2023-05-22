@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProductById, products } from '../../database/products';
+import { products } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
@@ -28,7 +28,7 @@ export default function CardPage() {
       <div className={styles.container}>
         <h1>Products Cart</h1>
         <div className={styles.containerCardProducts}>
-          <div className={styles.productsCardsContainer}>
+          <div className={styles.cardsContainer}>
             {filteredProducts.map((product) => {
               return (
                 <div

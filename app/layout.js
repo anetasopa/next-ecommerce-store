@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { FaCoffee, FaShoppingCart } from 'react-icons/fa';
 import BadgePage from './Badge';
 import styles from './globals.scss';
+import ShopCartPage from './ShopCart';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
                   color: 'black',
                   textDecoration: 'none',
                   fontSize: '1.5rem',
+                  marginLeft: '50px',
                 }}
               >
                 Cofeez <FaCoffee className={styles.icon} />
@@ -53,16 +55,7 @@ export default function RootLayout({ children }) {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/card"
-                  style={{
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                >
-                  <BadgePage />
-                  <FaShoppingCart className={styles.icon} />
-                </Link>
+                <ShopCartPage />
               </li>
             </ul>
           </nav>

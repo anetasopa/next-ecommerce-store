@@ -1,0 +1,13 @@
+.container {
+  padding: 30px;
+
+  .shopCart {
+    position: absolute;
+
+    .icon {
+      height: 30px;
+      width: 30px;
+      color: var(--button-par);
+    }
+  }
+}
