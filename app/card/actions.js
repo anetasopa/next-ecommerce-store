@@ -52,26 +52,23 @@ export async function addQuantity(productId, quantity) {
   await cookies().set('cart', JSON.stringify(productQuantities));
 }
 
-export async function removeQuantity(productId, quantity) {
+export async function removeQuantity(item) {
   const productQuantityCookie = getCookie('cart');
 
   const productQuantities = !productQuantityCookie
     ? []
     : parseJson(productQuantityCookie);
 
-  const removeValueQuantity = productQuantities.find((quantityNumber) => {
-    return quantityNumber.id === productId;
+  const removeValueQuantity = productQuantities.find((product) => {
+    return product.id === item.id;
   });
 
-  if (removeValueQuantity) {
-    removeValueQuantity.quantity =
-      Number(removeValueQuantity.quantity) - Number(quantity);
-  } else {
-    productQuantities.push({
-      id: productId,
-      quantity,
-    });
-  }
+  console.log('item');
+  console.log(item);
+  console.log('find');
+  console.log(removeValueQuantity);
+
+  removeValueQuantity.quantity -= 1;
 
   await cookies().set('cart', JSON.stringify(productQuantities));
 }

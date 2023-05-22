@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound, useRouter } from 'next/navigation';
 import { getProductById, products } from '../../../database/products';
-import AddToCart from './AddToCart';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
 

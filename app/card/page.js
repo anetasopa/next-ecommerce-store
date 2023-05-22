@@ -1,19 +1,35 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../database/products';
+import { getProductById, products } from '../../database/products';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 
 export default function CardPage() {
+  const valueCookies = getCookie('cart'); // This a string
+
+  const cookies = !valueCookies ? [] : parseJson(valueCookies); // this is an array
+
+  const itemInCart = products.map((product) => {
+    const matchingItems = cookies.find(
+      (cookieItem) => product.id === cookieItem.id,
+    );
+
+    return { ...product, quantity: matchingItems?.quantity };
+  });
+
+  const filteredProducts = itemInCart.filter((item) => item.quantity);
+
   return (
     <main>
       <div className={styles.container}>
         <h1>Products Card</h1>
         <div className={styles.containerCardProducts}>
           <div className={styles.productsCardsContainer}>
-            {products
+            {filteredProducts
               .map((product) => {
                 return (
                   <div
@@ -40,7 +56,7 @@ export default function CardPage() {
                       <p className={styles.productPrice}>
                         {product.price} <span>Euro</span>{' '}
                       </p>
-                      <QuantityCounter />
+                      <QuantityCounter product={product} />
                     </div>
                   </div>
                 );

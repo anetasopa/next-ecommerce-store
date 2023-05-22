@@ -5,8 +5,7 @@ import { FaArrowLeft, FaArrowRight, FaTrash } from 'react-icons/fa';
 import { addQuantity, createOrUpdateQuantity, removeQuantity } from './actions';
 import styles from './QuantityCounter.module.scss';
 
-export default function QuantityCounter(props) {
-  const [quantity, setQuantity] = useState(1);
+export default function QuantityCounter({ product }) {
   const router = useRouter();
 
   // const removeQuantity = () => {
@@ -18,6 +17,7 @@ export default function QuantityCounter(props) {
   // const addQuantity = () => {
   //   setQuantity(quantity + 1);
   // };
+  console.log(typeof product.quantity);
 
   return (
     <form className={styles.quantity}>
@@ -25,24 +25,19 @@ export default function QuantityCounter(props) {
         <button
           formAction={async () => {
             router.refresh();
-            await removeQuantity(props.productId, quantity);
+            await removeQuantity(product);
           }}
           className={styles.buttonRemove}
         >
           <FaArrowLeft className={styles.icon} />
         </button>
 
-        <input
-          type=""
-          className={styles.quantityInput}
-          value={quantity}
-          onChange={(e) => setQuantity(parseInt(e.target.value))}
-        />
+        <span className={styles.quantityValue}>{product.quantity}</span>
 
         <button
           formAction={async () => {
             router.refresh();
-            await addQuantity(props.productId, quantity);
+            await addQuantity(product.productId, product.quantity);
           }}
           className={styles.buttonRemove}
         >
@@ -53,7 +48,7 @@ export default function QuantityCounter(props) {
       <button
         formAction={async () => {
           router.refresh();
-          await createOrUpdateQuantity(props.productId, quantity);
+          // await createOrUpdateQuantity(props.productId, quantity);
         }}
         data-test-id="product-add-to-cart"
         className={styles.button}

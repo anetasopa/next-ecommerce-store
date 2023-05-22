@@ -78,7 +78,7 @@ function addQuantity(productId, quantity) {
   });
 }
 
-function removeQuantity(productId, quantity) {
+function removeQuantity(item) {
   var productQuantityCookie, productQuantities, removeValueQuantity;
   return regeneratorRuntime.async(function removeQuantity$(_context3) {
     while (1) {
@@ -86,23 +86,18 @@ function removeQuantity(productId, quantity) {
         case 0:
           productQuantityCookie = (0, _cookies.getCookie)('cart');
           productQuantities = !productQuantityCookie ? [] : (0, _json.parseJson)(productQuantityCookie);
-          removeValueQuantity = productQuantities.find(function (quantityNumber) {
-            return quantityNumber.id === productId;
+          removeValueQuantity = productQuantities.find(function (product) {
+            return product.id === item.id;
           });
-
-          if (removeValueQuantity) {
-            removeValueQuantity.quantity = Number(removeValueQuantity.quantity) - Number(quantity);
-          } else {
-            productQuantities.push({
-              id: productId,
-              quantity: quantity
-            });
-          }
-
-          _context3.next = 6;
+          console.log('item');
+          console.log(item);
+          console.log('find');
+          console.log(removeValueQuantity);
+          removeValueQuantity.quantity -= 1;
+          _context3.next = 10;
           return regeneratorRuntime.awrap((0, _headers.cookies)().set('cart', JSON.stringify(productQuantities)));
 
-        case 6:
+        case 10:
         case "end":
           return _context3.stop();
       }

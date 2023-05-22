@@ -6,6 +6,7 @@ import { createOrUpdateQuantity } from './actions';
 import styles from './QuantityCounter.module.scss';
 
 export default function QuantityCounter(props) {
+  console.log({ props });
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
 
@@ -23,12 +24,16 @@ export default function QuantityCounter(props) {
     <form className={styles.quantity}>
       <div className={styles.quantityCounter}>
         <FaArrowLeft onClick={decrementQuantity} className={styles.icon} />
-        <input
+
+        <span className={styles.quantityValue}>{props.quantity}</span>
+
+        {/* <input
           type=""
-          className={styles.quantityInput}
+          className={styles.quantityValue}
           value={quantity}
           onChange={(e) => setQuantity(parseInt(e.target.value))}
-        />
+        /> */}
+
         <FaArrowRight onClick={incrementQuantity} className={styles.icon} />
       </div>
       <button
@@ -41,14 +46,6 @@ export default function QuantityCounter(props) {
       >
         Add To Card
       </button>
-      {/* <button
-        formAction={async () => {
-          router.refresh();
-          await createOrUpdateQuantity(props.productId, quantity);
-        }}
-      >
-        Update Quantity
-      </button> */}
     </form>
   );
 }
