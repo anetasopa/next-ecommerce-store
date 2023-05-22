@@ -36,7 +36,7 @@ export default function QuantityCounter({ product }) {
           router.refresh();
           await removeItem(product);
         }}
-        data-test-id={`cart-product-remove-${id}`}
+        data-test-id={`cart-product-remove-${product.id}`}
         className={styles.button}
       >
         Remove

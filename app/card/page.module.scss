@@ -88,16 +88,11 @@ main {
         justify-content: center;
         padding: 70px 50px 70px 50px;
         border-radius: var(--border-radius);
-        // display: grid;
-        // grid-template-columns: 1fr;
 
         .productCard {
-          // align-items: center;
           overflow: hidden;
           display: flex;
           gap: 20px;
-          // height: 300px;
-          // width: 250px;
           border: 1px solid var(--color-span);
           border-radius: var(--border-radius);
           margin-bottom: 20px;

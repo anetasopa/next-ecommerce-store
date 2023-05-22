@@ -20,7 +20,7 @@ export default function HomePage() {
         <div>
           <Link
             className={styles.heroButtonGoToProduct}
-            href="/#"
+            href="/products"
             style={{
               textDecoration: 'none',
             }}

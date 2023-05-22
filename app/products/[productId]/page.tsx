@@ -47,7 +47,7 @@ export default function ProductPage(props: Props) {
           </div>
           <div className={styles.flex}>
             <p data-test-id="product-price" className={styles.price}>
-              Price: <span>{singleProduct.price}</span> Euro
+              Price:<span>{singleProduct.price}</span> Euro
             </p>
           </div>
           <QuantityCounter productId={singleProduct.id} />
@@ -63,7 +63,7 @@ export default function ProductPage(props: Props) {
           />
         </div>
       </div>
-
+      <h2>More Products</h2>
       <div className={styles.productsCardsContainer}>
         {products.map((product) => {
           return (

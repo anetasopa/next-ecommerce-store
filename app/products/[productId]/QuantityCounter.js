@@ -25,8 +25,6 @@ export default function QuantityCounter(props) {
       <div className={styles.quantityCounter}>
         {/* <FaArrowLeft onClick={decrementQuantity} className={styles.icon} /> */}
 
-        <span className={styles.quantityValue}>{props.quantity}</span>
-
         <input
           className={styles.quantityValue}
           value={quantity}
