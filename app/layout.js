@@ -6,6 +6,7 @@ import {
   FaCoffee,
   FaShoppingCart,
 } from 'react-icons/fa';
+import BannerPage from './Banner';
 import styles from './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -86,6 +87,7 @@ export default function RootLayout({ children }) {
                     textDecoration: 'none',
                   }}
                 >
+                  <BannerPage />
                   <FaShoppingCart className={styles.icon} />
                 </Link>
               </li>

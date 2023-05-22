@@ -4,8 +4,9 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
-export async function createOrUpdateQuantity({ productId, quantity }) {
+export async function createOrUpdateQuantity(productId, quantity) {
   const productQuantityCookie = getCookie('cart');
+
   const productQuantities = !productQuantityCookie
     ? []
     : parseJson(productQuantityCookie);
