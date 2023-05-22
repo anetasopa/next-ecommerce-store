@@ -1,8 +1,8 @@
 import { getCookie } from '../util/cookies';
 import { parseJson } from '../util/json';
-import styles from './Banner.module.scss';
+import styles from './Badge.module.scss';
 
-export default function BannerPage() {
+export default function BadgePage() {
   const valueCartCookie = getCookie('cart'); // This a string
   const values = !valueCartCookie ? [] : parseJson(valueCartCookie); // this is an array
 

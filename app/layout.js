@@ -1,12 +1,7 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import {
-  FaArrowLeft,
-  FaArrowRight,
-  FaCoffee,
-  FaShoppingCart,
-} from 'react-icons/fa';
-import BannerPage from './Banner';
+import { FaCoffee, FaShoppingCart } from 'react-icons/fa';
+import BadgePage from './Badge';
 import styles from './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -65,7 +60,7 @@ export default function RootLayout({ children }) {
                     textDecoration: 'none',
                   }}
                 >
-                  <BannerPage />
+                  <BadgePage />
                   <FaShoppingCart className={styles.icon} />
                 </Link>
               </li>
