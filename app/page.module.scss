@@ -86,7 +86,7 @@
     .knowMoreButtonAboutUs {
       margin-top: 30px;
       padding: 12px 30px;
-      width: auto;
+      width: 32%;
       font-size: 1.2rem;
       border-radius: 5px;
       letter-spacing: 0.5px;
@@ -97,7 +97,8 @@
 
       &:hover {
         cursor: pointer;
-        color: var(--background-color-footer);
+        color: var(--color-white);
+        background-color: var(--button-color);
         transition: 0.3s ease-in;
       }
     }
