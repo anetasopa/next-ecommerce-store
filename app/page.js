@@ -2,6 +2,13 @@ import { faChevronDown, faMugSaucer } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  FaCoffee,
+  FaCookie,
+  FaGlassCheers,
+  FaGlassMartini,
+  FaLeaf,
+} from 'react-icons/fa';
 import { products } from '../database/products';
 import makeCoffee from '../public/images/makeCoffee.png';
 import styles from './page.module.scss';
@@ -67,23 +74,23 @@ export default function HomePage() {
       <section className={styles.containerSectionBenefits}>
         <div>
           <div>
-            <FontAwesomeIcon className={styles.icon} icon={faMugSaucer} />
+            <FaCoffee className={styles.icon} />
             <h4>Types of Coffee</h4>
             <p>Choose amount of cups you drink.</p>
           </div>
           <div>
-            <FontAwesomeIcon className={styles.icon} icon={faMugSaucer} />
-            <h4>Types of Coffee</h4>
+            <FaGlassMartini className={styles.icon} />
+            <h4>Bean Varieties</h4>
+            <p>choose the drink that suits you best.</p>
+          </div>
+          <div>
+            <FaCookie className={styles.icon} />
+            <h4>Coffee & Cookie</h4>
             <p>Select the Brews that suits you best.</p>
           </div>
           <div>
-            <FontAwesomeIcon className={styles.icon} icon={faMugSaucer} />
-            <h4>Types of Coffee</h4>
-            <p>choose the drink that suits you best</p>
-          </div>
-          <div>
-            <FontAwesomeIcon className={styles.icon} icon={faMugSaucer} />
-            <h4>Types of Coffee</h4>
+            <FaLeaf className={styles.icon} />
+            <h4>Coffee to go</h4>
             <p>Enjoy a cup of coffee every morning.</p>
           </div>
         </div>
