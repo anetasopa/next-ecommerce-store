@@ -2,8 +2,9 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, useRouter } from 'next/navigation';
 import { getProductById, products } from '../../../database/products';
+import AddToCart from './AddToCart';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
 
@@ -50,20 +51,10 @@ export default function ProductPage(props: Props) {
             <p data-test-id="product-price" className={styles.price}>
               Price: <span>{singleProduct.price}</span> Euro
             </p>
-            <QuantityCounter productId={singleProduct.id} />
           </div>
-          <Link
-            data-test-id="product-add-to-cart"
-            className={styles.button}
-            href="/card"
-            style={{
-              color: 'black',
-              textDecoration: 'none',
-            }}
-          >
-            Add To Card
-          </Link>
+          <QuantityCounter productId={singleProduct.id} />
         </div>
+
         <div className={styles.imageContainer}>
           <Image
             data-test-id="product-image"

@@ -5,7 +5,7 @@ import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
 export async function createOrUpdateQuantity({ productId, quantity }) {
-  const productQuantityCookie = getCookie('productQuantity');
+  const productQuantityCookie = getCookie('cart');
   const productQuantities = !productQuantityCookie
     ? []
     : parseJson(productQuantityCookie);
@@ -24,5 +24,5 @@ export async function createOrUpdateQuantity({ productId, quantity }) {
     });
   }
 
-  await cookies().set('productQuantity', JSON.stringify(productQuantities));
+  await cookies().set('cart', JSON.stringify(productQuantities));
 }

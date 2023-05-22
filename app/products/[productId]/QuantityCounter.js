@@ -21,22 +21,26 @@ export default function QuantityCounter(props) {
 
   return (
     <form className={styles.quantity}>
-      <FaArrowLeft onClick={decrementQuantity} className={styles.icon} />
-      <input
-        type="number"
-        className={styles.quantityInput}
-        value={quantity}
-        onChange={(e) => setQuantity(parseInt(e.target.value))}
-      />
-      <FaArrowRight onClick={incrementQuantity} className={styles.icon} />
-
-      <FaArrowRight
+      <div className={styles.quantityCounter}>
+        <FaArrowLeft onClick={decrementQuantity} className={styles.icon} />
+        <input
+          type=""
+          className={styles.quantityInput}
+          value={quantity}
+          onChange={(e) => setQuantity(parseInt(e.target.value))}
+        />
+        <FaArrowRight onClick={incrementQuantity} className={styles.icon} />
+      </div>
+      <button
         formAction={async () => {
           router.refresh();
           await createOrUpdateQuantity(props.productId, quantity);
         }}
-        className={styles.icon}
-      />
+        data-test-id="product-add-to-cart"
+        className={styles.button}
+      >
+        Add To Card
+      </button>
       {/* <button
         formAction={async () => {
           router.refresh();

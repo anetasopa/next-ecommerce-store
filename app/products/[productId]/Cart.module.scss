@@ -1,0 +1,20 @@
+.button {
+  border: none;
+  font-size: 0.8rem;
+  border-radius: var(--border-radius);
+  color: white;
+  font-weight: bold;
+
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  margin-top: -125px;
+  margin-left: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
