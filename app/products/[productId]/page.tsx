@@ -91,11 +91,12 @@ export default function ProductPage(props: Props) {
               /> */}
               <div className={styles.container}>
                 <Image
+                  alt=""
                   src={`/images/${product.name}.png`}
                   width={250}
                   height={200}
                 />
-                <div className={styles.overlay}></div>
+                <div className={styles.overlay} />
                 <div className={styles.button}>
                   <Link
                     className={styles.a}
