@@ -1,0 +1,57 @@
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: space-between;
+
+  .quantityCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    .buttonRemove {
+      border: none;
+      background-color: transparent;
+    }
+
+    .quantityInput {
+      appearance: auto;
+      -webkit-appearance: none;
+      font-size: 16px;
+      border-radius: var(--border-radius);
+      color: var(--button-color);
+      border: none;
+      outline: none;
+      text-align: center;
+      width: 50px;
+    }
+
+    .icon {
+      color: #c9c9c9;
+      cursor: pointer;
+      margin-left: 30px;
+    }
+  }
+
+  .button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    letter-spacing: 0.5px;
+    background-color: #d17721;
+    color: white !important;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 100px;
+    margin-left: 20px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--button-color-hover);
+      transition: 0.3s ease-in;
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { products } from '../../database/products';
-import QuantityCounter from '../products/[productId]/QuantityCounter';
 import styles from './page.module.scss';
+import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 

@@ -1,0 +1,117 @@
+main .container h1 {
+  font-size: 2.188rem;
+  font-weight: 600;
+  color: var(--color-h);
+  padding: 30px 0;
+  text-align: center;
+}
+main .container .containerCardProducts {
+  display: flex;
+}
+main .container .containerCardProducts .sumContainer {
+  width: 50%;
+  display: block;
+  align-items: start;
+  justify-content: center;
+  padding: 70px 50px 70px 50px;
+  border-radius: var(--border-radius);
+  gap: 50px;
+}
+main .container .containerCardProducts .sumContainer h2 {
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+main .container .containerCardProducts .sumContainer .subtotal {
+  display: flex;
+  margin-bottom: 32px;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-span);
+}
+main .container .containerCardProducts .sumContainer .subtotal h5 {
+  color: var(--color-par);
+}
+main .container .containerCardProducts .sumContainer .subtotal p {
+  color: var(--color-par);
+}
+main .container .containerCardProducts .sumContainer .total {
+  display: flex;
+  margin-bottom: 32px;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+main .container .containerCardProducts .sumContainer .total h3 {
+  color: var(--color-h);
+}
+main .container .containerCardProducts .sumContainer .total h3 p {
+  color: var(--color-h);
+}
+main .container .containerCardProducts .sumContainer .total h3 span {
+  font-weight: bold;
+  color: var(--button-color);
+  font-size: 1.5rem;
+}
+main .container .containerCardProducts .sumContainer .button {
+  padding: 12px 30px;
+  width: 100%;
+  float: right;
+  border-radius: var(--border-radius);
+  letter-spacing: 0.5px;
+  background-color: var(--color-white);
+  color: var(--button-color);
+  border: 1px solid var(--button-color);
+  text-align: center;
+  font-weight: bold;
+}
+main .container .containerCardProducts .sumContainer .button:hover {
+  cursor: pointer;
+  background-color: var(--button-color-hover);
+  transition: 0.3s ease-in;
+}
+main .container .containerCardProducts .productsCardsContainer {
+  width: 50%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 50px 70px 50px;
+  border-radius: var(--border-radius);
+}
+main .container .containerCardProducts .productsCardsContainer .productCard {
+  overflow: hidden;
+  display: flex;
+  gap: 20px;
+  border: 1px solid var(--color-span);
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+}
+main .container .containerCardProducts .productsCardsContainer .productCard .img {
+  width: auto;
+  height: auto;
+}
+main .container .containerCardProducts .productsCardsContainer .productCard .productName {
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-size: 1.125rem;
+  font-weight: bolder;
+  color: var(--color-h);
+}
+main .container .containerCardProducts .productsCardsContainer .productCard .productType {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: var(--color-par);
+}
+main .container .containerCardProducts .productsCardsContainer .productCard .productPrice {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: var(--button-color);
+  font-weight: bold;
+  padding-bottom: 6px;
+}
+main .container .containerCardProducts .productsCardsContainer .productCard .productPrice span {
+  color: var(--color-par);
+  text-transform: none;
+  font-size: 1rem;
+}

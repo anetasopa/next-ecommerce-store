@@ -65,28 +65,6 @@ export default function RootLayout({ children }) {
                     textDecoration: 'none',
                   }}
                 >
-                  Product Card
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/checkout"
-                  style={{
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Checkout
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/thanks"
-                  style={{
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                >
                   <BannerPage />
                   <FaShoppingCart className={styles.icon} />
                 </Link>
