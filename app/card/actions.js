@@ -4,50 +4,29 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
-export async function createOrUpdateQuantity(productId, quantity) {
-  const productQuantityCookie = getCookie('cart');
-
+export async function removeItem(item) {
+  const productQuantityCookie = getCookie('cart'); // Get cookie from client as string
   const productQuantities = !productQuantityCookie
     ? []
-    : parseJson(productQuantityCookie);
+    : parseJson(productQuantityCookie); // Check cookie and return array of objects
 
-  const quantityToUpdate = productQuantities.find((quantityNumber) => {
-    return quantityNumber.id === productId;
-  });
-
-  if (quantityToUpdate) {
-    quantityToUpdate.quantity =
-      Number(quantityToUpdate.quantity) + Number(quantity);
-  } else {
-    productQuantities.push({
-      id: productId,
-      quantity,
-    });
-  }
-
-  await cookies().set('cart', JSON.stringify(productQuantities));
+  const removeCart = productQuantities.filter(
+    (product) => product.id !== item.id,
+  );
+  await cookies().set('cart', JSON.stringify(removeCart));
 }
 
-export async function addQuantity(productId, quantity) {
+export async function addQuantity(item) {
   const productQuantityCookie = getCookie('cart');
 
   const productQuantities = !productQuantityCookie
     ? []
     : parseJson(productQuantityCookie);
 
-  const addValueQuantity = productQuantities.find((quantityNumber) => {
-    return quantityNumber.id === productId;
+  const addValueQuantity = productQuantities.find((product) => {
+    return product.id === item.id;
   });
-
-  if (addValueQuantity) {
-    addValueQuantity.quantity =
-      Number(addValueQuantity.quantity) + Number(quantity);
-  } else {
-    productQuantities.push({
-      id: productId,
-      quantity,
-    });
-  }
+  addValueQuantity.quantity += 1;
 
   await cookies().set('cart', JSON.stringify(productQuantities));
 }
@@ -62,12 +41,6 @@ export async function removeQuantity(item) {
   const removeValueQuantity = productQuantities.find((product) => {
     return product.id === item.id;
   });
-
-  console.log('item');
-  console.log(item);
-  console.log('find');
-  console.log(removeValueQuantity);
-
   removeValueQuantity.quantity -= 1;
 
   await cookies().set('cart', JSON.stringify(productQuantities));

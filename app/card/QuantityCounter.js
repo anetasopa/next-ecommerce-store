@@ -2,22 +2,11 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaTrash } from 'react-icons/fa';
-import { addQuantity, createOrUpdateQuantity, removeQuantity } from './actions';
+import { addQuantity, removeItem, removeQuantity } from './actions';
 import styles from './QuantityCounter.module.scss';
 
 export default function QuantityCounter({ product }) {
   const router = useRouter();
-
-  // const removeQuantity = () => {
-  //   if (quantity > 1) {
-  //     setQuantity(quantity - 1);
-  //   }
-  // };
-
-  // const addQuantity = () => {
-  //   setQuantity(quantity + 1);
-  // };
-  console.log(typeof product.quantity);
 
   return (
     <form className={styles.quantity}>
@@ -31,41 +20,27 @@ export default function QuantityCounter({ product }) {
         >
           <FaArrowLeft className={styles.icon} />
         </button>
-
         <span className={styles.quantityValue}>{product.quantity}</span>
-
         <button
           formAction={async () => {
             router.refresh();
-            await addQuantity(product.productId, product.quantity);
+            await addQuantity(product);
           }}
           className={styles.buttonRemove}
         >
           <FaArrowRight className={styles.icon} />
         </button>
       </div>
-
       <button
         formAction={async () => {
           router.refresh();
-          // await createOrUpdateQuantity(props.productId, quantity);
+          await removeItem(product);
         }}
-        data-test-id="product-add-to-cart"
+        data-test-id={`cart-product-remove-${id}`}
         className={styles.button}
       >
         Remove
       </button>
-
-      {/* <FaTrash /> */}
-
-      {/* <button
-        formAction={async () => {
-          router.refresh();
-          await createOrUpdateQuantity(props.productId, quantity);
-        }}
-      >
-        Update Quantity
-      </button> */}
     </form>
   );
 }

@@ -26,42 +26,40 @@ export default function CardPage() {
   return (
     <main>
       <div className={styles.container}>
-        <h1>Products Card</h1>
+        <h1>Products Cart</h1>
         <div className={styles.containerCardProducts}>
           <div className={styles.productsCardsContainer}>
-            {filteredProducts
-              .map((product) => {
-                return (
-                  <div
-                    key={`product-div-${product.id}`}
-                    className={styles.productCard}
-                  >
-                    <Image
-                      className={styles.img}
-                      src={`/images/${product.name}.png`}
-                      width={150}
-                      height={100}
-                    />
-                    <div>
-                      <Link
-                        className={styles.productName}
-                        href={`/products/${product.id}`}
-                        style={{
-                          textDecoration: 'none',
-                        }}
-                      >
-                        {product.name}
-                      </Link>
-                      <p className={styles.productType}>{product.type}</p>
-                      <p className={styles.productPrice}>
-                        {product.price} <span>Euro</span>{' '}
-                      </p>
-                      <QuantityCounter product={product} />
-                    </div>
+            {filteredProducts.map((product) => {
+              return (
+                <div
+                  key={`product-div-${product.id}`}
+                  className={styles.productCard}
+                >
+                  <Image
+                    className={styles.img}
+                    src={`/images/${product.name}.png`}
+                    width={150}
+                    height={100}
+                  />
+                  <div>
+                    <Link
+                      className={styles.productName}
+                      href={`/products/${product.id}`}
+                      style={{
+                        textDecoration: 'none',
+                      }}
+                    >
+                      {product.name}
+                    </Link>
+                    <p className={styles.productType}>{product.type}</p>
+                    <p className={styles.productPrice}>
+                      {product.price} <span>Euro</span>{' '}
+                    </p>
+                    <QuantityCounter product={product} />
                   </div>
-                );
-              })
-              .splice(0, 3)}
+                </div>
+              );
+            })}
           </div>
           <div className={styles.sumContainer}>
             <h2>Summary Of The Amount</h2>

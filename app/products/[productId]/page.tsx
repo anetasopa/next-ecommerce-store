@@ -72,11 +72,6 @@ export default function ProductPage(props: Props) {
               className={styles.productCard}
             >
               {' '}
-              {/* <Image
-                src={`/images/${product.name}.png`}
-                width={250}
-                height={200}
-              /> */}
               <div className={styles.container}>
                 <Image
                   alt=""
@@ -87,7 +82,9 @@ export default function ProductPage(props: Props) {
                 <div className={styles.overlay} />
                 <div className={styles.button}>
                   <Link
+                    data-test-id={`product-${product.id}`}
                     className={styles.a}
+                    key={`product-${product.id}`}
                     href={`/products/${product.id}`}
                     style={{
                       color: 'black',
@@ -99,7 +96,9 @@ export default function ProductPage(props: Props) {
                 </div>
               </div>
               <Link
+                data-test-id={`product-${product.id}`}
                 className={styles.productName}
+                key={`product-${product.id}`}
                 href={`/products/${product.id}`}
                 style={{
                   textDecoration: 'none',
