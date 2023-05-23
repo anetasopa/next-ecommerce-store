@@ -17,6 +17,13 @@ import styles from './page.module.scss';
 export default function HomePage() {
   return (
     <main>
+      <div className={styles.picCtn}>
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+      </div>
       <div className={styles.container}>
         <h1>
           Enjoy Your Moment With <span> Coffee</span>.
