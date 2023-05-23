@@ -25,7 +25,6 @@
 }
 
 body {
-  padding: 50px;
   width: auto;
   height: auto;
   font-family: var(--font-family), sans-serif;
@@ -82,53 +81,72 @@ header nav ul li {
 }
 
 footer {
-  background-color: var(--background-color-footer);
-  padding: 0 50px;
-  padding-top: 20px;
-  grid-column-gap: 64px;
-  grid-row-gap: 20px;
-  grid-template-rows: auto;
-  grid-template-columns: 2fr 2fr 1fr;
-  grid-auto-columns: 1fr;
   display: grid;
-  color: white;
+  grid-gap: 40px;
+  grid-template-columns: 2fr 2fr 1fr;
+  background: var(--background-color-footer);
+  padding: 1.5rem 50px;
 }
-footer div {
-  flex-direction: column;
-  display: flex;
-}
-footer div .ContainerContactUs {
-  display: flex;
-  flex-direction: row;
-}
-footer div h5 {
-  color: #fff;
-  font-size: 1.5rem;
-  line-height: 1.875rem;
+footer h6 {
+  color: var(--color-white);
+  font-size: 24px;
+  line-height: 30px;
   text-transform: capitalize;
   margin-bottom: 30px;
-  font-weight: 900;
+  font-weight: 600;
 }
-footer div p {
-  font-weight: normal;
-  font-size: 1rem;
-  color: #979797;
-  letter-spacing: 0.5px;
-}
-footer form {
+footer li {
+  outline: none;
+  list-style: none;
+  margin-bottom: 10px;
   display: flex;
-  margin-bottom: 25px;
 }
-footer form div {
-  display: block;
-}
-footer form div p {
+footer li p {
   font-weight: normal;
-  font-size: 1rem;
+  margin-left: 10px;
+  font-size: 16px;
+  line-height: 28px;
   color: #979797;
   letter-spacing: 0.5px;
 }
-footer form input {
+
+li {
+  outline: none;
+  list-style: none;
+  margin-bottom: 10px;
+}
+li .icon {
+  margin-top: 10px;
+  background-color: white;
+}
+li p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  color: #979797;
+  letter-spacing: 0.5px;
+}
+
+h6 {
+  color: var(--color-white);
+  font-size: 24px;
+  line-height: 30px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+}
+
+p {
+  color: #979797;
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  font-family: "Manrope", sans-serif;
+}
+
+form input {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 12px 20px;
@@ -138,9 +156,9 @@ footer form input {
   color: #aaa;
   border-radius: 0.25rem 0 0 0.25rem;
 }
-footer form button {
+form button {
   text-align: center;
-  background: var(--button-color);
+  background: var(--primary-color);
   border: none;
   outline: none;
   color: #eee;
@@ -148,7 +166,20 @@ footer form button {
   cursor: pointer;
   width: 15%;
   border-radius: 0 0.25rem 0.25rem 0;
+  margin-bottom: 20px;
+  overflow: visible;
+  text-transform: none;
 }
-footer form button .icon {
-  width: 20px;
+
+.quickLinks li {
+  outline: none;
+  list-style: none;
+  margin-bottom: 10px;
+}
+.quickLinks li p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  color: #979797;
+  letter-spacing: 0.5px;
 }

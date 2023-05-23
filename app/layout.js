@@ -60,7 +60,62 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         {children}
+
         <footer>
+          <div>
+            <h6>Contact Us</h6>
+            <ul>
+              <li>
+                <FaLocationArrow className={styles.icon} />
+                <p>
+                  {' '}
+                  2005 Stokes Isle Apt. 896, Coffee Cafe Center, Vacaville 1001,
+                  Vienna.
+                </p>
+              </li>
+              <li>
+                <FaPhone className={styles.icon} />
+                <p>+(43)-665-999-8888</p>
+              </li>
+              <li>
+                <FaEnvelope className={styles.icon} />
+                <p>Coffeez@gmail.com</p>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h6>Newsletter</h6>
+            <p>Get in your inbox the latest News and</p>
+            <form>
+              <input type="email" name="email" placeholder="Email" />
+              <button>
+                <FaEnvelope className={styles.icon} />
+              </button>
+            </form>
+            <p>Subscribe and get our weekly newsletter</p>
+            <p>We'll never share your email address</p>
+          </div>
+
+          <div className={styles.quickLinks}>
+            <h6>Quick Links</h6>
+            <ul>
+              <li>
+                <p>Home</p>
+              </li>
+              <li>
+                <p>About Us</p>
+              </li>
+              <li>
+                <p>Benefits</p>
+              </li>
+              <li>
+                <p>Hours</p>
+              </li>
+            </ul>
+          </div>
+        </footer>
+        {/* <footer>
           <div>
             <h5>Contact Us</h5>
             <div className={styles.ContainerContactUs}>
@@ -106,7 +161,7 @@ export default function RootLayout({ children }) {
             <a href="/#">Analytics</a>
             <a href="/#">Integrations</a>
           </div>
-        </footer>
+        </footer> */}
       </body>
     </html>
   );
