@@ -108,19 +108,24 @@ footer {
     flex-direction: column;
     display: flex;
 
-    div {
-      display: block;
-      flex-direction: initial;
-
-      .block {
-        display: block;
-      }
-
-      p {
-        margin-left: 10px;
-        margin-bottom: 20px;
-      }
+    .ContainerContactUs {
+      display: flex;
+      flex-direction: row;
     }
+
+    // div {
+    //   display: block;
+    //   flex-direction: initial;
+
+    //   .block {
+    //     display: block;
+    //   }
+
+    //   p {
+    //     margin-left: 10px;
+    //     margin-bottom: 20px;
+    //   }
+    // }
 
     h5 {
       color: #fff;

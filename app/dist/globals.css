@@ -96,16 +96,9 @@ footer div {
   flex-direction: column;
   display: flex;
 }
-footer div div {
-  display: block;
-  flex-direction: initial;
-}
-footer div div .block {
-  display: block;
-}
-footer div div p {
-  margin-left: 10px;
-  margin-bottom: 20px;
+footer div .ContainerContactUs {
+  display: flex;
+  flex-direction: row;
 }
 footer div h5 {
   color: #fff;

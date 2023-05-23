@@ -54,7 +54,7 @@ export default function CardPage() {
                     </Link>
                     <p className={styles.productType}>{product.type}</p>
                     <p className={styles.productPrice}>
-                      {product.price}
+                      {Number(product.price) * Number(product.quantity)}
                       <span> Eur</span>{' '}
                     </p>
                     <QuantityCounter product={product} />

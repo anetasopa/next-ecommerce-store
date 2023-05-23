@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
         <footer>
           <div>
             <h5>Contact Us</h5>
-            <div>
+            <div className={styles.ContainerContactUs}>
               <FaLocationArrow className={styles.icon} />
               <p>
                 2005 Stokes Isle Apt. 896, Coffee Cafe Center, Vacaville 10010,
