@@ -10,6 +10,7 @@ import {
   FaLeaf,
 } from 'react-icons/fa';
 import { products } from '../database/products';
+import coffee from '../public/images/cup.png';
 import makeCoffee from '../public/images/makeCoffee.png';
 import styles from './page.module.scss';
 
@@ -96,67 +97,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* <section className={styles.containerSectionProducts}>
-        {products.map((product) => {
-          return (
-            <div className={styles.product} key={`product-div-${product.id}`}>
-              <div className={styles.textContainer}>
-                <h3>We make the delicious coffee for the coffee lovers.</h3>
-                <p>
-                  Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
-                  ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor
-                </p>
-                <div>
-                  <FontAwesomeIcon
-                    className={styles.icon}
-                    icon={faChevronDown}
-                  />
-                  <span>Lorem ipsum viverra feugiat.</span>
-                </div>
-                <div>
-                  <FontAwesomeIcon
-                    className={styles.icon}
-                    icon={faChevronDown}
-                  />
-                  <span>Lorem ipsum viverra feugiat.</span>
-                </div>
-                <div>
-                  <FontAwesomeIcon
-                    className={styles.icon}
-                    icon={faChevronDown}
-                  />
-                  <span>Lorem ipsum viverra feugiat.</span>
-                </div>
-              </div>
+      <section className={styles.containerHours}>
+        <div className={styles.hoursText}>
+          <h3>We make the delicious coffee.</h3>
+          <p>
+            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices
+            in ligula. Semper at tempufddfel. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. dignissimos quis soluta sapiente
+            aperiam quod.
+          </p>
+        </div>
+        <Image alt="coffee" className={styles.imageCoffee} src={coffee} />
+        <div className={styles.hours}>
+          <ul>
+            <h3>Opening Hours: </h3>
+            <li>Monday – Friday 11:00 - 07:00</li>
+            <li>Saturday 10:00 – 12:00</li>
+            <li>Sunday CLOSED</li>
+          </ul>
 
-              <div className={styles.imageContainer}>
-                <div className={styles.container}>
-                  <Image
-                    className={styles.img}
-                    alt="productName"
-                    width={200}
-                    height={200}
-                    src={`/images/${product.name}.png`}
-                  />
-                  <div className={styles.overlay}></div>
-                  <div className={styles.button}>
-                    <Link
-                      className={styles.a}
-                      href={`/products/${product.id}`}
-                      style={{
-                        color: 'black',
-                        textDecoration: 'none',
-                      }}
-                    >
-                      BUTTON, {product.id}
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </section> */}
+          <ul>
+            <h3>Reservation Numbers: </h3>
+            <li>+(43)-655-769-8876</li>
+            <li>+(43)-655-459-6688</li>
+          </ul>
+        </div>
+      </section>
     </main>
   );
 }

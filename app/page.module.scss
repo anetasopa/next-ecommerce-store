@@ -144,7 +144,7 @@
   div {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 0 30px;
+    margin: 0 10px;
 
     div {
       display: block;
@@ -304,6 +304,68 @@
 
       .container:hover .button {
         opacity: 1;
+      }
+    }
+  }
+}
+
+.containerHours {
+  display: flex;
+
+  .hoursText {
+    flex: 33.33%;
+    padding: 70px 50px;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      margin-top: 10px;
+      font-size: 2.188rem;
+      font-weight: 600;
+      line-height: 40px;
+      margin-bottom: 30px;
+      color: var(--color-h);
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: var(--color-par);
+    }
+  }
+
+  .imageCoffee {
+    padding: 70px 50px;
+    flex: 33.33%;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    width: 300px;
+  }
+
+  .hours {
+    flex: 33.33%;
+    padding: 70px 50px 70px 100px;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      margin-bottom: 30px;
+
+      h3 {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-bottom: 20px;
+        color: #2d2d43;
+      }
+
+      li {
+        color: #999;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 10px;
       }
     }
   }
