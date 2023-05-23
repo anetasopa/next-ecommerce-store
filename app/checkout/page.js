@@ -15,6 +15,11 @@ import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
 
+export const metadata = {
+  title: 'Checkout',
+  description: 'Checkout your cart with the products',
+};
+
 export default function CheckoutPage() {
   return (
     <main>

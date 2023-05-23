@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { products } from '../../database/products';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Products Overview',
+  description: 'Look fot the products',
+};
+
 export default function ProductPage() {
   return (
     <main className={styles.containerOverview}>

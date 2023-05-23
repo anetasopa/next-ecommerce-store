@@ -19,6 +19,11 @@ import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 
+export const metadata = {
+  title: 'Product Overview',
+  description: 'Check out the product',
+};
+
 type Props = {
   params: { productId: string };
 };
