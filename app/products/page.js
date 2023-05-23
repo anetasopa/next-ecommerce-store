@@ -18,6 +18,7 @@ export default function ProductPage() {
               <div className={styles.container}>
                 <Image
                   alt=""
+                  data-test-id="product-image"
                   src={`/images/${product.name}.png`}
                   width={250}
                   height={200}
@@ -25,6 +26,7 @@ export default function ProductPage() {
                 <div className={styles.overlay}></div>
                 <div className={styles.button}>
                   <Link
+                    data-test-id="products-link"
                     className={styles.a}
                     href={`/products/${product.id}`}
                     style={{
@@ -37,6 +39,7 @@ export default function ProductPage() {
                 </div>
               </div>
               <Link
+                data-test-id="products-link"
                 className={styles.productName}
                 href={`/products/${product.id}`}
                 style={{
