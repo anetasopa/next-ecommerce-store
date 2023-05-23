@@ -170,7 +170,6 @@ export default function CheckoutPage() {
                         <p className={styles.productPrice}>
                           {product.price} <span>Euro</span>{' '}
                         </p>
-                        <QuantityCounter />
                       </div>
                     </div>
                   );
