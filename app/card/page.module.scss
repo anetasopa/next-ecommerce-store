@@ -75,6 +75,7 @@ main {
 
           &:hover {
             cursor: pointer;
+            color: var(--color-white) !important;
             background-color: var(--button-color-hover);
             transition: 0.3s ease-in;
           }

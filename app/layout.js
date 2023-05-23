@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
-import { FaCoffee, FaLocation, FaMailBulk, FaPhone } from 'react-icons/fa';
+import { FaCoffee, FaEnvelope, FaLocationArrow, FaPhone } from 'react-icons/fa';
 import styles from './globals.scss';
 import ShopCartPage from './ShopCart';
 
@@ -64,35 +64,39 @@ export default function RootLayout({ children }) {
           <div>
             <h5>Contact Us</h5>
             <div>
-              <FaLocation className={styles.icon} />
-              <p>Lorem ipsum viverra feugiat tesque libero ut</p>
+              <FaLocationArrow className={styles.icon} />
+              <p>
+                2005 Stokes Isle Apt. 896, Coffee Cafe Center, Vacaville 10010,
+                USA.
+              </p>
             </div>
             <div>
               <FaPhone className={styles.icon} />
-              <p>+ 48 5854995838</p>
+              <p>+(43)-669-999-8888</p>
             </div>
             <div>
-              <FaMailBulk className={styles.icon} />
-              <p>cofee@gmail.com</p>
+              <FaEnvelope className={styles.icon} />
+              <p>cofeez@gmail.com</p>
             </div>
           </div>
 
           <div>
             <h5>Newsletter</h5>
-            <div>
-              {/* <FontAwesomeIcon className={styles.icon} icon={faLocationDot} /> */}
+            <div className={styles.block}>
               <p>Get in your inbox the latest News and</p>
               <form>
-                <input />
-                <button>
-                  {/* <FontAwesomeIcon className={styles.icon} icon={faEnvelope} /> */}
-                </button>
+                <div className={styles.containerNewsletter}>
+                  <input />
+                  <button>
+                    <FaEnvelope className={styles.icon} />
+                  </button>
+                  <p>
+                    Subscribe and get our weekly newsletter We'll never share
+                    your email address
+                  </p>
+                </div>
               </form>
             </div>
-            <a href="/#">Giveaways</a>
-            <a href="/#">Referral Hub</a>
-            <a href="/#">Analytics</a>
-            <a href="/#">Integrations</a>
           </div>
           <div>
             <h5>FEATURES</h5>

@@ -38,6 +38,7 @@ p {
 header {
   position: sticky;
   top: 0;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
 }
 header nav {
   width: 100%;
@@ -96,12 +97,15 @@ footer div {
   display: flex;
 }
 footer div div {
-  display: flex;
+  display: block;
+  flex-direction: initial;
 }
-footer div div .icon {
-  color: #979797;
-  width: 20px;
-  height: 20px;
+footer div div .block {
+  display: block;
+}
+footer div div p {
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 footer div h5 {
   color: #fff;
@@ -120,6 +124,15 @@ footer div p {
 footer form {
   display: flex;
   margin-bottom: 25px;
+}
+footer form div {
+  display: block;
+}
+footer form div p {
+  font-weight: normal;
+  font-size: 1rem;
+  color: #979797;
+  letter-spacing: 0.5px;
 }
 footer form input {
   background: rgba(255, 255, 255, 0.1);

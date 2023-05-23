@@ -2,7 +2,17 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound, useRouter } from 'next/navigation';
+import { notFound } from 'next/navigation';
+import {
+  FaArrowDown,
+  FaArrowUp,
+  FaCanadianMapleLeaf,
+  FaCoffee,
+  FaEnvelope,
+  FaLeaf,
+  FaLocationArrow,
+  FaPhone,
+} from 'react-icons/fa';
 import { getProductById, products } from '../../../database/products';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
@@ -28,22 +38,20 @@ export default function ProductPage(props: Props) {
       <h1>Product</h1>
       <div className={styles.product} key={`product-div-${singleProduct.id}`}>
         <div className={styles.textContainer}>
-          <h3>We make the delicious coffee for the coffee lovers.</h3>
-          <p>
-            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices
-            in ligula. Semper at tempufddfel. Lorem ipsum dolor
-          </p>
+          <h3>{singleProduct.name}</h3>
+          <p>{singleProduct.type}</p>
           <div>
+            {/* <FaArrow className={styles.icon} /> */}
             <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
-            <span>Lorem ipsum viverra feugiat.</span>
+            <span>{singleProduct.text1}</span>
           </div>
           <div>
             <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
-            <span>Lorem ipsum viverra feugiat.</span>
+            <span>{singleProduct.text2}</span>
           </div>
           <div>
             <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
-            <span>Lorem ipsum viverra feugiat.</span>
+            <span>{singleProduct.text3}</span>
           </div>
           <div className={styles.flex}>
             <p data-test-id="product-price" className={styles.price}>

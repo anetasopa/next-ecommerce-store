@@ -15,13 +15,9 @@ export default function ProductPage() {
               className={styles.productCard}
             >
               {' '}
-              {/* <Image
-                src={`/images/${product.name}.png`}
-                width={250}
-                height={200}
-              /> */}
               <div className={styles.container}>
                 <Image
+                  alt=""
                   src={`/images/${product.name}.png`}
                   width={250}
                   height={200}
@@ -51,7 +47,7 @@ export default function ProductPage() {
               </Link>
               <p className={styles.productType}>{product.type}</p>
               <p className={styles.productPrice}>
-                {product.price} <span>Euro</span>{' '}
+                {product.price} <span>Eur</span>{' '}
               </p>
             </div>
           );

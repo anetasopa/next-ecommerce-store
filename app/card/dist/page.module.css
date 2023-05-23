@@ -64,6 +64,7 @@ main .container .containerCardProducts .sumContainer .button {
 }
 main .container .containerCardProducts .sumContainer .button:hover {
   cursor: pointer;
+  color: var(--color-white) !important;
   background-color: var(--button-color-hover);
   transition: 0.3s ease-in;
 }

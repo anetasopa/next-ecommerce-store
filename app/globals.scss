@@ -39,6 +39,7 @@ p {
 header {
   position: sticky;
   top: 0;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
 
   nav {
     width: 100%;
@@ -108,12 +109,16 @@ footer {
     display: flex;
 
     div {
-      display: flex;
+      display: block;
+      flex-direction: initial;
 
-      .icon {
-        color: #979797;
-        width: 20px;
-        height: 20px;
+      .block {
+        display: block;
+      }
+
+      p {
+        margin-left: 10px;
+        margin-bottom: 20px;
       }
     }
 
@@ -137,6 +142,17 @@ footer {
   form {
     display: flex;
     margin-bottom: 25px;
+
+    div {
+      display: block;
+
+      p {
+        font-weight: normal;
+        font-size: 1rem;
+        color: #979797;
+        letter-spacing: 0.5px;
+      }
+    }
 
     input {
       background: rgba(255, 255, 255, 0.1);

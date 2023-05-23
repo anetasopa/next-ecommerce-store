@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../database/products';
+import { getProductById, products } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
@@ -36,6 +36,7 @@ export default function CardPage() {
                   className={styles.productCard}
                 >
                   <Image
+                    alt=""
                     className={styles.img}
                     src={`/images/${product.name}.png`}
                     width={150}
@@ -53,7 +54,8 @@ export default function CardPage() {
                     </Link>
                     <p className={styles.productType}>{product.type}</p>
                     <p className={styles.productPrice}>
-                      {product.price} <span>Euro</span>{' '}
+                      {product.price}
+                      <span> Eur</span>{' '}
                     </p>
                     <QuantityCounter product={product} />
                   </div>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaCoffee, FaShoppingCart } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
 import BadgePage from './Badge';
 import styles from './ShopCart.module.scss';
 
