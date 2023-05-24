@@ -1,3 +1,56 @@
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+.picCtn {
+  position: relative;
+  width: 100vw;
+  height: 300px;
+  margin-top: 15vh;
+}
+
+.picCtn > .pic {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  opacity: 0;
+  animation: display 10s infinite;
+}
+
+.pic:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.pic:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.pic:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.pic:nth-child(5) {
+  animation-delay: 8s;
+}
+
 .container {
   height: 100vh;
   background-image: linear-gradient(rgba(34, 34, 34, 0.3), rgba(34, 34, 34, 0.3)), url("../public//images/coffee.png");
@@ -270,12 +323,14 @@
 
 .containerHours {
   display: flex;
+  padding: 0 50px;
 }
 .containerHours .hoursText {
-  flex: 33.33%;
-  padding: 70px 50px;
+  flex: 1;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .containerHours .hoursText h3 {
   margin-top: 10px;
@@ -292,18 +347,17 @@
   color: var(--color-par);
 }
 .containerHours .imageCoffee {
-  padding: 70px 50px;
-  flex: 33.33%;
+  flex: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  width: 300px;
 }
 .containerHours .hours {
-  flex: 33.33%;
-  padding: 70px 50px 70px 100px;
+  flex: 1;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 .containerHours .hours ul {
   margin-bottom: 30px;

@@ -1,0 +1,36 @@
+.sumContainer {
+  width: 50%;
+  display: block;
+  align-items: start;
+  justify-content: center;
+  padding: 70px 50px 70px 50px;
+  border-radius: var(--border-radius);
+  gap: 50px;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 32px;
+    border-top: 1px solid var(--color-span);
+  }
+
+  .total {
+    display: flex;
+    margin-bottom: 32px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+
+    h3 {
+      color: var(--color-h);
+
+      p {
+        color: var(--color-h);
+      }
+
+      span {
+        font-weight: bold;
+        color: var(--button-color);
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

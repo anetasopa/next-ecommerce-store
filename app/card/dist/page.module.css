@@ -8,66 +8,6 @@ main .container h1 {
 main .container .containerCardProducts {
   display: flex;
 }
-main .container .containerCardProducts .sumContainer {
-  width: 50%;
-  display: block;
-  align-items: start;
-  justify-content: center;
-  padding: 70px 50px 70px 50px;
-  border-radius: var(--border-radius);
-  gap: 50px;
-}
-main .container .containerCardProducts .sumContainer h2 {
-  font-weight: bold;
-  margin-bottom: 32px;
-}
-main .container .containerCardProducts .sumContainer .subtotal {
-  display: flex;
-  margin-bottom: 32px;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--color-span);
-}
-main .container .containerCardProducts .sumContainer .subtotal h5 {
-  color: var(--color-par);
-}
-main .container .containerCardProducts .sumContainer .subtotal p {
-  color: var(--color-par);
-}
-main .container .containerCardProducts .sumContainer .total {
-  display: flex;
-  margin-bottom: 32px;
-  margin-bottom: 50px;
-  justify-content: space-between;
-}
-main .container .containerCardProducts .sumContainer .total h3 {
-  color: var(--color-h);
-}
-main .container .containerCardProducts .sumContainer .total h3 p {
-  color: var(--color-h);
-}
-main .container .containerCardProducts .sumContainer .total h3 span {
-  font-weight: bold;
-  color: var(--button-color);
-  font-size: 1.5rem;
-}
-main .container .containerCardProducts .sumContainer .button {
-  padding: 12px 30px;
-  width: 100%;
-  float: right;
-  border-radius: var(--border-radius);
-  letter-spacing: 0.5px;
-  background-color: var(--color-white);
-  color: var(--button-color);
-  border: 1px solid var(--button-color);
-  text-align: center;
-  font-weight: bold;
-}
-main .container .containerCardProducts .sumContainer .button:hover {
-  cursor: pointer;
-  color: var(--color-white) !important;
-  background-color: var(--button-color-hover);
-  transition: 0.3s ease-in;
-}
 main .container .containerCardProducts .cardsContainer {
   width: 50%;
   display: block;

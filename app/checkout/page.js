@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaQuestionCircle } from 'react-icons/fa';
 import { products } from '../../database/products';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
@@ -12,6 +14,20 @@ export const metadata = {
 };
 
 export default function CheckoutPage() {
+  const valueCookies = getCookie('cart'); // This a string
+
+  const cookies = !valueCookies ? [] : parseJson(valueCookies); // this is an array
+
+  const itemInCart = products.map((product) => {
+    const matchingItems = cookies.find(
+      (cookieItem) => product.id === cookieItem.id,
+    );
+
+    return { ...product, quantity: matchingItems?.quantity };
+  });
+
+  const filteredProducts = itemInCart.filter((item) => item.quantity);
+
   return (
     <main>
       <div className={styles.container}>
@@ -139,7 +155,7 @@ export default function CheckoutPage() {
               </Link>
             </div>
             <div className={styles.productsCardsContainer}>
-              {products.map((product) => {
+              {filteredProducts.map((product) => {
                 return (
                   <div
                     key={`product-div-${product.id}`}
@@ -163,7 +179,8 @@ export default function CheckoutPage() {
                       </Link>
                       <p className={styles.productType}>{product.type}</p>
                       <p className={styles.productPrice}>
-                        {product.price} <span>Euro</span>{' '}
+                        {Number(product.price) * Number(product.quantity)}{' '}
+                        <span>Eur</span>{' '}
                       </p>
                     </div>
                   </div>

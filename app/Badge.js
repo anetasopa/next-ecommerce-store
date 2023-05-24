@@ -11,7 +11,7 @@ export default function BadgePage() {
 
   return (
     <div>
-      <div className={`${totalQuantity === 0 ? styles.hide : ''}`}>
+      <div className={`${totalQuantity === 0 ? styles.hide : 0}`}>
         <span className={styles.span}>{totalQuantity}</span>
       </div>
     </div>

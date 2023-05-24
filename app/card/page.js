@@ -5,6 +5,7 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
+import Sum from './Sum';
 
 export const dynamic = 'force-dynamic';
 
@@ -31,62 +32,38 @@ export default function CardPage() {
           <div className={styles.cardsContainer}>
             {filteredProducts.map((product) => {
               return (
-                <div
-                  key={`product-div-${product.id}`}
-                  className={styles.productCard}
-                >
-                  <Image
-                    alt=""
-                    className={styles.img}
-                    src={`/images/${product.name}.png`}
-                    width={150}
-                    height={100}
-                  />
-                  <div>
-                    <Link
-                      className={styles.productName}
-                      href={`/products/${product.id}`}
-                      style={{
-                        textDecoration: 'none',
-                      }}
-                    >
-                      {product.name}
-                    </Link>
-                    <p className={styles.productType}>{product.type}</p>
-                    <p className={styles.productPrice}>
-                      {Number(product.price) * Number(product.quantity)}
-                      <span> Eur</span>{' '}
-                    </p>
-                    <QuantityCounter product={product} />
+                <div key={`product-div-${product.id}`}>
+                  <div className={styles.productCard}>
+                    <Image
+                      alt=""
+                      className={styles.img}
+                      src={`/images/${product.name}.png`}
+                      width={150}
+                      height={100}
+                    />
+                    <div>
+                      <Link
+                        className={styles.productName}
+                        href={`/products/${product.id}`}
+                        style={{
+                          textDecoration: 'none',
+                        }}
+                      >
+                        {product.name}
+                      </Link>
+                      <p className={styles.productType}>{product.type}</p>
+                      <p className={styles.productPrice}>
+                        {Number(product.price) * Number(product.quantity)}
+                        <span> Eur</span>{' '}
+                      </p>
+                      <QuantityCounter product={product} />
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
-          <div className={styles.sumContainer}>
-            <h2>Summary Of The Amount</h2>
-            <div className={styles.subtotal}>
-              <h5>Subtotal</h5>
-              <p>18 Eur</p>
-            </div>
-            <div className={styles.total}>
-              <h3>Total</h3>
-              <p>
-                <span>18</span> Eur
-              </p>
-            </div>
-            <Link
-              data-test-id="product-add-to-cart"
-              className={styles.button}
-              href="/checkout"
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
-              Checkout
-            </Link>
-          </div>
+          <Sum />
         </div>
       </div>
     </main>
