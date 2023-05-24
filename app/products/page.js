@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../database/products';
+import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -13,7 +13,7 @@ export default function ProductPage() {
     <main className={styles.containerOverview}>
       <h1>Products</h1>
       <div className={styles.productsCardsContainer}>
-        {products.map((product) => {
+        {getProducts.map((product) => {
           return (
             <div
               key={`product-div-${product.id}`}

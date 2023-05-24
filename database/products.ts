@@ -21,23 +21,23 @@ export const getProductById = cache(async (id: number) => {
   return product;
 });
 
-export const createProduct = cache(
-  async (
-    name: string,
-    text1: string,
-    text2: string,
-    text3: string,
-    type: string,
-    price: number,
-  ) => {
-    const [product] = await sql<Product[]>`
-      INSERT INTO products
-        (name, text1, text2, text3, type, price)
-      VALUES
-        (${name}, ${text1}, ${text2}, ${text3}, ${type}, ${price})
-      RETURNING *
-    `;
+// export const createProduct = cache(
+//   async (
+//     name: string,
+//     text1: string,
+//     text2: string,
+//     text3: string,
+//     type: string,
+//     price: number,
+//   ) => {
+//     const [product] = await sql<Product[]>`
+//       INSERT INTO products
+//         (name, text1, text2, text3, type, price)
+//       VALUES
+//         (${name}, ${text1}, ${text2}, ${text3}, ${type}, ${price})
+//       RETURNING *
+//     `;
 
-    return product;
-  },
-);
+//     return product;
+//   },
+// );
