@@ -1,16 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaQuestion, FaQuestionCircle } from 'react-icons/fa';
+import { FaQuestionCircle } from 'react-icons/fa';
 import { products } from '../../database/products';
-// import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import Image from 'next/image';
-// import Link from 'next/link';
-// import { notFound } from 'next/navigation';
-// import { getProductById, products } from '../../database/products';
-// import QuantityCounter from '../../util/counter';
-import image from '../../public/images/CapsuBrew Delight.png';
-import QuantityCounter from '../products/[productId]/QuantityCounter';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
