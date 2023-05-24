@@ -1,6 +1,6 @@
 import { Sql } from 'postgres';
 
-type Products = {
+export type Product = {
   id: number;
   name: string;
   text1: string;
