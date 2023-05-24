@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "dotenv -- ley --require tsm",
+    "ley-new": "f(){ touch migrations/$(date +%s)-$1.ts; }; f"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
