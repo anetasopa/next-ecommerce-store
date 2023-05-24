@@ -42,7 +42,7 @@ main .container .containerCheckout form .button {
   background-color: var(--button-color);
   color: var(--color-white) !important;
   font-weight: bold;
-  width: 30%;
+  width: 100%;
 }
 main .container .containerCheckout form .button:hover {
   cursor: pointer;

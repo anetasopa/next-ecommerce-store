@@ -67,12 +67,12 @@ export default function CardPage() {
             <h2>Summary Of The Amount</h2>
             <div className={styles.subtotal}>
               <h5>Subtotal</h5>
-              <p>18 Euro</p>
+              <p>18 Eur</p>
             </div>
             <div className={styles.total}>
               <h3>Total</h3>
               <p>
-                <span>18</span> Euro
+                <span>18</span> Eur
               </p>
             </div>
             <Link

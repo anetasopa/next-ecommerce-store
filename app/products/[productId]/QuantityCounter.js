@@ -10,15 +10,15 @@ export default function QuantityCounter(props) {
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
 
-  const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
+  // const decrementQuantity = () => {
+  //   if (quantity > 1) {
+  //     setQuantity(quantity - 1);
+  //   }
+  // };
 
-  const incrementQuantity = () => {
-    setQuantity(quantity + 1);
-  };
+  // const incrementQuantity = () => {
+  //   setQuantity(quantity + 1);
+  // };
 
   return (
     <form className={styles.quantity}>
