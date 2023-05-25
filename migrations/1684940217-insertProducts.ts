@@ -11,7 +11,7 @@ export const products = [
     text3: 'Creating a truly magical coffee experience.',
 
     type: 'bean',
-    price: 45,
+    price: 45.0,
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const products = [
       'Experience a heavenly fusion of velvety textures, nutty undertones, and a hint of vanilla.',
     text3: 'Transforming your coffee dreams into a blissful reality.',
     type: 'bean',
-    price: 78,
+    price: 78.0,
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ export const products = [
       "With every sip, you'll be spellbound by its deep, robust flavors, accented by dark chocolate and a touch of smokiness.",
     text3: 'Leaving you under its bewitching charm.',
     type: 'bean',
-    price: 37,
+    price: 37.0,
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const products = [
       'This invigorating blend combines vibrant notes of citrus and berries, harmonizing with a subtle sweetness and a smooth finish.',
     text3: 'Ensuring every morning feels like an epic adventure.',
     type: 'bean',
-    price: 98,
+    price: 98.0,
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const products = [
     text3:
       'Ensuring a quick and satisfying coffee experience without compromising on quality.',
     type: 'instant',
-    price: 27,
+    price: 27.0,
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ export const products = [
       'This enchanting blend combines the perfect balance of boldness and smoothness.',
     text3: 'Providing a magical awakening to kickstart your day.',
     type: 'instant',
-    price: 56,
+    price: 56.0,
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ export const products = [
     text3:
       'Enjoy a bold and invigorating coffee experience that energizes you in an instant.',
     type: 'instant',
-    price: 56,
+    price: 56.0,
   },
   {
     id: 8,
@@ -85,7 +85,7 @@ export const products = [
     text3:
       'Delivering a balanced blend of flavors that will make every sip a moment of pure pleasure.',
     type: 'instant',
-    price: 56,
+    price: 56.0,
   },
   {
     id: 9,
@@ -96,7 +96,7 @@ export const products = [
     text3:
       'Delivering a velvety smooth and rich espresso that will transport your taste buds to a state of pure delight.',
     type: 'capsules',
-    price: 41,
+    price: 41.0,
   },
   {
     id: 10,
@@ -106,7 +106,7 @@ export const products = [
     text3:
       'Ranging from subtle notes of caramel to hints of exotic spices, creating an extraordinary coffee experience that will leave you craving more.',
     type: 'capsules',
-    price: 18,
+    price: 18.0,
   },
   {
     id: 11,
@@ -117,7 +117,7 @@ export const products = [
     text3:
       'leading to a captivating cup of coffee that combines depth, richness, and an exquisite aftertaste.',
     type: 'capsules',
-    price: 36,
+    price: 36.0,
   },
   {
     id: 12,
@@ -130,7 +130,7 @@ export const products = [
       'Complex flavors, and an enchanting aroma that will leave you in a state of pure bliss.',
 
     type: 'capsules',
-    price: 24,
+    price: 24.0,
   },
 ];
 

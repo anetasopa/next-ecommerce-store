@@ -4,6 +4,7 @@ import { FaQuestionCircle } from 'react-icons/fa';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import Sum from '../card/Sum';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
@@ -29,6 +30,12 @@ export default async function CheckoutPage() {
 
   const filteredProducts = itemInCart.filter((item) => item.quantity);
 
+  const numberOfProducts = cookies.length;
+
+  const subTotalSum = 18;
+  const discount = 5;
+  const totalSumWithDiscount = 18 * 0.5;
+
   return (
     <main>
       <div className={styles.container}>
@@ -36,88 +43,84 @@ export default async function CheckoutPage() {
         <div className={styles.containerCardProducts}>
           <div className={styles.containerCheckout}>
             <div>
-              <h2>Shopping Address</h2> <FaQuestionCircle />
+              <h2>Contact Information</h2> <FaQuestionCircle />
             </div>
             <form>
               <div className={styles.flex}>
-                <input
-                  data-test-id="checkout-first-name"
-                  type="text"
-                  id="fname"
-                  name="firstName"
-                  placeholder="First name"
-                />
-                <input
-                  data-test-id="checkout-last-name"
-                  type="text"
-                  id="lname"
-                  name="lastName"
-                  placeholder="Last name"
-                />
+                <label>
+                  <input
+                    data-test-id="checkout-first-name"
+                    name="firstName"
+                    placeholder="First name"
+                  />
+                </label>
+                <label>
+                  <input
+                    data-test-id="checkout-last-name"
+                    name="lastName"
+                    placeholder="Last name"
+                  />
+                </label>
               </div>
-              <input
-                data-test-id="checkout-email"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email"
-              />
-              <input
-                data-test-id="checkout-address"
-                type="text"
-                id="address"
-                name="address"
-                placeholder="Address"
-              />
-              <input
-                data-test-id="checkout-city"
-                type="text"
-                id="city"
-                name="city"
-                placeholder="City"
-              />
-              <input
-                data-test-id="checkout-postal-code"
-                type="text"
-                id="postalCode"
-                name="postalCode"
-                placeholder="Postal code"
-              />
-              <input
-                data-test-id="checkout-country"
-                type="text"
-                id="country"
-                name="country"
-                placeholder="Country"
-              />
-              <input
-                data-test-id="checkout-credit-card"
-                type="number"
-                id="creditCard"
-                name="creditCard"
-                placeholder="Credit card"
-              />
-              <input
-                data-test-id="checkout-expiration-date"
-                type="number"
-                id="expirationDate"
-                name="expirationDate"
-                placeholder="Expiration date"
-              />
-              <input
-                data-test-id="checkout-security-code"
-                type="number"
-                id="securityCode"
-                name="securityCode"
-                placeholder="Security code"
-              />
-              <input
-                data-test-id="checkout-security-code"
-                type="number"
-                id="securityCode"
-                name="securityCode"
-                placeholder="Security code"
-              />
+              <label>
+                <input
+                  data-test-id="checkout-email"
+                  name="email"
+                  placeholder="Email"
+                />
+              </label>
+              <label>
+                <input
+                  data-test-id="checkout-address"
+                  name="address"
+                  placeholder="Address"
+                />
+              </label>
+              <label>
+                <input
+                  data-test-id="checkout-city"
+                  name="city"
+                  placeholder="City"
+                />
+              </label>
+              <label>
+                <input
+                  data-test-id="checkout-postal-code"
+                  name="postalCode"
+                  placeholder="Postal code"
+                />
+              </label>
+              <label>
+                <input data-test-id="checkout-country" placeholder="Country" />
+              </label>
+              <label>
+                <input
+                  data-test-id="checkout-credit-card"
+                  name="creditCard"
+                  placeholder="Credit card"
+                />
+              </label>
+              <label>
+                <input
+                  data-test-id="checkout-expiration-date"
+                  name="expirationDate"
+                  placeholder="Expiration date"
+                />
+              </label>
+              <label>
+                <input
+                  data-test-id="checkout-security-code"
+                  name="securityCode"
+                  placeholder="Security code"
+                />
+              </label>
+              <label>
+                <input
+                  data-test-id="checkout-security-code"
+                  name="securityCode"
+                  placeholder="Security code"
+                />
+              </label>
               <Link
                 data-test-id="checkout-confirm-order"
                 className={styles.button}
@@ -135,12 +138,16 @@ export default async function CheckoutPage() {
               <h2>Order Summary</h2>
               <div className={styles.subtotal}>
                 <h5>Subtotal</h5>
-                <p>18 Euro</p>
+                <p>{subTotalSum} Eur</p>
+              </div>
+              <div className={styles.subtotal}>
+                <h5>Discounts</h5>
+                <p>{discount} Eur</p>
               </div>
               <div className={styles.total}>
                 <h3>Total</h3>
                 <p>
-                  <span>18</span> Euro
+                  <span>{totalSumWithDiscount}</span> Euro
                 </p>
               </div>
               <Link
@@ -154,39 +161,40 @@ export default async function CheckoutPage() {
               >
                 APPLY A PROMO CODE OR DISCOUNT
               </Link>
-            </div>
-            <div className={styles.productsCardsContainer}>
-              {filteredProducts.map((product) => {
-                return (
-                  <div
-                    key={`product-div-${product.id}`}
-                    className={styles.productCard}
-                  >
-                    <Image
-                      className={styles.img}
-                      src={`/images/${product.name}.png`}
-                      width={150}
-                      height={100}
-                    />
-                    <div className={styles.productsContainer}>
-                      <Link
-                        className={styles.productName}
-                        href={`/products/${product.id}`}
-                        style={{
-                          textDecoration: 'none',
-                        }}
-                      >
-                        {product.name}
-                      </Link>
-                      <p className={styles.productType}>{product.type}</p>
-                      <p className={styles.productPrice}>
-                        {Number(product.price) * Number(product.quantity)}{' '}
-                        <span>Eur</span>{' '}
-                      </p>
+              <div className={styles.productsCardsContainer}>
+                <h2>In your cart ({numberOfProducts})</h2>
+                {filteredProducts.map((product) => {
+                  return (
+                    <div
+                      key={`product-div-${product.id}`}
+                      className={styles.productCard}
+                    >
+                      <Image
+                        className={styles.img}
+                        src={`/images/${product.name}.png`}
+                        width={150}
+                        height={100}
+                      />
+                      <div className={styles.productsContainer}>
+                        <Link
+                          className={styles.productName}
+                          href={`/products/${product.id}`}
+                          style={{
+                            textDecoration: 'none',
+                          }}
+                        >
+                          {product.name}
+                        </Link>
+                        <p className={styles.productType}>{product.type}</p>
+                        <p className={styles.productPrice}>
+                          <span>$</span>{' '}
+                          {Number(product.price) * Number(product.quantity)}{' '}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
