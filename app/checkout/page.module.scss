@@ -67,135 +67,141 @@ main {
 
     .containerCardProducts {
       display: flex;
+    }
 
-      .button {
-        padding: 12px 30px;
-        font-size: 1.2rem;
-        border-radius: var(--border-radius);
-        letter-spacing: 0.5px;
-        background-color: var(--color-white);
-        color: var(--button-color) !important;
-        border: 1px solid var(--button-color);
-        text-align: center;
-        width: 100%;
+    .productsContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .button {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      border-radius: var(--border-radius);
+      letter-spacing: 0.5px;
+      background-color: var(--color-white);
+      color: var(--button-color) !important;
+      border: 1px solid var(--button-color);
+      text-align: center;
+      width: 100%;
+      font-weight: bold;
+      float: right;
+      margin-bottom: 50px;
+
+      &:hover {
+        cursor: pointer;
+        color: var(--background-color-footer);
+        transition: 0.3s ease-in;
+      }
+    }
+
+    .sumContainer {
+      width: 50%;
+      display: block;
+      align-items: start;
+      justify-content: center;
+      padding: 70px 50px 70px 50px;
+      border-radius: var(--border-radius);
+      gap: 50px;
+
+      h2 {
         font-weight: bold;
-        float: right;
-        margin-bottom: 50px;
+        margin-bottom: 32px;
+      }
 
-        &:hover {
-          cursor: pointer;
-          color: var(--background-color-footer);
-          transition: 0.3s ease-in;
+      .subtotal {
+        display: flex;
+        margin-bottom: 32px;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--color-span);
+
+        h5 {
+          color: var(--color-par);
+        }
+
+        p {
+          color: var(--color-par);
         }
       }
 
-      .sumContainer {
-        width: 50%;
-        display: block;
-        align-items: start;
-        justify-content: center;
-        padding: 70px 50px 70px 50px;
-        border-radius: var(--border-radius);
-        gap: 50px;
+      .total {
+        display: flex;
+        margin-bottom: 32px;
+        margin-bottom: 50px;
+        justify-content: space-between;
 
-        h2 {
-          font-weight: bold;
-          margin-bottom: 32px;
-        }
-
-        .subtotal {
-          display: flex;
-          margin-bottom: 32px;
-          justify-content: space-between;
-          border-bottom: 1px solid var(--color-span);
-
-          h5 {
-            color: var(--color-par);
-          }
+        h3 {
+          color: var(--color-h);
 
           p {
-            color: var(--color-par);
-          }
-        }
-
-        .total {
-          display: flex;
-          margin-bottom: 32px;
-          margin-bottom: 50px;
-          justify-content: space-between;
-
-          h3 {
             color: var(--color-h);
+          }
 
-            p {
-              color: var(--color-h);
-            }
-
-            span {
-              font-weight: bold;
-              color: var(--button-color);
-              font-size: 1.5rem;
-            }
+          span {
+            font-weight: bold;
+            color: var(--button-color);
+            font-size: 1.5rem;
           }
         }
       }
+    }
 
-      .productsCardsContainer {
-        width: 100%;
-        display: block;
-        align-items: center;
-        justify-content: center;
-        padding: 70px 0;
+    .productsCardsContainer {
+      width: 100%;
+      display: block;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 0;
+      border-radius: var(--border-radius);
+      // display: grid;
+      // grid-template-columns: 1fr;
+
+      .productCard {
+        // align-items: center;
+        overflow: hidden;
+        display: flex;
+        gap: 20px;
+        // height: 300px;
+        // width: 250px;
+        border: 1px solid var(--color-span);
         border-radius: var(--border-radius);
-        // display: grid;
-        // grid-template-columns: 1fr;
+        margin-bottom: 20px;
 
-        .productCard {
-          // align-items: center;
-          overflow: hidden;
-          display: flex;
-          gap: 20px;
-          // height: 300px;
-          // width: 250px;
-          border: 1px solid var(--color-span);
-          border-radius: var(--border-radius);
-          margin-bottom: 20px;
+        .img {
+          width: auto;
+          height: auto;
+        }
 
-          .img {
-            width: auto;
-            height: auto;
-          }
+        .productName {
+          text-decoration: none;
+          letter-spacing: 0.5px;
+          font-size: 1.125rem;
+          font-weight: bolder;
+          color: var(--color-h);
+        }
 
-          .productName {
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            font-size: 1.125rem;
-            font-weight: bolder;
-            color: var(--color-h);
-          }
+        .productType {
+          text-transform: uppercase;
+          font-size: 0.8rem;
+          line-height: 28px;
+          letter-spacing: 0.5px;
+          color: var(--color-par);
+        }
 
-          .productType {
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            line-height: 28px;
-            letter-spacing: 0.5px;
+        .productPrice {
+          text-transform: uppercase;
+          font-size: 1.5rem;
+          line-height: 28px;
+          letter-spacing: 0.5px;
+          color: var(--button-color);
+          font-weight: bold;
+          padding-bottom: 6px;
+
+          span {
             color: var(--color-par);
-          }
-
-          .productPrice {
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            line-height: 28px;
-            letter-spacing: 0.5px;
-            color: var(--button-color);
-            font-weight: bold;
-            padding-bottom: 6px;
-
-            span {
-              color: var(--color-par);
-              text-transform: none;
-              font-size: 1rem;
-            }
+            text-transform: none;
+            font-size: 1rem;
           }
         }
       }

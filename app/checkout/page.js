@@ -168,7 +168,7 @@ export default async function CheckoutPage() {
                       width={150}
                       height={100}
                     />
-                    <div>
+                    <div className={styles.productsContainer}>
                       <Link
                         className={styles.productName}
                         href={`/products/${product.id}`}
