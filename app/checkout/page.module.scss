@@ -37,26 +37,44 @@ main {
           padding: 12px 30px;
           flex: 50%;
           width: 100%;
-          border: 1px solid var(--color-span);
+          border: 1px solid var(--color-h);
+          color: var(--color-par);
 
           &:focus {
             border: 1px solid var(--button-color);
+            transition: none;
+            outline: none;
+          }
+
+          &:active {
+            border: 1px solid var(--button-color);
+            outline: none;
+            transition: background 0.5s linear 0s;
           }
         }
 
         .flex {
           display: flex;
-          gap: 10px;
+          justify-content: space-between;
 
           input {
             margin-top: 24px;
             padding: 12px 30px;
             width: 100%;
+            color: var(--color-h);
             margin-right: 10px;
             border: 1px solid var(--color-span);
 
             &:focus {
               border: 1px solid var(--button-color);
+              transition: none;
+              outline: none;
+            }
+
+            &:active {
+              border: 1px solid var(--button-color);
+              outline: none;
+              transition: background 0.5s linear 0s;
             }
           }
         }

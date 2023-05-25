@@ -123,7 +123,7 @@ export default async function CheckoutPage() {
               <Link
                 data-test-id="checkout-confirm-order"
                 className={styles.button}
-                href="/#"
+                href="/thank"
                 style={{
                   textDecoration: 'none',
                 }}
