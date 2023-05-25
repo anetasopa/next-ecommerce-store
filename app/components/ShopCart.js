@@ -18,7 +18,7 @@ export default function ShopCartPage() {
         <div className={styles.shopCart}>
           <FaShoppingCart className={styles.icon} />
         </div>
-        <div className={styles.badge}>
+        <div>
           <BadgePage />
         </div>
       </Link>

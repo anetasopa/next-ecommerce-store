@@ -1,5 +1,3 @@
-import styles from './page.module.scss';
-
 export const metadata = {
   title: 'Thank You | Coffez',
   description: 'Thank you for the order',
