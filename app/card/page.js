@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProductById, products } from '../../database/products';
+import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
@@ -9,7 +9,8 @@ import Sum from './Sum';
 
 export const dynamic = 'force-dynamic';
 
-export default function CardPage() {
+export default async function CardPage() {
+  const products = await getProducts();
   const valueCookies = getCookie('cart'); // This a string
 
   const cookies = !valueCookies ? [] : parseJson(valueCookies); // this is an array

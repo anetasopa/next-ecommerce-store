@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaQuestionCircle } from 'react-icons/fa';
-import { products } from '../../database/products';
+import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './page.module.scss';
@@ -13,7 +13,8 @@ export const metadata = {
   description: 'Checkout your cart with the products',
 };
 
-export default function CheckoutPage() {
+export default async function CheckoutPage() {
+  const products = await getProducts();
   const valueCookies = getCookie('cart'); // This a string
 
   const cookies = !valueCookies ? [] : parseJson(valueCookies); // this is an array

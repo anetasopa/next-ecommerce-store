@@ -13,7 +13,7 @@ import {
   FaLocationArrow,
   FaPhone,
 } from 'react-icons/fa';
-import { getProductById } from '../../../database/products';
+import { getProductById, getProducts } from '../../../database/products';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
 
@@ -24,12 +24,13 @@ export const metadata = {
   description: 'Check out the product',
 };
 
-// type Props = {
-//   params: { productId: string };
-// };
+type Props = {
+  params: { productId: string };
+};
 
-export default async function AnimalPage({ params: any }) {
-  const singleProduct = await getProductById(Number(params.animalId));
+export default async function ProductPage(props: Props) {
+  const singleProduct = await getProductById(Number(props.params.productId));
+  const products = await getProducts();
 
   if (!singleProduct) {
     notFound();

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
+// import { products } from '../../database/products';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -8,12 +9,13 @@ export const metadata = {
   description: 'Look fot the products',
 };
 
-export default function ProductPage() {
+export default async function ProductPage() {
+  const products = await getProducts();
   return (
     <main className={styles.containerOverview}>
       <h1>Products</h1>
       <div className={styles.productsCardsContainer}>
-        {getProducts.map((product) => {
+        {products.map((product) => {
           return (
             <div
               key={`product-div-${product.id}`}

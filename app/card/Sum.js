@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { products } from '../../database/products';
+import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './Sum.module.scss';
 
-export default function TotalSum() {
+export default async function TotalSum() {
+  const products = await getProducts();
   const valueCookies = getCookie('cart'); // This a string
 
   const cookies = !valueCookies ? [] : parseJson(valueCookies); // this is an array
