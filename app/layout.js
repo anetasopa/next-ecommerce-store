@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import styles from './globals.scss';
 
 const inter = Inter({ subsets: ['latin'] });
+console.log(inter);
 
 export const metadata = {
   title: 'Create Next App',
