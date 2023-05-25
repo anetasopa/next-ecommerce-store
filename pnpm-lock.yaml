@@ -16,9 +16,6 @@ dependencies:
   dotenv-safe:
     specifier: ^8.2.0
     version: 8.2.0
-  dotenv-save:
-    specifier: ^1.2.0
-    version: 1.2.0
   ley:
     specifier: ^0.8.1
     version: 0.8.1
@@ -1767,10 +1764,6 @@ packages:
     resolution: {integrity: sha512-uWwWWdUQkSs5a3mySDB22UtNwyEYi0JtEQu+vDzIqr9OjbDdC2Ip13PnSpi/fctqlYmzkxCeabiyCAOROuAIaA==}
     dependencies:
       dotenv: 8.6.0
-    dev: false
-
-  /dotenv-save@1.2.0:
-    resolution: {integrity: sha512-ypD9BMD3RcMT3TZfOolWAo/s0LiZ5VzO5VOrl86sfXavoruhMw4FVUA47fotxfUDH0BHy6W76d+XFkCo26okpg==}
     dev: false
 
   /dotenv@16.0.3:
