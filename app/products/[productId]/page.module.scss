@@ -112,6 +112,28 @@
     }
   }
 
+  @media (max-width: 480px) {
+    .product {
+      display: block;
+
+      .textContainer {
+        width: 100%;
+        padding: 0 50px;
+      }
+
+      .imageContainer {
+        width: 100%;
+        padding: 50px 50px;
+
+        .img {
+          height: 300px;
+          width: 300px;
+          border-radius: var(--border-radius);
+        }
+      }
+    }
+  }
+
   h2 {
     margin-top: 10px;
     text-align: center;
@@ -176,17 +198,6 @@
       }
     }
 
-    // .button {
-    //   position: absolute;
-    //   opacity: 0;
-    //   transition: opacity 0.35s ease;
-    //   margin-top: -125px;
-    //   margin-left: 25px;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    // }
-
     .button .a {
       width: 200px;
       text-align: center;
@@ -239,6 +250,14 @@
           font-size: 1rem;
         }
       }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .productsCardsContainer {
+      grid-template-columns: repeat(1, 1fr);
+      margin: auto;
+      padding: 0 50px;
     }
   }
 }

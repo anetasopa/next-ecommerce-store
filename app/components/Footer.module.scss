@@ -110,23 +110,31 @@
       }
     }
   }
+}
 
-  // .li {
-  //   outline: none;
-  //   list-style: none;
-  //   margin-bottom: 10px;
+@media (max-width: 480px) {
+  .footer {
+    display: block;
 
-  //   .icon {
-  //     margin-top: 10px;
-  //     background-color: white;
-  //   }
+    .contactUs {
+      h6 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+    }
 
-  //   p {
-  //     font-weight: normal;
-  //     font-size: 16px;
-  //     line-height: 28px;
-  //     color: #979797;
-  //     letter-spacing: 0.5px;
-  //   }
-  // }
+    .newsletter {
+      h6 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .quickLinks {
+      h6 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }

@@ -50,4 +50,10 @@
       transition: 0.3s ease-in;
     }
   }
+
+  @media (max-width: 480px) {
+    button {
+      margin-left: 10px;
+    }
+  }
 }

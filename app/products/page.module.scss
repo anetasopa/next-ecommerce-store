@@ -66,17 +66,6 @@
       }
     }
 
-    // .button {
-    //   position: absolute;
-    //   opacity: 0;
-    //   transition: opacity 0.35s ease;
-    //   margin-top: -125px;
-    //   margin-left: 25px;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    // }
-
     .button .a {
       width: 200px;
       text-align: center;
@@ -129,6 +118,12 @@
           font-size: 1rem;
         }
       }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .productsCardsContainer {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }

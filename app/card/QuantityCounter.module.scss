@@ -53,3 +53,13 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .quantity {
+    margin-left: -30px;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+}

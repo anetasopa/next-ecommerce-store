@@ -142,5 +142,28 @@ main {
         }
       }
     }
+
+    @media (max-width: 480px) {
+      .containerCardProducts {
+        display: block;
+
+        .cardsContainer {
+          width: 100%;
+          padding: 0 50px;
+
+          .productCard {
+            display: block;
+
+            div {
+              padding-left: 30px;
+            }
+
+            .img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }

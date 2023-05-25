@@ -243,5 +243,27 @@ main {
         }
       }
     }
+
+    @media (max-width: 480px) {
+      .containerCheckout {
+        padding: 0 50px;
+      }
+
+      .containerCardProducts {
+        display: block;
+
+        .containerCheckout {
+          width: 100%;
+        }
+
+        .sumContainer {
+          width: 100%;
+        }
+
+        .productsCardsContainer {
+          padding: 0;
+        }
+      }
+    }
   }
 }

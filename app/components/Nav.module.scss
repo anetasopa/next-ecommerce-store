@@ -50,6 +50,12 @@
         padding: 10px 20px;
         display: flex;
       }
+
+      @media (max-width: 480px) {
+        li {
+          padding: 0 5px;
+        }
+      }
     }
   }
 }
