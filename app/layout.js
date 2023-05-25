@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { FaCoffee, FaEnvelope, FaLocationArrow, FaPhone } from 'react-icons/fa';
+import Footer from './components/Footer';
 import Nav from './components/Nav';
 import styles from './globals.scss';
 import ShopCartPage from './ShopCart';
@@ -17,53 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Nav />
-        {/* <header>
-          <nav>
-            <div>
-              <Link
-                href="/"
-                style={{
-                  color: 'black',
-                  textDecoration: 'none',
-                  fontSize: '1.5rem',
-                  marginLeft: '50px',
-                }}
-              >
-                Cofeez <FaCoffee className={styles.icon} />
-              </Link>
-            </div>
-            <ul>
-              <li>
-                <Link
-                  href="/"
-                  style={{
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/products"
-                  style={{
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Products
-                </Link>
-              </li>
-              <li>
-                <ShopCartPage />
-              </li>
-            </ul>
-          </nav>
-        </header> */}
         {children}
 
-        <footer>
+        <Footer />
+        {/* <footer>
           <div>
             <h6>Contact Us</h6>
             <ul>
@@ -116,7 +74,8 @@ export default function RootLayout({ children }) {
               </li>
             </ul>
           </div>
-        </footer>
+        </footer> */}
+
         {/* <footer>
           <div>
             <h5>Contact Us</h5>

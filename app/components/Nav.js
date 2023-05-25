@@ -17,7 +17,7 @@ export default function Nav() {
               marginLeft: '50px',
             }}
           >
-            Cofeez <FaCoffee className={styles.icon} />
+            Cofeez <FaCoffee />
           </Link>
         </div>
         <ul>
