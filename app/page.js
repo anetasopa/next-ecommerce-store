@@ -106,7 +106,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className={styles.imageCoffee}>
-          <Image alt="coffee" src={coffee} width={270} height={250} />
+          <Image alt="coffee" src={coffee} width={300} height={250} />
         </div>
         <div className={styles.hours}>
           <h3>Opening Hours: </h3>

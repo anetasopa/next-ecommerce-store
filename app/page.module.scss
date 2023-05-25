@@ -404,23 +404,23 @@
   .hours {
     flex: 1;
     padding-top: 20px;
-    justify-content: center;
-    align-items: center;
     display: flex;
     flex-direction: column;
+
+    h3 {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 30px;
+      margin-bottom: 20px;
+      color: #2d2d43;
+    }
 
     ul {
       margin-bottom: 30px;
 
-      h3 {
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 30px;
-        margin-bottom: 20px;
-        color: #2d2d43;
-      }
-
       li {
+        text-align: left;
+        list-style-type: none;
         color: #999;
         font-weight: 600;
         font-size: 18px;
