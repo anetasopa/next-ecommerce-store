@@ -6,5 +6,9 @@ export const metadata = {
 };
 
 export default function ThankPage() {
-  return <main>Thank you page</main>;
+  return (
+    <main>
+      <h1>Thank you for your order</h1>
+    </main>
+  );
 }

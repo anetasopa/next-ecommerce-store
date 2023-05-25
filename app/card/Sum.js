@@ -41,7 +41,7 @@ export default async function TotalSum() {
         </p>
       </div>
       <Link
-        data-test-id="product-add-to-cart"
+        data-test-id="cart-checkout"
         className={styles.button}
         href="/checkout"
         style={{

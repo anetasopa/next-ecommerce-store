@@ -7,6 +7,7 @@ export default function ShopCartPage() {
   return (
     <div className={styles.container}>
       <Link
+        data-test-id="cart-link"
         href="/card"
         style={{
           color: 'black',
