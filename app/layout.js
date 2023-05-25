@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { FaCoffee, FaEnvelope, FaLocationArrow, FaPhone } from 'react-icons/fa';
+import Nav from './components/Nav';
 import styles from './globals.scss';
 import ShopCartPage from './ShopCart';
 
@@ -15,7 +16,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header>
+        <Nav />
+        {/* <header>
           <nav>
             <div>
               <Link
@@ -58,7 +60,7 @@ export default function RootLayout({ children }) {
               </li>
             </ul>
           </nav>
-        </header>
+        </header> */}
         {children}
 
         <footer>
