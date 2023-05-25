@@ -1,15 +1,6 @@
-import { faChevronDown, faMugSaucer } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  FaCoffee,
-  FaCookie,
-  FaGlassCheers,
-  FaGlassMartini,
-  FaLeaf,
-} from 'react-icons/fa';
-import { products } from '../database/products';
+import { FaCoffee, FaCookie, FaGlassMartini, FaLeaf } from 'react-icons/fa';
 import coffee from '../public/images/cup.png';
 import makeCoffee from '../public/images/makeCoffee.png';
 import styles from './page.module.scss';
@@ -118,14 +109,13 @@ export default function HomePage() {
           <Image alt="coffee" src={coffee} width={270} height={250} />
         </div>
         <div className={styles.hours}>
+          <h3>Opening Hours: </h3>
           <ul>
-            <h3>Opening Hours: </h3>
             <li>Monday – Friday 11:00 - 07:00</li>
             <li>Saturday 10:00 – 12:00</li>
           </ul>
-
+          <h3>Reservation Numbers: </h3>
           <ul>
-            <h3>Reservation Numbers: </h3>
             <li>+(43)-655-769-8876</li>
           </ul>
         </div>

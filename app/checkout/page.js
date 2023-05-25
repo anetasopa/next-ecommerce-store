@@ -4,7 +4,6 @@ import { FaQuestionCircle } from 'react-icons/fa';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import Sum from '../card/Sum';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';

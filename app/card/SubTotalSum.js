@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { products } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';

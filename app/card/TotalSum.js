@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { products } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
@@ -32,8 +31,7 @@ export default function TotalSum() {
             <div className={styles.total}>
               <h3>Total</h3>
               <p>
-                <span>{Number(product.price)}</span>{' '}
-                Eur
+                <span>{Number(product.price)}</span> Eur
               </p>
             </div>
           </div>

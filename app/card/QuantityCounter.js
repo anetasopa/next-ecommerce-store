@@ -1,7 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { FaArrowLeft, FaArrowRight, FaTrash } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { addQuantity, removeItem, removeQuantity } from './actions';
 import styles from './QuantityCounter.module.scss';
 

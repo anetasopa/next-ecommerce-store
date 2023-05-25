@@ -13,7 +13,7 @@ export default function BadgePage() {
     <div>
       <div
         data-test-id="cart-count"
-        className={`${totalQuantity === 0 ? styles.hide : 0}`}
+        className={totalQuantity === 0 ? styles.hide : 0}
       >
         <span className={styles.span}>{totalQuantity}</span>
       </div>
