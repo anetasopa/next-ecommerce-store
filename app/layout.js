@@ -1,10 +1,7 @@
 import { Inter } from 'next/font/google';
-import Link from 'next/link';
-import { FaCoffee, FaEnvelope, FaLocationArrow, FaPhone } from 'react-icons/fa';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import styles from './globals.scss';
-import ShopCartPage from './ShopCart';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,110 +16,7 @@ export default function RootLayout({ children }) {
       <body>
         <Nav />
         {children}
-
         <Footer />
-        {/* <footer>
-          <div>
-            <h6>Contact Us</h6>
-            <ul>
-              <li>
-                <FaLocationArrow className={styles.icon} />
-                <p>
-                  {' '}
-                  2005 Stokes Isle Apt. 896, Coffee Cafe Center, Vacaville 1001,
-                  Vienna.
-                </p>
-              </li>
-              <li>
-                <FaPhone className={styles.icon} />
-                <p>+(43)-665-999-8888</p>
-              </li>
-              <li>
-                <FaEnvelope className={styles.icon} />
-                <p>Coffeez@gmail.com</p>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h6>Newsletter</h6>
-            <p>Get in your inbox the latest News and</p>
-            <form>
-              <input type="email" name="email" placeholder="Email" />
-              <button>
-                <FaEnvelope className={styles.icon} />
-              </button>
-            </form>
-            <p>Subscribe and get our weekly newsletter</p>
-            <p>We'll never share your email address</p>
-          </div>
-
-          <div className={styles.quickLinks}>
-            <h6>Quick Links</h6>
-            <ul>
-              <li>
-                <p>Home</p>
-              </li>
-              <li>
-                <p>About Us</p>
-              </li>
-              <li>
-                <p>Benefits</p>
-              </li>
-              <li>
-                <p>Hours</p>
-              </li>
-            </ul>
-          </div>
-        </footer> */}
-
-        {/* <footer>
-          <div>
-            <h5>Contact Us</h5>
-            <div className={styles.ContainerContactUs}>
-              <FaLocationArrow className={styles.icon} />
-              <p>
-                2005 Stokes Isle Apt. 896, Coffee Cafe Center, Vacaville 10010,
-                USA.
-              </p>
-            </div>
-            <div>
-              <FaPhone className={styles.icon} />
-              <p>+(43)-669-999-8888</p>
-            </div>
-            <div>
-              <FaEnvelope className={styles.icon} />
-              <p>cofeez@gmail.com</p>
-            </div>
-          </div>
-
-          <div>
-            <h5>Newsletter</h5>
-            <div className={styles.block}>
-              <p>Get in your inbox the latest News and</p>
-              <form>
-                <div className={styles.containerNewsletter}>
-                  <input />
-                  <button>
-                    <FaEnvelope className={styles.icon} />
-                  </button>
-                  <p>
-                    Subscribe and get our weekly newsletter We'll never share
-                    your email address
-                  </p>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div>
-            <h5>FEATURES</h5>
-            <a href="/#">Rewards</a>
-            <a href="/#">Giveaways</a>
-            <a href="/#">Referral Hub</a>
-            <a href="/#">Analytics</a>
-            <a href="/#">Integrations</a>
-          </div>
-        </footer> */}
       </body>
     </html>
   );
