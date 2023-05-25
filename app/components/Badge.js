@@ -1,5 +1,5 @@
-import { getCookie } from '../util/cookies';
-import { parseJson } from '../util/json';
+import { getCookie } from '../../util/cookies';
+import { parseJson } from '../../util/json';
 import styles from './Badge.module.scss';
 
 export default function BadgePage() {

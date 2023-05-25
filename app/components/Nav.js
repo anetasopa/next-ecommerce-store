@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FaCoffee } from 'react-icons/fa';
-import ShopCartPage from '../ShopCart';
 import styles from './Nav.module.scss';
+import ShopCartPage from './ShopCart';
 
 export default function Nav() {
   return (
