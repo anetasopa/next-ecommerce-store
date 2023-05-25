@@ -4,7 +4,7 @@ import { getProducts } from '../../database/products';
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'Coffee | Coffez',
+  title: 'Product Overview | Coffez',
   description: 'Products',
 };
 
@@ -32,7 +32,7 @@ export default async function ProductPage() {
                 <div className={styles.overlay}></div>
                 <div className={styles.button}>
                   <Link
-                    data-test-id="products-link"
+                    data-test-id={`product-${product.id}`}
                     className={styles.a}
                     href={`/products/${product.id}`}
                     style={{
@@ -45,7 +45,7 @@ export default async function ProductPage() {
                 </div>
               </div>
               <Link
-                data-test-id="products-link"
+                data-test-id={`product-${product.id}`}
                 className={styles.productName}
                 href={`/products/${product.id}`}
                 style={{
@@ -55,7 +55,7 @@ export default async function ProductPage() {
                 {product.name}
               </Link>
               <p className={styles.productType}>{product.type}</p>
-              <p className={styles.productPrice}>
+              <p data-test-id="product-price" className={styles.productPrice}>
                 {Number(product.price)}
                 <span> EUR</span>
               </p>

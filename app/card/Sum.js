@@ -21,7 +21,7 @@ export default async function TotalSum() {
   const filteredProducts = itemInCart.filter((item) => item.quantity);
 
   return (
-    <div className={styles.sumContainer}>
+    <div data-test-id="cart-total" className={styles.sumContainer}>
       <h2>Summary Of The Amount</h2>
       {filteredProducts.map((product) => {
         return (

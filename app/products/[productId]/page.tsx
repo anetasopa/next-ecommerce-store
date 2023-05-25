@@ -73,6 +73,7 @@ export default async function ProductPage(props: Props) {
               {' '}
               <div className={styles.container}>
                 <Image
+                  data-test-id="product-image"
                   alt=""
                   src={`/images/${product.name}.png`}
                   width={250}
@@ -106,7 +107,7 @@ export default async function ProductPage(props: Props) {
                 {product.name}
               </Link>
               <p className={styles.productType}>{product.type}</p>
-              <p className={styles.productPrice}>
+              <p data-test-id="product-price" className={styles.productPrice}>
                 {product.price}
                 <span> EUR</span>
               </p>

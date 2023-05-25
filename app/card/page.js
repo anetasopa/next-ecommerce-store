@@ -33,7 +33,10 @@ export default async function CardPage() {
           <div className={styles.cardsContainer}>
             {filteredProducts.map((product) => {
               return (
-                <div key={`product-div-${product.id}`}>
+                <div
+                  key={`product-div-${product.id}`}
+                  data-test-id={`cart-product-${product.id}`}
+                >
                   <div className={styles.productCard}>
                     <Image
                       alt=""
