@@ -29,7 +29,7 @@ export default async function TotalSum() {
             {' '}
             <div className={styles.subtotal}>
               <h5>{product.name}</h5>
-              <p>{Number(product.price) * Number(product.quantity)} Eur</p>
+              <p>{Number(product.price) * Number(product.quantity)} EUR</p>
             </div>
           </div>
         );
@@ -37,7 +37,7 @@ export default async function TotalSum() {
       <div className={styles.total}>
         <h3>Total</h3>
         <p>
-          <span>18</span> Eur
+          <span>18</span> EUR
         </p>
       </div>
       <Link

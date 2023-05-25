@@ -55,7 +55,7 @@ export default async function CardPage() {
                       <p className={styles.productType}>{product.type}</p>
                       <p className={styles.productPrice}>
                         {Number(product.price) * Number(product.quantity)}
-                        <span> Eur</span>{' '}
+                        <span> EUR</span>{' '}
                       </p>
                       <QuantityCounter product={product} />
                     </div>

@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
-// import { products } from '../../database/products';
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'Products Overview',
-  description: 'Look fot the products',
+  title: 'Coffee | Coffez',
+  description: 'Products',
 };
 
 export default async function ProductPage() {
@@ -57,7 +56,8 @@ export default async function ProductPage() {
               </Link>
               <p className={styles.productType}>{product.type}</p>
               <p className={styles.productPrice}>
-                {product.price} <span>Eur</span>{' '}
+                {Number(product.price)}
+                <span> EUR</span>
               </p>
             </div>
           );

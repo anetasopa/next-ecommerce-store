@@ -32,9 +32,9 @@ export default async function CheckoutPage() {
 
   const numberOfProducts = cookies.length;
 
-  const subTotalSum = 18;
-  const discount = 5;
-  const totalSumWithDiscount = 18 * 0.5;
+  const subTotalSum = 18.0;
+  const discount = 5.0;
+  const totalSumWithDiscount = 9.0;
 
   return (
     <main>
@@ -138,16 +138,16 @@ export default async function CheckoutPage() {
               <h2>Order Summary</h2>
               <div className={styles.subtotal}>
                 <h5>Subtotal</h5>
-                <p>{subTotalSum} Eur</p>
+                <p>{subTotalSum} EUR</p>
               </div>
               <div className={styles.subtotal}>
                 <h5>Discounts</h5>
-                <p>{discount} Eur</p>
+                <p>{discount} EUR</p>
               </div>
               <div className={styles.total}>
                 <h3>Total</h3>
                 <p>
-                  <span>{totalSumWithDiscount}</span> Euro
+                  <span>{totalSumWithDiscount}</span> EUR
                 </p>
               </div>
               <Link
@@ -187,8 +187,8 @@ export default async function CheckoutPage() {
                         </Link>
                         <p className={styles.productType}>{product.type}</p>
                         <p className={styles.productPrice}>
-                          <span>$</span>{' '}
                           {Number(product.price) * Number(product.quantity)}{' '}
+                          <span>EUR </span>{' '}
                         </p>
                       </div>
                     </div>

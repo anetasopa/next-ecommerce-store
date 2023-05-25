@@ -19,11 +19,6 @@ import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata = {
-  title: 'Product Overview',
-  description: 'Check out the product',
-};
-
 type Props = {
   params: { productId: string };
 };
@@ -61,7 +56,7 @@ export default async function ProductPage(props: Props) {
           </div>
           <div className={styles.flex}>
             <p data-test-id="product-price" className={styles.price}>
-              Price:<span>{singleProduct.price}</span> Euro
+              Price: € <span>{singleProduct.price}</span>
             </p>
           </div>
           <QuantityCounter productId={singleProduct.id} />
@@ -122,7 +117,8 @@ export default async function ProductPage(props: Props) {
               </Link>
               <p className={styles.productType}>{product.type}</p>
               <p className={styles.productPrice}>
-                {product.price} <span>Euro</span>{' '}
+                {product.price}
+                <span> EUR</span>
               </p>
             </div>
           );
