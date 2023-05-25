@@ -29,7 +29,7 @@ export default async function ProductPage() {
                   width={250}
                   height={200}
                 />
-                <div className={styles.overlay}></div>
+                <div className={styles.overlay}> </div>
                 <div className={styles.button}>
                   <Link
                     data-test-id={`product-${product.id}`}
