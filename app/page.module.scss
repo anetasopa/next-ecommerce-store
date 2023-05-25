@@ -367,7 +367,7 @@
 
 .containerHours {
   display: flex;
-  padding: 0 50px;
+  padding: 100px 50px;
 
   .hoursText {
     flex: 1;
@@ -398,11 +398,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: cover;
   }
 
   .hours {
     flex: 1;
-    // padding: 70px 50px 70px 100px;
+    padding-top: 20px;
     justify-content: center;
     align-items: center;
     display: flex;

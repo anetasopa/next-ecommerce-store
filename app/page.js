@@ -115,20 +115,18 @@ export default function HomePage() {
           </p>
         </div>
         <div className={styles.imageCoffee}>
-          <Image alt="coffee" src={coffee} width={300} height={300} />
+          <Image alt="coffee" src={coffee} width={270} height={250} />
         </div>
         <div className={styles.hours}>
           <ul>
             <h3>Opening Hours: </h3>
             <li>Monday – Friday 11:00 - 07:00</li>
             <li>Saturday 10:00 – 12:00</li>
-            <li>Sunday CLOSED</li>
           </ul>
 
           <ul>
             <h3>Reservation Numbers: </h3>
             <li>+(43)-655-769-8876</li>
-            <li>+(43)-655-459-6688</li>
           </ul>
         </div>
       </section>
