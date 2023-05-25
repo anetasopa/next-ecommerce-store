@@ -40,3 +40,27 @@
     }
   }
 }
+
+@media (max-width: 480px) {
+  .container {
+    height: 70vh;
+
+    .containerText {
+      width: 87%;
+
+      h1 {
+        font-size: 1.5rem;
+
+        span {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 24px;
+      }
+    }
+  }
+}
