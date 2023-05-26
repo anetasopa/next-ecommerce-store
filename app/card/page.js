@@ -60,8 +60,8 @@ export default async function CardPage() {
                         {Number(product.price) * Number(product.quantity)}
                         <span> EUR</span>{' '}
                       </p>
+                      <QuantityCounter product={product} />
                     </div>
-                    <QuantityCounter product={product} />
                   </div>
                 </div>
               );

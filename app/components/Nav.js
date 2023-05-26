@@ -8,15 +8,7 @@ export default function Nav() {
     <header className={styles.header}>
       <nav>
         <div>
-          <Link
-            href="/"
-            style={{
-              color: 'black',
-              textDecoration: 'none',
-              fontSize: '1.5rem',
-              marginLeft: '50px',
-            }}
-          >
+          <Link href="/" className={styles.logo}>
             Cofeez <FaCoffee />
           </Link>
         </div>
