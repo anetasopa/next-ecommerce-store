@@ -44,6 +44,7 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
+
       <section className={styles.containerSectionAboutUs}>
         <div>
           <span>About Us</span>
@@ -70,6 +71,7 @@ export default function HomePage() {
           src={makeCoffee}
         />
       </section>
+
       <section className={styles.containerSectionBenefits}>
         <div>
           <div>

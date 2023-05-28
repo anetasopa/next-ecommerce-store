@@ -1,19 +1,12 @@
-// import 'server-only';
+import 'server-only';
 import { config } from 'dotenv-safe';
 import postgres from 'postgres';
 
-config();
+// This loads all environment variables from a .env file
+// for all code after this line
+if (!process.env.FLY_IO) config();
 
-// Making a simple connection to Postgres
-// Next.js fast refresh increases database connection slot
-// and causes connection slot error
-// export const sql = postgres({
-//   transform: {
-//     ...postgres.camel,
-//     undefined: null,
-//   },
-// });
-
+// Type needed for the connection function below
 declare module globalThis {
   let postgresSqlClient: ReturnType<typeof postgres> | undefined;
 }

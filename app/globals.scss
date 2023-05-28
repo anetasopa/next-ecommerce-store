@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Roboto:wght@300&family=Rubik&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=NunitoSans&family=Roboto:wght@300&family=Manrope&family=Sigmar&display=swap');
 
 * {
   margin: 0;
@@ -9,6 +9,7 @@
 :root {
   --font-family: Manrope, ans-serif;
   --font-family-two: Roboto, ans-serif;
+  --font-family-three: NunitoSans, ans-serif;
   --font-size-s: 13px;
   --font-size-m: 16px;
   --font-size-l: 18px;
@@ -36,4 +37,8 @@ body {
 p {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-family: var(--font-family-three);
 }
