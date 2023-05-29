@@ -26,27 +26,27 @@ export default async function ProductPage(props: Props) {
       data-test-id={`cart-product-${singleProduct.id}`}
       className={styles.containerSectionProducts}
     >
-      <h1>Product</h1>
       <div className={styles.product} key={`product-div-${singleProduct.id}`}>
         <div className={styles.textContainer}>
           <h3>{singleProduct.name}</h3>
           <p>{singleProduct.type}</p>
           <div>
-            {/* <FaArrow className={styles.icon} /> */}
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
             <span>{singleProduct.text1}</span>
           </div>
           <div>
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
             <span>{singleProduct.text2}</span>
           </div>
           <div>
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
             <span>{singleProduct.text3}</span>
           </div>
           <div className={styles.flex}>
             <p data-test-id="product-price" className={styles.price}>
-              Price:<span>{singleProduct.price}</span> EUR
+              Price:
+              <span>
+                {' '}
+                {''} {singleProduct.price}
+              </span>{' '}
+              EUR
             </p>
           </div>
           <QuantityCounter productId={singleProduct.id} />
@@ -62,7 +62,7 @@ export default async function ProductPage(props: Props) {
           />
         </div>
       </div>
-      <h2>More Products</h2>
+      <h2>You may also like</h2>
       <div className={styles.productsCardsContainer}>
         {products.map((product) => {
           return (
