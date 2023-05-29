@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default async function ProductPage() {
-  const products = []; //await getProducts();
+  const products = await getProducts();
   return (
     <main className={styles.containerOverview}>
       <h1>Products</h1>

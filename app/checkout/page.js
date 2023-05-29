@@ -28,12 +28,18 @@ export default async function CheckoutPage() {
   });
 
   const filteredProducts = itemInCart.filter((item) => item.quantity);
+  console.log({ filteredProducts });
 
   const numberOfProducts = cookies.length;
 
-  const subTotalSum = 18.0;
-  const discount = 5.0;
-  const totalSumWithDiscount = 9.0;
+  const subTotalPrice = filteredProducts.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0,
+  );
+
+  const discount = 5;
+
+  const totalPrice = subTotalPrice - discount;
 
   return (
     <main>
@@ -137,16 +143,16 @@ export default async function CheckoutPage() {
               <h2>Order Summary</h2>
               <div className={styles.subtotal}>
                 <h5>Subtotal</h5>
-                <p>{subTotalSum} EUR</p>
+                <p>{subTotalPrice} EUR</p>
               </div>
               <div className={styles.subtotal}>
-                <h5>Discounts</h5>
-                <p>{discount} EUR</p>
+                <h5>{discount}</h5>
+                <p>5 EUR</p>
               </div>
               <div className={styles.total}>
                 <h3>Total</h3>
                 <p>
-                  <span>{totalSumWithDiscount}</span> EUR
+                  <span>{totalPrice}</span> EUR
                 </p>
               </div>
               <Link
