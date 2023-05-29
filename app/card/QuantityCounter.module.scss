@@ -58,9 +58,13 @@
 @media (max-width: 480px) {
   .quantity {
     margin-left: -60px;
-  }
 
-  .button {
-    margin-top: 20px;
+    .button {
+      margin-top: 20px;
+    }
+
+    .buttonRemove {
+      margin-left: 90px;
+    }
   }
 }

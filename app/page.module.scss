@@ -167,7 +167,7 @@
   div {
     flex: 0 0 50%;
     max-width: 50%;
-    padding: 70px 50px;
+    padding: 100px 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -219,10 +219,15 @@
     flex: 0 0 50%;
     max-width: 50%;
     vertical-align: middle;
-    padding: 130px 50px 70px 50px;
+    padding: 70px 50px 70px 50px;
     border-style: none;
-    border-radius: var(--border-radius);
     object-fit: cover;
+
+    img {
+      border-radius: var(--border-radius);
+      width: 550px;
+      height: 350px;
+    }
   }
 }
 
@@ -232,6 +237,10 @@
 
     div {
       max-width: 100%;
+
+      .knowMoreButtonAboutUs {
+        width: 55%;
+      }
 
       span {
         font-weight: 600;
@@ -252,7 +261,12 @@
     .imageMakeCoffee {
       max-width: 100%;
       vertical-align: middle;
-      padding: 0 50px 50px 50px;
+      padding-top: 0;
+
+      img {
+        width: auto;
+        height: auto;
+      }
     }
   }
 }

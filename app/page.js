@@ -65,11 +65,9 @@ export default function HomePage() {
             Know More
           </Link>
         </div>
-        <Image
-          alt="makeCoffee"
-          className={styles.imageMakeCoffee}
-          src={makeCoffee}
-        />
+        <div className={styles.imageMakeCoffee}>
+          <Image alt="makeCoffee" src={makeCoffee} />
+        </div>
       </section>
 
       <section className={styles.containerSectionBenefits}>
