@@ -11,77 +11,6 @@ main {
     .containerCardProducts {
       display: flex;
 
-      // .sumContainer {
-      //   width: 50%;
-      //   display: block;
-      //   align-items: start;
-      //   justify-content: center;
-      //   padding: 70px 50px 70px 50px;
-      //   border-radius: var(--border-radius);
-      //   gap: 50px;
-
-      //   h2 {
-      //     font-weight: bold;
-      //     margin-bottom: 32px;
-      //   }
-
-      //   .subtotal {
-      //     display: flex;
-      //     margin-bottom: 32px;
-      //     justify-content: space-between;
-      //     border-bottom: 1px solid var(--color-span);
-
-      //     h5 {
-      //       color: var(--color-par);
-      //     }
-
-      //     p {
-      //       color: var(--color-par);
-      //     }
-      //   }
-
-      //   .total {
-      //     display: flex;
-      //     margin-bottom: 32px;
-      //     margin-bottom: 50px;
-      //     justify-content: space-between;
-
-      //     h3 {
-      //       color: var(--color-h);
-
-      //       p {
-      //         color: var(--color-h);
-      //       }
-
-      //       span {
-      //         font-weight: bold;
-      //         color: var(--button-color);
-      //         font-size: 1.5rem;
-      //       }
-      //     }
-      //   }
-
-      //   .button {
-      //     padding: 12px 30px;
-      //     width: 100%;
-      //     float: right;
-      //     border-radius: var(--border-radius);
-      //     letter-spacing: 0.5px;
-      //     background-color: var(--color-white);
-      //     color: var(--button-color);
-      //     border: 1px solid var(--button-color);
-      //     text-align: center;
-      //     font-weight: bold;
-
-      //     &:hover {
-      //       cursor: pointer;
-      //       color: var(--color-white) !important;
-      //       background-color: var(--button-color-hover);
-      //       transition: 0.3s ease-in;
-      //     }
-      //   }
-      // }
-
       .cardsContainer {
         width: 50%;
         display: block;
@@ -94,12 +23,13 @@ main {
           overflow: hidden;
           display: flex;
           gap: 20px;
+          // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
           border: 1px solid var(--color-span);
           border-radius: var(--border-radius);
           margin-bottom: 20px;
 
           div {
-            padding-top: 20px;
+            padding-top: 30px;
           }
 
           .img {

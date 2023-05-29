@@ -16,33 +16,36 @@ export default function QuantityCounter({ product }) {
             router.refresh();
             await removeQuantity(product);
           }}
-          className={styles.buttonRemove}
+          className={styles.button}
         >
           <FaArrowLeft className={styles.icon} />
         </button>
+
         <span
           data-test-id={`cart-product-quantity-${product.id}`}
           className={styles.quantityValue}
         >
           {product.quantity}
         </span>
+
         <button
           formAction={async () => {
             router.refresh();
             await addQuantity(product);
           }}
-          className={styles.buttonRemove}
+          className={styles.button}
         >
           <FaArrowRight className={styles.icon} />
         </button>
       </div>
+
       <button
         formAction={async () => {
           router.refresh();
           await removeItem(product);
         }}
         data-test-id={`cart-product-remove-${product.id}`}
-        className={styles.button}
+        className={styles.buttonRemove}
       >
         Remove
       </button>
