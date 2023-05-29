@@ -28,7 +28,7 @@ export default async function CardPage() {
   return (
     <main>
       <div className={styles.container}>
-        <h1>Products Cart</h1>
+        <h1>Shopping Cart</h1>
         <div className={styles.containerCardProducts}>
           <div className={styles.cardsContainer}>
             {filteredProducts.map((product) => {

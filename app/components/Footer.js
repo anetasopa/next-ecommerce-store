@@ -11,7 +11,7 @@ export default function Footer() {
             <FaLocationArrow className={styles.icon} />
             <p>
               {' '}
-              2005 Stokes Isle Apt. 896, Coffee Cafe Center, Vacaville 1001,
+              1001 Antoker Isle Apt. 896, Coffee Cafe Center, Melonilie 1001,
               Vienna.
             </p>
           </li>
@@ -21,14 +21,14 @@ export default function Footer() {
           </li>
           <li className={styles.li}>
             <FaEnvelope className={styles.icon} />
-            <p>Coffeez@gmail.com</p>
+            <p>coffeez@gmail.com</p>
           </li>
         </ul>
       </div>
 
       <div className={styles.newsletter}>
         <h6>Newsletter</h6>
-        <p>Get in your inbox the latest News and</p>
+        <p>Would be get the latest news</p>
         <form>
           <input type="email" name="email" placeholder="Email" />
           <button>
