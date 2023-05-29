@@ -10,6 +10,7 @@ export const metadata = {
 
 export default async function ProductPage() {
   const products = await getProducts();
+
   return (
     <main className={styles.containerOverview}>
       <h1>Products</h1>
@@ -20,7 +21,6 @@ export default async function ProductPage() {
               key={`product-div-${product.id}`}
               className={styles.productCard}
             >
-              {' '}
               <div className={styles.container}>
                 <Image
                   alt=""
