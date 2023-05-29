@@ -24,7 +24,7 @@ export default function CheckoutForm() {
         <FaQuestionCircle className={styles.icon} />
       </div>
       <div className={styles.nameContainer}>
-        <label>
+        <label className={styles.labelFlex}>
           <input
             data-test-id="checkout-first-name"
             value={firstName}
@@ -32,8 +32,9 @@ export default function CheckoutForm() {
             className={styles.input}
             onChange={(event) => setFirstName(event.currentTarget.value)}
           />
+          {/* <div className={styles.underline}></div> */}
         </label>
-        <label>
+        <label className={styles.labelFlex}>
           <input
             data-test-id="checkout-last-name"
             value={lastName}
@@ -65,7 +66,7 @@ export default function CheckoutForm() {
           />
         </label>
         <div className={styles.addressContainer}>
-          <label>
+          <label className={styles.labelFlex}>
             <input
               className={`${styles.input} ${styles.city}`}
               data-test-id="checkout-city"
@@ -74,7 +75,7 @@ export default function CheckoutForm() {
               onChange={(event) => setCity(event.currentTarget.value)}
             />
           </label>
-          <label>
+          <label className={styles.labelFlex}>
             <input
               className={`${styles.input} ${styles.city}`}
               data-test-id="checkout-postal-code"
@@ -106,9 +107,9 @@ export default function CheckoutForm() {
           />
         </label>
         <div className={styles.paymentInfo}>
-          <label>
+          <label className={styles.labelFlex}>
             <input
-              className={`${styles.input} ${styles.card}`}
+              className={`${styles.input} ${styles.card} ${styles.data}`}
               type="date"
               data-test-id="checkout-expiration-date"
               placeholder="05/26"
@@ -116,7 +117,7 @@ export default function CheckoutForm() {
               onChange={(event) => setExpiration(event.currentTarget.value)}
             />
           </label>
-          <label>
+          <label className={styles.labelFlex}>
             <input
               className={`${styles.input} ${styles.card}`}
               data-test-id="checkout-security-code"
