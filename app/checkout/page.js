@@ -4,6 +4,7 @@ import { FaQuestionCircle } from 'react-icons/fa';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import CheckoutForm from './CheckoutForm';
 import styles from './page.module.scss';
 
 export const dynamic = 'force-dynamic';
@@ -14,6 +15,17 @@ export const metadata = {
 };
 
 export default async function CheckoutPage() {
+  // const [firstName, setFirstName] = useState('');
+  // const [lastName, setLastName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [adress, setAdress] = useState('');
+  // const [postCode, setPostCode] = useState('');
+  // const [city, setCity] = useState('');
+  // const [country, setCountry] = useState('');
+  // const [creditCard, setCreditCard] = useState('');
+  // const [expiration, setExpiration] = useState('');
+  // const [securityCode, setSecurityCode] = useState('');
+
   const products = await getProducts();
   const valueCookies = getCookie('cart'); // This a string
 
@@ -47,85 +59,123 @@ export default async function CheckoutPage() {
         <h1>Checkout</h1>
         <div className={styles.containerCardProducts}>
           <div className={styles.containerCheckout}>
-            <div>
-              <h2>Contact Information</h2> <FaQuestionCircle />
-            </div>
-            <form>
-              <div className={styles.flex}>
+            <CheckoutForm />
+            {/* <form>
+              <div className={styles.containerText}>
+                <h2>Contact Information</h2>{' '}
+                <FaQuestionCircle className={styles.icon} />
+              </div>
+              <div className={styles.nameContainer}>
                 <label>
                   <input
                     data-test-id="checkout-first-name"
-                    name="firstName"
+                    value={firstName}
                     placeholder="First name"
+                    className={styles.name}
+                    onChange={(event) =>
+                      setFirstName(event.currentTarget.value)
+                    }
                   />
                 </label>
                 <label>
                   <input
                     data-test-id="checkout-last-name"
-                    name="lastName"
+                    value={lastName}
                     placeholder="Last name"
+                    className={styles.name}
+                    onChange={(event) => setLastName(event.currentTarget.value)}
                   />
                 </label>
               </div>
               <label>
                 <input
+                  type="email"
+                  value={email}
                   data-test-id="checkout-email"
-                  name="email"
-                  placeholder="Email"
+                  placeholder="customer@email.com"
+                  onChange={(event) => setEmail(event.currentTarget.value)}
                 />
               </label>
-              <label>
-                <input
-                  data-test-id="checkout-address"
-                  name="address"
-                  placeholder="Address"
-                />
-              </label>
-              <label>
-                <input
-                  data-test-id="checkout-city"
-                  name="city"
-                  placeholder="City"
-                />
-              </label>
-              <label>
-                <input
-                  data-test-id="checkout-postal-code"
-                  name="postalCode"
-                  placeholder="Postal code"
-                />
-              </label>
-              <label>
-                <input data-test-id="checkout-country" placeholder="Country" />
-              </label>
-              <label>
-                <input
-                  data-test-id="checkout-credit-card"
-                  name="creditCard"
-                  placeholder="Credit card"
-                />
-              </label>
-              <label>
-                <input
-                  data-test-id="checkout-expiration-date"
-                  name="expirationDate"
-                  placeholder="Expiration date"
-                />
-              </label>
-              <label>
-                <input
-                  data-test-id="checkout-security-code"
-                  name="securityCode"
-                  placeholder="Security code"
-                />
-              </label>
-              <label>
-                <input
-                  data-test-id="checkout-security-code"
-                  name="securityCode"
-                  placeholder="Security code"
-                />
-              </label>
+              <div>
+                <h2>Shipping Information</h2>
+                <label>
+                  <input
+                    data-test-id="checkout-address"
+                    value={adress}
+                    placeholder="Address"
+                    onChange={(event) => setAdress(event.currentTarget.value)}
+                  />
+                </label>
+
+                <div className={styles.addressContainer}>
+                  <label>
+                    <input
+                      data-test-id="checkout-city"
+                      value={city}
+                      placeholder="City"
+                      className={styles.city}
+                      onChange={(event) => setCity(event.currentTarget.value)}
+                    />
+                  </label>
+                  <label>
+                    <input
+                      data-test-id="checkout-postal-code"
+                      value={postCode}
+                      placeholder="Post Code"
+                      className={styles.city}
+                      onChange={(event) =>
+                        setPostCode(event.currentTarget.value)
+                      }
+                    />
+                  </label>
+                </div>
+                <label>
+                  <input
+                    data-test-id="checkout-country"
+                    value={country}
+                    placeholder="Country"
+                    onChange={(event) => setCountry(event.currentTarget.value)}
+                  />
+                </label>
+              </div>
+              <div>
+                <h2>Payment Information</h2>
+                <label>
+                  <input
+                    data-test-id="checkout-credit-card"
+                    value={creditCard}
+                    placeholder="Credit Card Number"
+                    onChange={(event) =>
+                      setCreditCard(event.currentTarget.value)
+                    }
+                  />
+                </label>
+                <div className={styles.paymentInfo}>
+                  <label>
+                    <input
+                      type="date"
+                      data-test-id="checkout-expiration-date"
+                      placeholder="05/26"
+                      value={expiration}
+                      className={styles.card}
+                      onChange={(event) =>
+                        setExpiration(event.currentTarget.value)
+                      }
+                    />
+                  </label>
+                  <label>
+                    <input
+                      data-test-id="checkout-security-code"
+                      placeholder="Security Code"
+                      value={securityCode}
+                      className={styles.card}
+                      onChange={(event) =>
+                        setSecurityCode(event.currentTarget.value)
+                      }
+                    />
+                  </label>
+                </div>
+              </div>
               <Link
                 data-test-id="checkout-confirm-order"
                 className={styles.button}
@@ -136,7 +186,7 @@ export default async function CheckoutPage() {
               >
                 Confirm Order
               </Link>
-            </form>
+            </form> */}
           </div>
           <div className={styles.sumContainer}>
             <div>

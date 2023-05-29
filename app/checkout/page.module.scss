@@ -6,6 +6,7 @@ main {
       color: var(--color-h);
       padding-top: 30px;
       text-align: center;
+      padding: 30px 0;
     }
 
     .containerCheckout {
@@ -16,87 +17,6 @@ main {
       padding: 50px 50px 50px 50px;
       border-radius: var(--border-radius);
       gap: 50px;
-
-      .test {
-        display: block;
-      }
-
-      div {
-        display: flex;
-
-        h2 {
-          margin-right: 10px;
-        }
-      }
-
-      form {
-        display: grid;
-        gap: 24px;
-
-        input {
-          padding: 12px 30px;
-          flex: 50%;
-          width: 100%;
-          border: 1px solid var(--color-h);
-          color: var(--color-par);
-
-          &:focus {
-            border: 1px solid var(--button-color);
-            transition: none;
-            outline: none;
-          }
-
-          &:active {
-            border: 1px solid var(--button-color);
-            outline: none;
-            transition: background 0.5s linear 0s;
-          }
-        }
-
-        .flex {
-          display: flex;
-          justify-content: space-between;
-
-          input {
-            margin-top: 24px;
-            padding: 12px 30px;
-            width: 100%;
-            color: var(--color-h);
-            margin-right: 10px;
-            border: 1px solid var(--color-span);
-
-            &:focus {
-              border: 1px solid var(--button-color);
-              transition: none;
-              outline: none;
-            }
-
-            &:active {
-              border: 1px solid var(--button-color);
-              outline: none;
-              transition: background 0.5s linear 0s;
-            }
-          }
-        }
-
-        .button {
-          padding: 12px 30px;
-          border: none;
-          font-size: 1.2rem;
-          border-radius: 5px;
-          letter-spacing: 0.5px;
-          background-color: var(--button-color);
-          color: var(--color-white) !important;
-          font-weight: bold;
-          width: 100%;
-
-          &:hover {
-            cursor: pointer;
-            background-color: var(--button-color-hover);
-            transition: 0.3s ease-in;
-          }
-        }
-      }
     }
 
     .containerCardProducts {
@@ -107,27 +27,6 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
-
-    .button {
-      padding: 12px 30px;
-      font-size: 1.2rem;
-      border-radius: var(--border-radius);
-      letter-spacing: 0.5px;
-      background-color: var(--color-white);
-      color: var(--button-color) !important;
-      border: 1px solid var(--button-color);
-      text-align: center;
-      width: 100%;
-      font-weight: bold;
-      float: right;
-      margin-bottom: 50px;
-
-      &:hover {
-        cursor: pointer;
-        color: var(--background-color-footer);
-        transition: 0.3s ease-in;
-      }
     }
 
     .sumContainer {
@@ -191,16 +90,11 @@ main {
       justify-content: center;
       padding: 70px 0;
       border-radius: var(--border-radius);
-      // display: grid;
-      // grid-template-columns: 1fr;
 
       .productCard {
-        // align-items: center;
         overflow: hidden;
         display: flex;
         gap: 20px;
-        // height: 300px;
-        // width: 250px;
         border: 1px solid var(--color-span);
         border-radius: var(--border-radius);
         margin-bottom: 20px;
