@@ -9,6 +9,11 @@ import Sum from './Sum';
 
 export const dynamic = 'force-dynamic';
 
+export const metadata = {
+  title: 'Shopping cart | Coffez',
+  description: 'Checkout your shopping cart',
+};
+
 export default async function CardPage() {
   const products = await getProducts();
   const valueCookies = getCookie('cart'); // This a string

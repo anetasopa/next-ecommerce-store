@@ -6,26 +6,17 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import CheckoutForm from './CheckoutForm';
 import styles from './page.module.scss';
+import SelectProducts from './SelectProducts';
+import Summary from './Summary';
 
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
-  title: 'Checkout',
+  title: 'Checkout | Coffez',
   description: 'Checkout your cart with the products',
 };
 
 export default async function CheckoutPage() {
-  // const [firstName, setFirstName] = useState('');
-  // const [lastName, setLastName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [adress, setAdress] = useState('');
-  // const [postCode, setPostCode] = useState('');
-  // const [city, setCity] = useState('');
-  // const [country, setCountry] = useState('');
-  // const [creditCard, setCreditCard] = useState('');
-  // const [expiration, setExpiration] = useState('');
-  // const [securityCode, setSecurityCode] = useState('');
-
   const products = await getProducts();
   const valueCookies = getCookie('cart'); // This a string
 
@@ -60,198 +51,14 @@ export default async function CheckoutPage() {
         <div className={styles.containerCardProducts}>
           <div className={styles.containerCheckout}>
             <CheckoutForm />
-            {/* <form>
-              <div className={styles.containerText}>
-                <h2>Contact Information</h2>{' '}
-                <FaQuestionCircle className={styles.icon} />
-              </div>
-              <div className={styles.nameContainer}>
-                <label>
-                  <input
-                    data-test-id="checkout-first-name"
-                    value={firstName}
-                    placeholder="First name"
-                    className={styles.name}
-                    onChange={(event) =>
-                      setFirstName(event.currentTarget.value)
-                    }
-                  />
-                </label>
-                <label>
-                  <input
-                    data-test-id="checkout-last-name"
-                    value={lastName}
-                    placeholder="Last name"
-                    className={styles.name}
-                    onChange={(event) => setLastName(event.currentTarget.value)}
-                  />
-                </label>
-              </div>
-              <label>
-                <input
-                  type="email"
-                  value={email}
-                  data-test-id="checkout-email"
-                  placeholder="customer@email.com"
-                  onChange={(event) => setEmail(event.currentTarget.value)}
-                />
-              </label>
-              <div>
-                <h2>Shipping Information</h2>
-                <label>
-                  <input
-                    data-test-id="checkout-address"
-                    value={adress}
-                    placeholder="Address"
-                    onChange={(event) => setAdress(event.currentTarget.value)}
-                  />
-                </label>
-
-                <div className={styles.addressContainer}>
-                  <label>
-                    <input
-                      data-test-id="checkout-city"
-                      value={city}
-                      placeholder="City"
-                      className={styles.city}
-                      onChange={(event) => setCity(event.currentTarget.value)}
-                    />
-                  </label>
-                  <label>
-                    <input
-                      data-test-id="checkout-postal-code"
-                      value={postCode}
-                      placeholder="Post Code"
-                      className={styles.city}
-                      onChange={(event) =>
-                        setPostCode(event.currentTarget.value)
-                      }
-                    />
-                  </label>
-                </div>
-                <label>
-                  <input
-                    data-test-id="checkout-country"
-                    value={country}
-                    placeholder="Country"
-                    onChange={(event) => setCountry(event.currentTarget.value)}
-                  />
-                </label>
-              </div>
-              <div>
-                <h2>Payment Information</h2>
-                <label>
-                  <input
-                    data-test-id="checkout-credit-card"
-                    value={creditCard}
-                    placeholder="Credit Card Number"
-                    onChange={(event) =>
-                      setCreditCard(event.currentTarget.value)
-                    }
-                  />
-                </label>
-                <div className={styles.paymentInfo}>
-                  <label>
-                    <input
-                      type="date"
-                      data-test-id="checkout-expiration-date"
-                      placeholder="05/26"
-                      value={expiration}
-                      className={styles.card}
-                      onChange={(event) =>
-                        setExpiration(event.currentTarget.value)
-                      }
-                    />
-                  </label>
-                  <label>
-                    <input
-                      data-test-id="checkout-security-code"
-                      placeholder="Security Code"
-                      value={securityCode}
-                      className={styles.card}
-                      onChange={(event) =>
-                        setSecurityCode(event.currentTarget.value)
-                      }
-                    />
-                  </label>
-                </div>
-              </div>
-              <Link
-                data-test-id="checkout-confirm-order"
-                className={styles.button}
-                href="/thank"
-                style={{
-                  textDecoration: 'none',
-                }}
-              >
-                Confirm Order
-              </Link>
-            </form> */}
           </div>
-          <div className={styles.sumContainer}>
-            <div>
-              <h2>Order Summary</h2>
-              <div className={styles.subtotal}>
-                <h5>Subtotal</h5>
-                <p>{subTotalPrice} EUR</p>
-              </div>
-              <div className={styles.subtotal}>
-                <h5>{discount}</h5>
-                <p>5 EUR</p>
-              </div>
-              <div className={styles.total}>
-                <h3>Total</h3>
-                <p>
-                  <span>{totalPrice}</span> EUR
-                </p>
-              </div>
-              <Link
-                data-test-id="product-add-to-cart"
-                className={styles.button}
-                href="/#"
-                style={{
-                  color: 'black',
-                  textDecoration: 'none',
-                }}
-              >
-                APPLY A PROMO CODE OR DISCOUNT
-              </Link>
-              <div className={styles.productsCardsContainer}>
-                <h2>In your cart ({numberOfProducts})</h2>
-                {filteredProducts.map((product) => {
-                  return (
-                    <div
-                      key={`product-div-${product.id}`}
-                      className={styles.productCard}
-                    >
-                      <Image
-                        className={styles.img}
-                        src={`/images/${product.name}.png`}
-                        width={150}
-                        height={100}
-                      />
-                      <div className={styles.productsContainer}>
-                        <Link
-                          className={styles.productName}
-                          href={`/products/${product.id}`}
-                          style={{
-                            textDecoration: 'none',
-                          }}
-                        >
-                          {product.name}
-                        </Link>
-                        <p className={styles.productType}>{product.type}</p>
-                        <p className={styles.productPrice}>
-                          {Number(product.price) * Number(product.quantity)}{' '}
-                          <span>EUR </span>{' '}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
+          <Summary
+            subTotalPrice={subTotalPrice}
+            discount={discount}
+            totalPrice={totalPrice}
+            filteredProducts={filteredProducts}
+            numberOfProducts={numberOfProducts}
+          />
         </div>
       </div>
     </main>
