@@ -1,26 +1,38 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import { getProducts } from '../../database/products';
-import styles from './page.module.scss';
+import styles from './Filter.module.scss';
 
-export const metadata = {
-  title: 'Product Overview | Coffez',
-  description: 'Products',
-};
-
-export default async function ProductPage() {
+export default async function Filter() {
+  // const [selectedType, setSelectedType] = useState('');
   const products = await getProducts();
+
+  // Filter products by type
+  const filteredProducts = selectedType
+    ? products.filter((product) => product.type === selectedType)
+    : products;
+
   return (
-    <main className={styles.containerOverview}>
-      <h1>Products</h1>
+    <>
+      <label htmlFor="typeFilter">Filter by Type:</label>
+      <select
+        id="typeFilter"
+        value={selectedType}
+        onChange={(e) => setSelectedType(e.target.value)}
+      >
+        <option value="">All</option>
+        <option value="type1">Type 1</option>
+        <option value="type2">Type 2</option>
+        {/* Add more options for different types */}
+      </select>
       <div className={styles.productsCardsContainer}>
-        {products.map((product) => {
+        {filteredProducts.map((product) => {
           return (
             <div
               key={`product-div-${product.id}`}
               className={styles.productCard}
             >
-              {' '}
               <div className={styles.container}>
                 <Image
                   alt=""
@@ -63,6 +75,6 @@ export default async function ProductPage() {
           );
         })}
       </div>
-    </main>
+    </>
   );
 }
