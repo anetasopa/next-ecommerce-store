@@ -9,8 +9,13 @@ import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 
+export type CookieItem = {
+  id: number;
+  quantity: number;
+};
+
 type Props = {
-  params: { productId: string };
+  params: { productId: string }; // it is string from url string
 };
 
 export default async function ProductPage(props: Props) {

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -5,7 +7,7 @@ import { getProducts } from '../../database/products';
 import styles from './Filter.module.scss';
 
 export default async function Filter() {
-  // const [selectedType, setSelectedType] = useState('');
+  const [selectedType, setSelectedType] = useState('');
   const products = await getProducts();
 
   // Filter products by type
@@ -15,16 +17,16 @@ export default async function Filter() {
 
   return (
     <>
-      <label htmlFor="typeFilter">Filter by Type:</label>
+      <label htmlFor="typeFilter">Filter by Type: </label>
       <select
         id="typeFilter"
         value={selectedType}
         onChange={(e) => setSelectedType(e.target.value)}
       >
         <option value="">All</option>
-        <option value="type1">Type 1</option>
-        <option value="type2">Type 2</option>
-        {/* Add more options for different types */}
+        <option value="capsules">Capsules</option>
+        <option value="instant">Instant</option>
+        <option value="bean">Bean</option>
       </select>
       <div className={styles.productsCardsContainer}>
         {filteredProducts.map((product) => {

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
+// import Filter from './Filter';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -13,6 +14,7 @@ export default async function ProductPage() {
   return (
     <main className={styles.containerOverview}>
       <h1>Products</h1>
+      {/* <Filter /> */}
       <div className={styles.productsCardsContainer}>
         {products.map((product) => {
           return (
