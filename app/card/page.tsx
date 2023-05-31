@@ -1,13 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '../../database/products';
+import { Product } from '../../migrations/1684934780-createTableProducts';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import { CookieItem } from '../products/[productId]/page';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
 import Sum from './Sum';
 
 export const dynamic = 'force-dynamic';
+
+export type ProductWithQuantity = Product & {
+  quantity: number;
+};
 
 export const metadata = {
   title: 'Shopping cart | Coffez',
@@ -16,21 +22,30 @@ export const metadata = {
 
 export default async function CardPage() {
   const products = await getProducts();
-  const valueCookies = getCookie('cart'); // This a string
+  const valueCookies = getCookie('cart'); // This is a string
 
-  const cookies = !valueCookies ? [] : parseJson(valueCookies); // this is an array
+  const productsInCookie: CookieItem[] | undefined = valueCookies
+    ? parseJson(valueCookies)
+    : []; // this is an array
 
-  const itemInCart = products.map((product) => {
-    const matchingItems = cookies?.find(
-      (cookieItem) => product.id === cookieItem.id,
+  if (!productsInCookie) {
+    throw new Error('no cookies');
+  }
+
+  const filteredProducts: ProductWithQuantity[] = [];
+
+  productsInCookie.forEach((item: CookieItem) => {
+    const product: Product | undefined = products.find(
+      (product1) => product1.id === item.id,
     );
 
-    return { ...product, quantity: matchingItems?.quantity };
+    if (product) {
+      filteredProducts.push({
+        ...item,
+        ...product,
+      });
+    }
   });
-
-  console.log({ itemInCart });
-
-  const filteredProducts = itemInCart.filter((item) => item.quantity);
 
   return (
     <main>
@@ -38,7 +53,7 @@ export default async function CardPage() {
         <h1>Shopping Cart</h1>
         <div className={styles.containerCardProducts}>
           <div className={styles.cardsContainer}>
-            {filteredProducts.map((product) => {
+            {filteredProducts.map((product: ProductWithQuantity) => {
               return (
                 <div
                   key={`product-div-${product.id}`}

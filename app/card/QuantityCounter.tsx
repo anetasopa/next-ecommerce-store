@@ -2,24 +2,27 @@
 import { useRouter } from 'next/navigation';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { addQuantity, removeItem, removeQuantity } from './actions';
+import { ProductWithQuantity } from './page';
 import styles from './QuantityCounter.module.scss';
 
-type Product = {
-  id: number;
-  quantity: number;
+type Props = {
+  product: ProductWithQuantity;
 };
 
-export default function QuantityCounter(product: Product) {
+export default function QuantityCounter(props: Props) {
+  const product: ProductWithQuantity = props.product;
+
   const router = useRouter();
+  const item = { id: product.id, quantity: product.quantity };
 
   return (
     <form className={styles.quantity}>
       <div className={styles.quantityCounter}>
         <button
-          data-test-id={`cart-product-remove-${product.id}`}
+          data-test-id={`cart-product-remove-${item.id}`}
           formAction={async () => {
             router.refresh();
-            await removeQuantity(product);
+            await removeQuantity(item);
           }}
           className={styles.button}
         >
@@ -27,16 +30,16 @@ export default function QuantityCounter(product: Product) {
         </button>
 
         <span
-          data-test-id={`cart-product-quantity-${product.id}`}
+          data-test-id={`cart-product-quantity-${item.id}`}
           className={styles.quantityValue}
         >
-          {product.quantity}
+          {item.quantity}
         </span>
 
         <button
           formAction={async () => {
             router.refresh();
-            await addQuantity(product);
+            await addQuantity(item);
           }}
           className={styles.button}
         >
@@ -47,9 +50,9 @@ export default function QuantityCounter(product: Product) {
       <button
         formAction={async () => {
           router.refresh();
-          await removeItem(product);
+          await removeItem(item);
         }}
-        data-test-id={`cart-product-remove-${product.id}`}
+        data-test-id={`cart-product-remove-${item.id}`}
         className={styles.buttonRemove}
       >
         Remove
