@@ -3,16 +3,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-// import { getProducts } from '../../database/products';
 import styles from './Filter.module.scss';
 
 export default function Filter({ products }) {
-  // const [selectedType, setSelectedType] = useState('');
+  const [selectedType, setSelectedType] = useState('');
 
-  // // Filter products by type
-  // const filteredProducts = selectedType
-  //   ? products.filter((product) => product.type === selectedType)
-  //   : products;
+  // Filter products by type
+  const filteredProducts = selectedType
+    ? products.filter((product) => product.type === selectedType)
+    : products;
 
   return (
     <>
@@ -29,7 +28,7 @@ export default function Filter({ products }) {
           <option value="bean">Bean</option>
         </select>
       </form>
-      {/* <div className={styles.productsCardsContainer}>
+      <div className={styles.productsCardsContainer}>
         {filteredProducts.map((product) => {
           return (
             <div
@@ -77,7 +76,7 @@ export default function Filter({ products }) {
             </div>
           );
         })}
-      </div> */}
+      </div>
     </>
   );
 }
