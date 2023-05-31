@@ -4,7 +4,12 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { addQuantity, removeItem, removeQuantity } from './actions';
 import styles from './QuantityCounter.module.scss';
 
-export default function QuantityCounter({ product }) {
+type Product = {
+  id: number;
+  quantity: number;
+};
+
+export default function QuantityCounter(product: Product) {
   const router = useRouter();
 
   return (

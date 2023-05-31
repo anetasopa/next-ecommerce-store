@@ -3,32 +3,33 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { getProducts } from '../../database/products';
+// import { getProducts } from '../../database/products';
 import styles from './Filter.module.scss';
 
-export default async function Filter() {
-  const [selectedType, setSelectedType] = useState('');
-  const products = await getProducts();
+export default function Filter({ products }) {
+  // const [selectedType, setSelectedType] = useState('');
 
-  // Filter products by type
-  const filteredProducts = selectedType
-    ? products.filter((product) => product.type === selectedType)
-    : products;
+  // // Filter products by type
+  // const filteredProducts = selectedType
+  //   ? products.filter((product) => product.type === selectedType)
+  //   : products;
 
   return (
     <>
-      <label htmlFor="typeFilter">Filter by Type: </label>
-      <select
-        id="typeFilter"
-        value={selectedType}
-        onChange={(e) => setSelectedType(e.target.value)}
-      >
-        <option value="">All</option>
-        <option value="capsules">Capsules</option>
-        <option value="instant">Instant</option>
-        <option value="bean">Bean</option>
-      </select>
-      <div className={styles.productsCardsContainer}>
+      <form>
+        <label htmlFor="typeFilter">Filter by Type: </label>
+        <select
+          id="typeFilter"
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)}
+        >
+          <option value="">All</option>
+          <option value="capsules">Capsules</option>
+          <option value="instant">Instant</option>
+          <option value="bean">Bean</option>
+        </select>
+      </form>
+      {/* <div className={styles.productsCardsContainer}>
         {filteredProducts.map((product) => {
           return (
             <div
@@ -76,7 +77,7 @@ export default async function Filter() {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </>
   );
 }

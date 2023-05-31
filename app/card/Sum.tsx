@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getProductById, getProducts } from '../../database/products';
+import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './Sum.module.scss';
@@ -12,7 +12,7 @@ export default async function TotalSum() {
   const cookies = !valueCookies ? [] : parseJson(valueCookies); // this is an array
 
   const itemInCart = products.map((product) => {
-    const matchingItems = cookies.find(
+    const matchingItems = cookies?.find(
       (cookieItem) => product.id === cookieItem.id,
     );
 

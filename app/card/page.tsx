@@ -21,12 +21,14 @@ export default async function CardPage() {
   const cookies = !valueCookies ? [] : parseJson(valueCookies); // this is an array
 
   const itemInCart = products.map((product) => {
-    const matchingItems = cookies.find(
+    const matchingItems = cookies?.find(
       (cookieItem) => product.id === cookieItem.id,
     );
 
     return { ...product, quantity: matchingItems?.quantity };
   });
+
+  console.log({ itemInCart });
 
   const filteredProducts = itemInCart.filter((item) => item.quantity);
 
@@ -72,6 +74,7 @@ export default async function CardPage() {
               );
             })}
           </div>
+          {/* @ts-expect-error Async Server Component */}
           <Sum />
         </div>
       </div>
