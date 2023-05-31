@@ -1,0 +1,139 @@
+.footer {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: 2fr 2fr 1fr;
+  background: var(--background-color-footer);
+  padding: 1.5rem 50px;
+
+  .contactUs {
+    h6 {
+      color: var(--color-white);
+      font-size: 24px;
+      line-height: 30px;
+      text-transform: capitalize;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .li {
+      outline: none;
+      list-style: none;
+      margin-bottom: 10px;
+      display: flex;
+
+      .icon {
+        color: var(--color-par);
+        margin-right: 10px;
+        margin-top: 8px;
+      }
+
+      p {
+        font-weight: normal;
+        margin-left: 10px;
+        font-size: 16px;
+        line-height: 28px;
+        color: var(--color-par);
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .newsletter {
+    h6 {
+      color: var(--color-white);
+      font-size: 24px;
+      line-height: 30px;
+      text-transform: capitalize;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    p {
+      color: #979797;
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    form {
+      display: flex;
+      margin-bottom: 25px;
+
+      input {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 12px 20px;
+        font-size: 16px;
+        outline: none;
+        width: 85%;
+        color: #aaa;
+        border-radius: 0.25rem 0 0 0.25rem;
+      }
+
+      button {
+        text-align: center;
+        background: var(--button-color);
+        border: none;
+        outline: none;
+        color: #eee;
+        font-size: 18px;
+        cursor: pointer;
+        width: 15%;
+        border-radius: 0 0.25rem 0.25rem 0;
+      }
+    }
+  }
+
+  .quickLinks {
+    h6 {
+      color: var(--color-white);
+      font-size: 24px;
+      line-height: 30px;
+      text-transform: capitalize;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    li {
+      outline: none;
+      list-style: none;
+      margin-bottom: 10px;
+
+      p {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        color: var(--color-par);
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    display: block;
+
+    .contactUs {
+      h6 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .newsletter {
+      h6 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .quickLinks {
+      h6 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

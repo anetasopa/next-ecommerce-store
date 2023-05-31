@@ -1,0 +1,141 @@
+form {
+  .containerText {
+    display: flex;
+
+    .contactInformationText {
+      padding-right: 10px;
+      font-weight: bold;
+      margin-top: 24px;
+    }
+
+    .icon {
+      margin-top: 20px;
+    }
+  }
+
+  .labelFlex {
+    flex: 1;
+  }
+
+  .shippingInformationText {
+    margin-top: 30px;
+  }
+
+  .paymentInformationText {
+    margin-top: 30px;
+  }
+
+  // .input {
+  //   height: 40px;
+  //   width: 100%;
+  //   margin-top: 20px;
+  //   padding-left: 20px;
+  //   color: var(--color-span);
+  // }
+
+  .input {
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 20px;
+    color: var(--color-span);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    position: relative;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .input::-webkit-input-placeholder {
+    color: #aaa;
+  }
+
+  .input:focus::-webkit-input-placeholder {
+    color: var(--button-color);
+  }
+
+  .input:focus + .underline {
+    transform: scale(1);
+  }
+
+  // .underline {
+  //   background-color: dodgerblue;
+  //   display: inline-block;
+  //   height: 2px;
+  //   left: 50px;
+  //   margin-top: -4px;
+  //   position: absolute;
+  //   top: 200px;
+  //   -webkit-transform: scale(0, 1);
+  //   transform: scale(0, 1);
+  //   -webkit-transition: all 0.5s linear;
+  //   transition: all 0.5s linear;
+  //   width: 202px;
+  // }
+
+  .data {
+    padding-right: 20px;
+  }
+
+  .nameContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+
+    .name {
+      height: 40px;
+      width: 100%;
+    }
+  }
+
+  .addressContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+
+    .city {
+      height: 40px;
+      width: 100%;
+    }
+  }
+
+  .paymentInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    .card {
+      height: 40px;
+      width: 100%;
+    }
+  }
+}
+
+.button {
+  padding: 10px 25px;
+
+  font-size: 1.2rem;
+  border-radius: var(--border-radius);
+  letter-spacing: 0.5px;
+  border: 1px solid var(--button-color);
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  float: right;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background-color: #d17721;
+  color: white !important;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--button-color-hover);
+    transition: 0.3s ease-in;
+  }
+}

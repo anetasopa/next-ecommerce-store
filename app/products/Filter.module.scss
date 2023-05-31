@@ -1,0 +1,114 @@
+.productsCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+
+  .container {
+    position: relative;
+    height: 500px;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 93%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+  }
+
+  .container:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .img {
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    left: 0;
+    z-index: -10;
+  }
+
+  .button {
+    border: none;
+    font-size: 0.8rem;
+    border-radius: var(--border-radius);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    margin-top: -125px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .button .a {
+    width: 200px;
+    text-align: center;
+    color: var(--color-white) !important;
+    font-weight: bold;
+    z-index: 1;
+  }
+
+  .container:hover .button {
+    opacity: 1;
+  }
+
+  .productCard {
+    align-items: center;
+    overflow: hidden;
+    display: flex;
+    height: 300px;
+    width: 250px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+
+    .productName {
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      font-size: 1.125rem;
+      font-weight: bolder;
+      color: var(--color-h);
+    }
+
+    .productType {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: var(--color-par);
+    }
+
+    .productPrice {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: var(--button-color);
+      font-weight: bold;
+      padding-bottom: 6px;
+
+      span {
+        color: var(--color-par);
+        text-transform: none;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .productsCardsContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

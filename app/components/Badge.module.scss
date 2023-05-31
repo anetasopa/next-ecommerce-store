@@ -1,0 +1,20 @@
+.hide {
+  // display: none;
+  background-color: black;
+  color: white;
+}
+
+.textCount {
+  margin-top: -23px;
+  margin-left: 25px;
+  background: var(--button-color);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  font-size: 0.8rem;
+}

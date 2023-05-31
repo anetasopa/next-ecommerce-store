@@ -3,28 +3,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import {
-  FaArrowDown,
-  FaArrowUp,
-  FaCanadianMapleLeaf,
-  FaCoffee,
-  FaEnvelope,
-  FaLeaf,
-  FaLocationArrow,
-  FaPhone,
-} from 'react-icons/fa';
-import { getProductById, products } from '../../../database/products';
+import { getProductById, getProducts } from '../../../database/products';
+import Filter from '../Filter';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 
-type Props = {
-  params: { productId: string };
+export type CookieItem = {
+  id: number;
+  quantity: number;
 };
 
-export default function ProductPage(props: Props) {
-  const singleProduct = getProductById(Number(props.params.productId));
+type Props = {
+  params: { productId: string }; // it is string from url string
+};
+
+export default async function ProductPage(props: Props) {
+  const singleProduct = await getProductById(Number(props.params.productId));
+  const products = await getProducts();
 
   if (!singleProduct) {
     notFound();
@@ -35,27 +32,24 @@ export default function ProductPage(props: Props) {
       data-test-id={`cart-product-${singleProduct.id}`}
       className={styles.containerSectionProducts}
     >
-      <h1>Product</h1>
       <div className={styles.product} key={`product-div-${singleProduct.id}`}>
         <div className={styles.textContainer}>
           <h3>{singleProduct.name}</h3>
           <p>{singleProduct.type}</p>
           <div>
-            {/* <FaArrow className={styles.icon} /> */}
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
             <span>{singleProduct.text1}</span>
           </div>
           <div>
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
             <span>{singleProduct.text2}</span>
           </div>
           <div>
-            <FontAwesomeIcon className={styles.icon} icon={faChevronDown} />
             <span>{singleProduct.text3}</span>
           </div>
           <div className={styles.flex}>
             <p data-test-id="product-price" className={styles.price}>
-              Price:<span>{singleProduct.price}</span> Euro
+              Price:
+              <span>{singleProduct.price}</span>
+              EUR
             </p>
           </div>
           <QuantityCounter productId={singleProduct.id} />
@@ -71,7 +65,7 @@ export default function ProductPage(props: Props) {
           />
         </div>
       </div>
-      <h2>More Products</h2>
+      <h2>You may also like</h2>
       <div className={styles.productsCardsContainer}>
         {products.map((product) => {
           return (
@@ -82,6 +76,7 @@ export default function ProductPage(props: Props) {
               {' '}
               <div className={styles.container}>
                 <Image
+                  data-test-id="product-image"
                   alt=""
                   src={`/images/${product.name}.png`}
                   width={250}
@@ -115,8 +110,9 @@ export default function ProductPage(props: Props) {
                 {product.name}
               </Link>
               <p className={styles.productType}>{product.type}</p>
-              <p className={styles.productPrice}>
-                {product.price} <span>Euro</span>{' '}
+              <p data-test-id="product-price" className={styles.productPrice}>
+                {product.price}
+                <span> EUR</span>
               </p>
             </div>
           );

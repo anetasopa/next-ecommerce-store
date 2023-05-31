@@ -1,21 +1,20 @@
-import { faChevronDown, faMugSaucer } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  FaCoffee,
-  FaCookie,
-  FaGlassCheers,
-  FaGlassMartini,
-  FaLeaf,
-} from 'react-icons/fa';
-import { products } from '../database/products';
+import { FaCoffee, FaCookie, FaGlassMartini, FaLeaf } from 'react-icons/fa';
+import coffee from '../public/images/cup.png';
 import makeCoffee from '../public/images/makeCoffee.png';
 import styles from './page.module.scss';
 
 export default function HomePage() {
   return (
     <main>
+      {/* <div className={styles.picCtn}>
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+        <img src={coffee} alt="" className={styles.pic} />
+        <img src="/image/coffee.png" alt="" className={styles.pic} />
+      </div> */}
       <div className={styles.container}>
         <h1>
           Enjoy Your Moment With <span> Coffee</span>.
@@ -45,6 +44,7 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
+
       <section className={styles.containerSectionAboutUs}>
         <div>
           <span>About Us</span>
@@ -65,12 +65,11 @@ export default function HomePage() {
             Know More
           </Link>
         </div>
-        <Image
-          alt="makeCoffee"
-          className={styles.imageMakeCoffee}
-          src={makeCoffee}
-        />
+        <div className={styles.imageMakeCoffee}>
+          <Image alt="makeCoffee" src={makeCoffee} />
+        </div>
       </section>
+
       <section className={styles.containerSectionBenefits}>
         <div>
           <div>
@@ -96,67 +95,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* <section className={styles.containerSectionProducts}>
-        {products.map((product) => {
-          return (
-            <div className={styles.product} key={`product-div-${product.id}`}>
-              <div className={styles.textContainer}>
-                <h3>We make the delicious coffee for the coffee lovers.</h3>
-                <p>
-                  Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
-                  ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor
-                </p>
-                <div>
-                  <FontAwesomeIcon
-                    className={styles.icon}
-                    icon={faChevronDown}
-                  />
-                  <span>Lorem ipsum viverra feugiat.</span>
-                </div>
-                <div>
-                  <FontAwesomeIcon
-                    className={styles.icon}
-                    icon={faChevronDown}
-                  />
-                  <span>Lorem ipsum viverra feugiat.</span>
-                </div>
-                <div>
-                  <FontAwesomeIcon
-                    className={styles.icon}
-                    icon={faChevronDown}
-                  />
-                  <span>Lorem ipsum viverra feugiat.</span>
-                </div>
-              </div>
-
-              <div className={styles.imageContainer}>
-                <div className={styles.container}>
-                  <Image
-                    className={styles.img}
-                    alt="productName"
-                    width={200}
-                    height={200}
-                    src={`/images/${product.name}.png`}
-                  />
-                  <div className={styles.overlay}></div>
-                  <div className={styles.button}>
-                    <Link
-                      className={styles.a}
-                      href={`/products/${product.id}`}
-                      style={{
-                        color: 'black',
-                        textDecoration: 'none',
-                      }}
-                    >
-                      BUTTON, {product.id}
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </section> */}
+      <section className={styles.containerHours}>
+        <div className={styles.hoursText}>
+          <h3>We make the delicious coffee.</h3>
+          <p>
+            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices
+            in ligula. Semper at tempufddfel. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. dignissimos quis soluta sapiente
+            aperiam quod.
+          </p>
+        </div>
+        <div className={styles.imageCoffee}>
+          <Image alt="coffee" src={coffee} width={300} height={250} />
+        </div>
+        <div className={styles.hours}>
+          <h3>Opening Hours: </h3>
+          <ul>
+            <li>Monday – Friday 11:00 - 07:00</li>
+            <li>Saturday 10:00 – 12:00</li>
+          </ul>
+          <h3>Reservation Numbers: </h3>
+          <ul>
+            <li>+(43)-655-769-8876</li>
+          </ul>
+        </div>
+      </section>
     </main>
   );
 }
