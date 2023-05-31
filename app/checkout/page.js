@@ -1,12 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaQuestionCircle } from 'react-icons/fa';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import CheckoutForm from './CheckoutForm';
 import styles from './page.module.scss';
-import SelectProducts from './SelectProducts';
 import Summary from './Summary';
 
 export const dynamic = 'force-dynamic';
