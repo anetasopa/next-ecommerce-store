@@ -1,4 +1,41 @@
-.box {
+.search {
+  position: absolute;
+  top: 17%;
+  left: 4.5%;
+
+  @media (max-width: 480px) {
+    & {
+      top: 17%;
+      left: 20%;
+    }
+  }
+
+  .icon {
+    color: var(--color-icon);
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    margin-left: 12px;
+    margin-top: 12px;
+  }
+
+  .inputSearch {
+    background-color: var(--color-white);
+    color: var(--color-span);
+    padding: 12px;
+    width: 250px;
+    font-weight: 400;
+    border: none;
+    font-size: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 20px;
+    border-radius: var(--border-radius);
+    outline: none;
+    font-family: var(--font-family-three);
+    padding-left: 45px;
+  }
+}
+
+.filter {
   position: absolute;
   top: 20%;
   left: 85.5%;
@@ -6,13 +43,13 @@
 
   @media (max-width: 480px) {
     & {
-      top: 20%;
-      left: 50%;
+      top: 12%;
+      left: 82%;
     }
   }
 }
 
-.box select {
+.filter select {
   background-color: var(--color-white);
   color: var(--color-span);
   padding: 12px;
@@ -26,13 +63,19 @@
   appearance: button;
   outline: none;
   font-family: var(--font-family-three);
+
+  @media (max-width: 480px) {
+    & {
+      width: 100px;
+    }
+  }
 }
 
-.box select:hover {
+.filter select:hover {
   cursor: pointer;
 }
 
-.box::before {
+.filter::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -46,12 +89,12 @@
   pointer-events: none;
 }
 
-.box:hover::before {
+.filter:hover::before {
   color: var(--color-span);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.box select option {
+.filter select option {
   padding: 30px;
 }
 

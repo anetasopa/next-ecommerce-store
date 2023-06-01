@@ -3,10 +3,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { FaSearch } from 'react-icons/fa';
 import styles from './Filter.module.scss';
 
 export default function Filter({ products }) {
   const [selectedType, setSelectedType] = useState('');
+  const [searchName, setSearchName] = useState(null);
+
+  // Search products by name
+  if (searchName) {
+    const fn = (o) => o.name.includes(searchName);
+
+    products = products.filter(fn);
+  }
 
   // Filter products by type
   const filteredProducts = selectedType
@@ -15,7 +24,16 @@ export default function Filter({ products }) {
 
   return (
     <>
-      <div className={styles.box}>
+      <div className={styles.search}>
+        <FaSearch className={styles.icon} />
+        <input
+        className={styles.inputSearch}
+          type=""
+          value={searchName}
+          onChange={(e) => setSearchName(e.target.value)}
+        />
+      </div>
+      <div className={styles.filter}>
         <select
           id="typeFilter"
           value={selectedType}
