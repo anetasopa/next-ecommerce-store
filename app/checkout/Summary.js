@@ -18,8 +18,8 @@ export default function Summary({
           <p>{subTotalPrice} EUR</p>
         </div>
         <div className={styles.subtotal}>
-          <h5>{discount}</h5>
-          <p>5 EUR</p>
+          <h5>Discount</h5>
+          <p>{discount} EUR</p>
         </div>
         <div className={styles.total}>
           <h3>Total</h3>

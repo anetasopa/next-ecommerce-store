@@ -27,7 +27,6 @@ export default async function CheckoutPage() {
   });
 
   const filteredProducts = itemInCart.filter((item) => item.quantity);
-  console.log({ filteredProducts });
 
   const numberOfProducts = cookies.length;
 
