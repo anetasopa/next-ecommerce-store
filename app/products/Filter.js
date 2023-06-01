@@ -32,7 +32,7 @@ export default function Filter({ products }) {
           return (
             <div
               key={`product-div-${product.id}`}
-              data-test-id={`product-id${product.name}`}
+              data-test-id={`product-${product.id}`}
               className={styles.productCard}
             >
               <div className={styles.container}>
