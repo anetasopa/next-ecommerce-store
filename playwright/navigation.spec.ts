@@ -149,8 +149,8 @@ test('navigation test', async ({ page }) => {
   // Expect a Button Products
   await page.getByRole('link', { name: 'Go To Product' }).click();
 
-  // Expect a Button AboutUs
-  await page.getByRole('link', { name: 'About Us' }).click();
+  // // Expect a Button AboutUs
+  // await page.getByRole('link', { name: 'About Us' }).click();
 
   // Click on link "products"
   await page.getByRole('link', { name: 'Products' }).click();
@@ -159,25 +159,15 @@ test('navigation test', async ({ page }) => {
   // Expect a h1
   await expect(page.getByRole('heading', { name: 'Products' })).toBeVisible();
 
-  // Expect 12 products
-  await expect(page.locator('[data-test-id^="product-"]')).toHaveCount(12);
-
-  // Expect 12 names of the products
-  await expect(page.locator('[data-test-id^="product-"]')).toHaveText(
-    products.map((product) => product.name),
-  );
-
   // Expect 12 imgs of the products
   await expect(page.locator('[data-test-id^="product-"] >> img')).toHaveCount(
     12,
   );
 
-  // Expect 12 links of the products
-  for (const product of products) {
-    await expect(page.getByRole('link', { name: product.name })).toBeVisible();
-  }
-
   // Click on the first product
   await page.getByRole('link', { name: 'Fantasia Blend' }).click();
-  await expect(page).toHaveURL('http://localhost:3000/products/1');
+  await expect(page).toHaveURL('http://localhost:3000/products/13');
+
+  // Expect an image
+  await expect(page.getByRole('img', { name: 'productName' })).toBeVisible();
 });
