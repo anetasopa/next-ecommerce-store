@@ -56,6 +56,12 @@
         line-height: 40px;
         margin-bottom: 30px;
         color: var(--color-h);
+
+        @media (max-width: 480px) {
+          & {
+            margin-top: 30px;
+          }
+        }
       }
 
       p {
@@ -125,6 +131,12 @@
     font-weight: 600;
     line-height: 40px;
     color: var(--color-h);
+
+    @media (max-width: 480px) {
+      & {
+        margin-bottom: 30px;
+      }
+    }
   }
 
   .productsCardsContainer {

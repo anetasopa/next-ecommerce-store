@@ -3,6 +3,13 @@
   top: 20%;
   left: 85.5%;
   transform: translate(-50%, -50%);
+
+  @media (max-width: 480px) {
+    & {
+      top: 20%;
+      left: 50%;
+    }
+  }
 }
 
 .box select {
@@ -10,6 +17,7 @@
   color: var(--color-span);
   padding: 12px;
   width: 250px;
+  font-weight: 400;
   border: none;
   font-size: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 20px;

@@ -73,7 +73,6 @@ export default async function ProductPage(props: Props) {
               key={`product-div-${product.id}`}
               className={styles.productCard}
             >
-              {' '}
               <div className={styles.container}>
                 <Image
                   data-test-id="product-image"

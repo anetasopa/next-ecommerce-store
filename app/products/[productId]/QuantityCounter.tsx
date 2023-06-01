@@ -1,4 +1,5 @@
 'use client';
+
 import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 import { createOrUpdateQuantity } from './actions';
@@ -12,16 +13,6 @@ export default function QuantityCounter(props: Props) {
   const [quantity, setQuantity] = useState(1);
   const router = useRouter();
 
-  // const decrementQuantity = () => {
-  //   if (quantity > 1) {
-  //     setQuantity(quantity - 1);
-  //   }
-  // };
-
-  // const incrementQuantity = () => {
-  //   setQuantity(quantity + 1);
-  // };
-
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setQuantity(Number(event.currentTarget.value));
   }
@@ -29,8 +20,6 @@ export default function QuantityCounter(props: Props) {
   return (
     <form className={styles.quantity}>
       <div className={styles.quantityCounter}>
-        {/* <FaArrowLeft onClick={decrementQuantity} className={styles.icon} /> */}
-
         <input
           className={styles.quantityValue}
           value={quantity}
@@ -39,8 +28,6 @@ export default function QuantityCounter(props: Props) {
           data-test-id="product-quantity"
           onChange={handleChange}
         />
-
-        {/* <FaArrowRight onClick={incrementQuantity} className={styles.icon} /> */}
       </div>
       <button
         className={styles.button}

@@ -122,7 +122,7 @@ export const products = [
   {
     id: 12,
     name: 'BrewClique Euphoria',
-    text1:git 
+    text1:
       'Join the exclusive BrewClique and discover a euphoric coffee experience.',
     text2:
       'Each capsule is a work of art, blending premium coffee beans from around the world to create a sublime espresso with a velvety texture.',
