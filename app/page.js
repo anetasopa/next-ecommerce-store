@@ -25,6 +25,7 @@ export default function HomePage() {
         </p>
         <div>
           <Link
+            data-test-id="products-link"
             className={styles.heroButtonGoToProduct}
             href="/products"
             style={{

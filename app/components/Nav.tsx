@@ -26,6 +26,7 @@ export default function Nav() {
           </li>
           <li>
             <Link
+              data-test-id="products-link"
               href="/products"
               style={{
                 color: 'black',
