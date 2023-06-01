@@ -17,8 +17,12 @@ export default function CheckoutForm() {
   const [expiration, setExpiration] = useState('');
   const [securityCode, setSecurityCode] = useState('');
 
+  const handleClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleClick}>
       <div className={styles.containerText}>
         <h2 className={styles.contactInformationText}>Contact Information</h2>{' '}
         <FaQuestionCircle className={styles.icon} />
@@ -72,7 +76,7 @@ export default function CheckoutForm() {
               data-test-id="checkout-city"
               value={city}
               placeholder="City"
-              onChange={(event) => setCity(event.currentTarget.value)}
+              onChange={(event) => setPostCode(event.currentTarget.value)}
             />
           </label>
           <label className={styles.labelFlex}>
@@ -81,7 +85,7 @@ export default function CheckoutForm() {
               data-test-id="checkout-postal-code"
               value={postCode}
               placeholder="Post Code"
-              onChange={(event) => setPostCode(event.currentTarget.value)}
+              onChange={(event) => setCity(event.currentTarget.value)}
             />
           </label>
         </div>
