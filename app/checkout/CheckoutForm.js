@@ -1,11 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaQuestionCircle } from 'react-icons/fa';
 import styles from './CheckoutForm.module.scss';
 
 export default function CheckoutForm() {
+  const router = useRouter();
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -16,6 +19,23 @@ export default function CheckoutForm() {
   const [creditCard, setCreditCard] = useState('');
   const [expiration, setExpiration] = useState('');
   const [securityCode, setSecurityCode] = useState('');
+
+  function validate() {
+    return (
+      firstName.length &&
+      lastName.length &&
+      email.length &&
+      adress.length &&
+      city.length &&
+      postCode.length &&
+      country.length &&
+      creditCard.length &&
+      expiration.length &&
+      securityCode.length
+    );
+  }
+
+  const isValid = validate();
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -132,16 +152,20 @@ export default function CheckoutForm() {
           </label>
         </div>
       </div>
-      <Link
+      <button
+        type="button"
         data-test-id="checkout-confirm-order"
-        className={styles.button}
-        href="/thank"
-        style={{
-          textDecoration: 'none',
-        }}
+        className={isValid ? styles.button : styles.disabled}
+        // href="/thank"
+        // style={{
+        //   textDecoration: 'none',
+        // }}
+
+        disabled={!isValid}
+        onClick={() => router.push('/thank')}
       >
         Confirm Order
-      </Link>
+      </button>
     </form>
   );
 }
