@@ -1,3 +1,52 @@
+.box {
+  position: absolute;
+  top: 20%;
+  left: 85.5%;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color: var(--color-white);
+  color: var(--color-span);
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 20px;
+  -webkit-appearance: button;
+  border-radius: var(--border-radius);
+  appearance: button;
+  outline: none;
+  font-family: var(--font-family-three);
+}
+
+.box select:hover {
+  cursor: pointer;
+}
+
+.box::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: var(--color-span);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: var(--color-span);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.box select option {
+  padding: 30px;
+}
+
 .productsCardsContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

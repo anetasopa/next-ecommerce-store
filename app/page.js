@@ -35,7 +35,7 @@ export default function HomePage() {
           </Link>
           <Link
             className={styles.heroButtonAboutUs}
-            href="/#"
+            href="#aboutUs"
             style={{
               textDecoration: 'none',
             }}
@@ -45,7 +45,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <section className={styles.containerSectionAboutUs}>
+      <section id="aboutUs" className={styles.containerSectionAboutUs}>
         <div>
           <span>About Us</span>
           <h3>We make the delicious coffee for the coffee lovers.</h3>

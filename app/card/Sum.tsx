@@ -4,6 +4,10 @@ import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import styles from './Sum.module.scss';
 
+export function sum(subTotal: number, newValue: number) {
+  return subTotal + newValue;
+}
+
 export default async function TotalSum() {
   const products = await getProducts();
   const valueCookies = getCookie('cart'); // This a string
@@ -25,7 +29,9 @@ export default async function TotalSum() {
     <div data-test-id="cart-total" className={styles.sumContainer}>
       <h2>Summary Of The Amount</h2>
       {filteredProducts.map((product) => {
-        total = total + Number(product.price) * Number(product.quantity);
+        const newSubTotal: number =
+          Number(product.price) * Number(product.quantity);
+        total = sum(total, newSubTotal);
         return (
           <div key={`product-div-${product.id}`}>
             <div className={styles.subtotal}>

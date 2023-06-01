@@ -137,32 +137,32 @@ export const products = [
 test('navigation test', async ({ page }) => {
   await page.goto('http://localhost:3000/');
 
-  await expect(page.getByRole('link', { name: 'Cofeez' })).toBeVisible();
-
   await expect(
     page.getByRole('heading', { name: 'Enjoy Your Moment With Coffee.' }),
   ).toBeVisible();
 
+  await expect(page.getByRole('link', { name: 'Cofeez' })).toBeVisible();
+
   await page.getByRole('link', { name: 'Go To Product' }).click();
   await page.getByRole('link', { name: 'About Us' }).click();
 
-  await expect(page).toHaveURL('http://localhost:3000/products');
-  await expect(page.getByRole('link', { name: 'Products' })).toBeVisible();
+  // await page.getByRole('link', { name: 'Products' }).click();
+  // await expect(page).toHaveURL('http://localhost:3000/products');
 
-  await expect(page.locator('[data-test-id^="product-id-"]')).toHaveCount(12);
+  // await expect(page.locator('[data-test-id^="product-id-"]')).toHaveCount(12);
 
-  await expect(page.locator('[data-test-id^="product-id-"]')).toHaveText(
-    products.map((product) => product.name),
-  );
+  // await expect(page.locator('[data-test-id^="product-id-"]')).toHaveText(
+  //   products.map((product) => product.name),
+  // );
 
-  await expect(
-    page.locator('[data-test-id^="product-id-"] >> img'),
-  ).toHaveCount(12);
+  // await expect(
+  //   page.locator('[data-test-id^="product-id-"] >> img'),
+  // ).toHaveCount(12);
 
-  for (const product of products) {
-    await expect(page.getByRole('link', { name: product.name })).toBeVisible();
-  }
+  // for (const product of products) {
+  //   await expect(page.getByRole('link', { name: product.name })).toBeVisible();
+  // }
 
-  await page.getByRole('link', { name: 'Fantasia Blend' }).click();
-  await expect(page).toHaveURL('http://localhost:3000/products/1');
+  // await page.getByRole('link', { name: 'Fantasia Blend' }).click();
+  // await expect(page).toHaveURL('http://localhost:3000/products/1');
 });

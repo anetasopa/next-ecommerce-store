@@ -15,7 +15,19 @@ export default function Filter({ products }) {
 
   return (
     <>
-      <form>
+      <div className={styles.box}>
+        <select
+          id="typeFilter"
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)}
+        >
+          <option value="">All</option>
+          <option value="capsules">Capsules</option>
+          <option value="instant">Instant</option>
+          <option value="bean">Bean</option>
+        </select>
+      </div>
+      {/* <form className={styles.form}>
         <label htmlFor="typeFilter">Filter by Type: </label>
         <select
           id="typeFilter"
@@ -27,7 +39,7 @@ export default function Filter({ products }) {
           <option value="instant">Instant</option>
           <option value="bean">Bean</option>
         </select>
-      </form>
+      </form> */}
       <div className={styles.productsCardsContainer}>
         {filteredProducts.map((product) => {
           return (
