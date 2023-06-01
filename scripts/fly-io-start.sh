@@ -45,4 +45,4 @@ SQL
 fi
 
 pnpm migrate up
-pnpm start
+pnpm dev

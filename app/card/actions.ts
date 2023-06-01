@@ -10,7 +10,7 @@ type Cart = {
 };
 
 export async function removeItem(item: Cart) {
-  const productQuantityCookie = await getCookie('cart'); // Get cookie from client as string
+  const productQuantityCookie = getCookie('cart'); // Get cookie from client as string
   const productQuantities = !productQuantityCookie
     ? []
     : parseJson(productQuantityCookie); // Check cookie and return array of objects
@@ -41,7 +41,7 @@ export async function addQuantity(item: Cart) {
 }
 
 export async function removeQuantity(item: Cart) {
-  const productQuantityCookie = await getCookie('cart');
+  const productQuantityCookie = getCookie('cart');
 
   const productQuantities = !productQuantityCookie
     ? []
@@ -50,7 +50,10 @@ export async function removeQuantity(item: Cart) {
   const removeValueQuantity = productQuantities?.find((product) => {
     return product.id === item.id;
   });
-  removeValueQuantity!.quantity -= 1;
+
+  removeValueQuantity!.quantity > 1
+    ? (removeValueQuantity!.quantity -= 1)
+    : (removeValueQuantity!.quantity = 1);
 
   await cookies().set('cart', JSON.stringify(productQuantities));
 }

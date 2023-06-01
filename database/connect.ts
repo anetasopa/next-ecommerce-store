@@ -6,7 +6,16 @@ import postgres from 'postgres';
 // for all code after this line
 if (!process.env.FLY_IO) config();
 
-// Type needed for the connection function below
+// Making a simple connection to Postgres
+// Next.js fast refresh increases database connection slot
+// and causes connection slot error
+// export const sql = postgres({
+//   transform: {
+//     ...postgres.camel,
+//     undefined: null,
+//   },
+// });
+
 declare module globalThis {
   let postgresSqlClient: ReturnType<typeof postgres> | undefined;
 }

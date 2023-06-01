@@ -23,6 +23,7 @@ export const metadata = {
 export default async function CardPage() {
   const products = await getProducts();
   const valueCookies = getCookie('cart'); // This is a string
+  console.log(valueCookies);
 
   const productsInCookie: CookieItem[] | undefined = valueCookies
     ? parseJson(valueCookies)
