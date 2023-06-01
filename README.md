@@ -1,6 +1,17 @@
+# Ecommerce store next.js 
+
+<img width="450" alt="Screenshot 2023-06-02 at 00 43 08" src="https://github.com/butterfly-123/next-ecommerce-store/assets/58802893/6bb934bd-30c9-49de-8bfc-e2668d25e37b">
+
+### What is the project about? ❓
+
+Coffeez, my Coffee e-commerce project built with next.js during the upLeveled bootcamp, provides a wide selection of coffee varieties to users. By exploring the store page, users can choose products, navigate to dedicated pages for more information, modify quantities in the basket, view the total amount, and complete the checkout process to complete their purchase.
+
+<img width="450" alt="Screenshot 2023-06-02 at 00 52 31" src="https://github.com/butterfly-123/next-ecommerce-store/assets/58802893/ad4ee797-4490-4320-993d-2d9801c70a70">
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### How to start? 🤔
 
 First, run the development server:
 
@@ -18,7 +29,7 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### Learn More 💡
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -27,7 +38,7 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
