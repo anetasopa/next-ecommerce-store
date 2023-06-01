@@ -149,9 +149,20 @@ test('navigation test', async ({ page }) => {
   await expect(page).toHaveURL('http://localhost:3000/products');
   await expect(page.getByRole('link', { name: 'Products' })).toBeVisible();
 
-  await expect(page.locator('[data-test-id^="product-"]')).toHaveCount(12);
+  await expect(page.locator('[data-test-id^="product-id-"]')).toHaveCount(12);
 
-  await expect(page.locator('[data-test-id^="product-"]')).toHaveText(
+  await expect(page.locator('[data-test-id^="product-id-"]')).toHaveText(
     products.map((product) => product.name),
   );
+
+  await expect(
+    page.locator('[data-test-id^="product-id-"] >> img'),
+  ).toHaveCount(12);
+
+  for (const product of products) {
+    await expect(page.getByRole('link', { name: product.name })).toBeVisible();
+  }
+
+  await page.getByRole('link', { name: 'Fantasia Blend' }).click();
+  await expect(page).toHaveURL('http://localhost:3000/products/1');
 });
