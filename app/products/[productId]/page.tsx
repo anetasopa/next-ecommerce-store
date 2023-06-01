@@ -47,8 +47,7 @@ export default async function ProductPage(props: Props) {
           </div>
           <div className={styles.flex}>
             <p data-test-id="product-price" className={styles.price}>
-              Price:
-              <span>{singleProduct.price}</span>
+              Price: <span> {singleProduct.price}</span>
               EUR
             </p>
           </div>

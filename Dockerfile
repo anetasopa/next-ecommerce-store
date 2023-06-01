@@ -1,3 +1,4 @@
+# Multi-stage builds: builder stage
 FROM node:18-alpine AS builder
 ENV NODE_ENV production
 # Install necessary tools
