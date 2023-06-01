@@ -81,9 +81,6 @@ devDependencies:
   jest-environment-jsdom:
     specifier: ^29.5.0
     version: 29.5.0
-  libpg-query:
-    specifier: ^15.0.2
-    version: 15.0.2
   stylelint:
     specifier: ^15.6.2
     version: 15.6.2
