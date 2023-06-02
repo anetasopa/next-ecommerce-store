@@ -16,6 +16,10 @@ function contactInformation(
 ) {
   return (
     <>
+      <div className={styles.containerText}>
+        <h2 className={styles.contactInformationText}>Contact Information</h2>{' '}
+        <FaQuestionCircle className={styles.icon} />
+      </div>
       <div className={styles.nameContainer}>
         <label className={styles.labelFlex}>
           <input
@@ -63,6 +67,8 @@ function shoppingInformation(
 ) {
   return (
     <>
+      <h2 className={styles.shippingInformationText}>Shipping Information</h2>
+
       <label>
         <input
           className={styles.input}
@@ -115,6 +121,7 @@ function paymentInformation(
 ) {
   return (
     <>
+      <h2 className={styles.paymentInformationText}>Payment Information</h2>
       <label>
         <input
           className={styles.input}
@@ -205,10 +212,6 @@ export default function CheckoutForm() {
 
   return (
     <form onSubmit={handleClick}>
-      <div className={styles.containerText}>
-        <h2 className={styles.contactInformationText}>Contact Information</h2>{' '}
-        <FaQuestionCircle className={styles.icon} />
-      </div>
       {contactInformation(
         firstName,
         setFirstName,
@@ -218,7 +221,6 @@ export default function CheckoutForm() {
         setEmail,
       )}
       <div>
-        <h2 className={styles.shippingInformationText}>Shipping Information</h2>
         {shoppingInformation(
           adress,
           setAdress,
@@ -231,7 +233,6 @@ export default function CheckoutForm() {
         )}
       </div>
       <div>
-        <h2 className={styles.paymentInformationText}>Payment Information</h2>
         {paymentInformation(
           creditCard,
           setCreditCard,
