@@ -29,7 +29,7 @@ export default function Summary({
             <span>{sum}</span> EUR
           </p>
         </div>
-        <Link
+        {/* <Link
           data-test-id="product-add-to-cart"
           className={styles.buttonDiscount}
           href="/#"
@@ -39,7 +39,7 @@ export default function Summary({
           }}
         >
           APPLY A PROMO CODE OR DISCOUNT
-        </Link>
+        </Link> */}
         <SelectProducts
           filteredProducts={filteredProducts}
           numberOfProducts={numberOfProducts}
