@@ -170,4 +170,12 @@ test('navigation test', async ({ page }) => {
 
   // Expect an image
   await expect(page.getByRole('img', { name: 'productName' })).toBeVisible();
+
+  // Expect a h3
+  await expect(
+    page.getByRole('heading', { name: 'Fantasia Blend' }),
+  ).toBeVisible();
+
+  // Expect a type
+  await expect(page.getByText('bean', { exact: true }).first()).toBeVisible();
 });

@@ -116,6 +116,7 @@ form {
     }
   }
 }
+
 .disabled {
   padding: 10px 25px;
   font-size: 1.2rem;
@@ -129,6 +130,7 @@ form {
   margin-top: 30px;
   background-color: var(--color-footer-text);
   color: white !important;
+  pointer-events: none;
 }
 .button {
   padding: 10px 25px;
