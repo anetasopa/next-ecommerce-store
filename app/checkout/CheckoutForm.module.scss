@@ -131,7 +131,13 @@ form {
   background-color: var(--color-footer-text);
   color: white !important;
   pointer-events: none;
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: default;
+  }
 }
+
 .button {
   padding: 10px 25px;
   font-size: 1.2rem;
