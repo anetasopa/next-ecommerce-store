@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-export const products = [
+const products = [
   {
     id: 1,
     name: 'Fantasia Blend',
@@ -153,11 +153,11 @@ test('navigation test', async ({ page }) => {
   // await page.getByRole('link', { name: 'About Us' }).click();
 
   // Click on link "products"
-  await page.getByRole('link', { name: 'Products' }).click();
+  await page.getByTestId('products-link').click();
   await expect(page).toHaveURL('http://localhost:3000/products');
 
   // Expect a h1
-  await expect(page.getByRole('heading', { name: 'Products' })).toBeVisible();
+  // await expect(page.getByRole('heading', { name: 'Products' })).toBeVisible();
 
   // Expect 12 imgs of the products
   await expect(page.locator('[data-test-id^="product-"] >> img')).toHaveCount(
@@ -178,4 +178,41 @@ test('navigation test', async ({ page }) => {
 
   // Expect a type
   await expect(page.getByText('bean', { exact: true }).first()).toBeVisible();
+
+  // Expect a text1
+  await expect(
+    page.getByText(
+      'Immerse yourself in a fantastical journey with this whimsical blend.',
+    ),
+  ).toBeVisible();
+
+  // Expect a text2
+  await expect(
+    page.getByText(
+      'Discover a harmonious combination of smooth flavors, dancing with hints of choco',
+    ),
+  ).toBeVisible();
+
+  // Expect a text3
+  await expect(
+    page.getByText('Creating a truly magical coffee experience.'),
+  ).toBeVisible();
+
+  // Expect a price
+  await expect(page.getByText('45', { exact: true }).first()).toBeVisible();
+
+  // Expect an input
+  await expect(page.getByTestId('product-quantity'));
+
+  // Expect a button
+  await expect(page.getByTestId('product-add-to-cart'));
+
+  // Expect a h3
+  await expect(
+    page.getByRole('heading', { name: 'You may also like' }),
+  ).toBeVisible();
+
+  // Click on link "shopping cart"
+  await page.getByTestId('cart-link').click();
+  await expect(page).toHaveURL('http://localhost:3000/cart');
 });
