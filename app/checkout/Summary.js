@@ -9,6 +9,8 @@ export default function Summary({
   filteredProducts,
   numberOfProducts,
 }) {
+  const sum = subTotalPrice === 0 ? totalPrice === 0 : totalPrice;
+
   return (
     <div className={styles.sumContainer}>
       <div>
@@ -24,7 +26,7 @@ export default function Summary({
         <div className={styles.total}>
           <h3>Total</h3>
           <p>
-            <span>{totalPrice}</span> EUR
+            <span>{sum}</span> EUR
           </p>
         </div>
         <Link

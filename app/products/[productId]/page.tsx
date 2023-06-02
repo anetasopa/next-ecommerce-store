@@ -1,10 +1,7 @@
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getProductById, getProducts } from '../../../database/products';
-import Filter from '../Filter';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
 
