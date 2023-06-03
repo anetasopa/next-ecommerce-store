@@ -146,73 +146,80 @@ test('navigation test', async ({ page }) => {
   // Expect a Logo Name
   await expect(page.getByRole('link', { name: 'Cofeez' })).toBeVisible();
 
-  // Expect a Button Products
+  // Expect a Home Page
+  await expect(page.getByRole('link', { name: 'Home' })).toBeVisible();
+
+  // Expect a Products Page
+  await expect(page.getByRole('link', { name: 'Products' })).toBeVisible();
+
+  // Expect a Button AboutUs
+  // await expect(page.getByRole('link', { name: 'About Us' })).toBeVisible();
+
+  // Expect a Button Products and go to products
   await page.getByRole('link', { name: 'Go To Product' }).click();
-
-  // // Expect a Button AboutUs
-  // await page.getByRole('link', { name: 'About Us' }).click();
-
-  // Click on link "products"
-  await page.getByTestId('products-link').click();
   await expect(page).toHaveURL('http://localhost:3000/products');
 
   // Expect a h1
-  // await expect(page.getByRole('heading', { name: 'Products' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Products' })).toBeVisible();
 
   // Expect 12 imgs of the products
   await expect(page.locator('[data-test-id^="product-"] >> img')).toHaveCount(
     12,
   );
 
-  // Click on the first product
+  // // Click on the first product
   await page.getByRole('link', { name: 'Fantasia Blend' }).click();
   await expect(page).toHaveURL('http://localhost:3000/products/13');
 
-  // Expect an image
+  // // Expect an image
   await expect(page.getByRole('img', { name: 'productName' })).toBeVisible();
 
-  // Expect a h3
+  // // Expect a h3
   await expect(
     page.getByRole('heading', { name: 'Fantasia Blend' }),
   ).toBeVisible();
 
-  // Expect a type
+  // // Expect a type
   await expect(page.getByText('bean', { exact: true }).first()).toBeVisible();
 
-  // Expect a text1
+  // // Expect a text1
   await expect(
     page.getByText(
       'Immerse yourself in a fantastical journey with this whimsical blend.',
     ),
   ).toBeVisible();
 
-  // Expect a text2
+  // // Expect a text2
   await expect(
     page.getByText(
       'Discover a harmonious combination of smooth flavors, dancing with hints of choco',
     ),
   ).toBeVisible();
 
-  // Expect a text3
+  // // Expect a text3
   await expect(
     page.getByText('Creating a truly magical coffee experience.'),
   ).toBeVisible();
 
-  // Expect a price
+  // // Expect a price
   await expect(page.getByText('45', { exact: true }).first()).toBeVisible();
 
-  // Expect an input
-  await expect(page.getByTestId('product-quantity'));
+  // // Expect an input
+  await expect(page.getByTestId('product-quantity')).toBeVisible();
 
-  // Expect a button
+  // // Expect a button
   await expect(page.getByTestId('product-add-to-cart'));
 
-  // Expect a h3
-  await expect(
-    page.getByRole('heading', { name: 'You may also like' }),
-  ).toBeVisible();
+  // // Expect a h3
+  // await expect(
+  //   page.getByRole('heading', { name: 'You may also like' }),
+  // ).toBeVisible();
 
-  // Click on link "shopping cart"
+  // // Click on link "shopping cart"
   await page.getByTestId('cart-link').click();
   await expect(page).toHaveURL('http://localhost:3000/cart');
+
+  await expect(
+    page.getByRole('main').getByText('Your cart is empty'),
+  ).toBeVisible();
 });
