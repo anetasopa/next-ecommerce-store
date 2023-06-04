@@ -3,6 +3,24 @@
 import { cookies } from 'next/headers';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
+import { CookieItem } from './page';
+
+export async function update(
+  quantityToUpdate: CookieItem | undefined,
+  productQuantities: CookieItem[] | undefined,
+  productId: number,
+  quantity: number,
+) {
+  if (quantityToUpdate) {
+    quantityToUpdate.quantity =
+      Number(quantityToUpdate.quantity) + Number(quantity);
+  } else {
+    productQuantities!.push({
+      id: productId,
+      quantity,
+    });
+  }
+}
 
 export async function createOrUpdateQuantity(
   productId: number,
@@ -18,15 +36,7 @@ export async function createOrUpdateQuantity(
     return quantityNumber.id === productId;
   });
 
-  if (quantityToUpdate) {
-    quantityToUpdate.quantity =
-      Number(quantityToUpdate.quantity) + Number(quantity);
-  } else {
-    productQuantities!.push({
-      id: productId,
-      quantity,
-    });
-  }
+  await update(quantityToUpdate, productQuantities, quantity, productId);
 
   await cookies().set('cart', JSON.stringify(productQuantities));
 }
