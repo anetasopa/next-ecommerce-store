@@ -43,8 +43,9 @@ export default async function ProductPage(props: Props) {
             <span>{singleProduct.text3}</span>
           </div>
           <div className={styles.flex}>
-            <p data-test-id="product-price" className={styles.price}>
-              Price: <span> {singleProduct.price}</span>
+            <p className={styles.price}>
+              Price:{' '}
+              <span data-test-id="product-price"> {singleProduct.price}</span>
               EUR
             </p>
           </div>

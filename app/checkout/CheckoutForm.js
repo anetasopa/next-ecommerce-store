@@ -28,6 +28,7 @@ function contactInformation(
             placeholder="First name"
             className={styles.input}
             onChange={(event) => setFirstName(event.currentTarget.value)}
+            required
           />
           {/* <div className={styles.underline}></div> */}
         </label>
@@ -38,6 +39,7 @@ function contactInformation(
             placeholder="Last name"
             className={styles.input}
             onChange={(event) => setLastName(event.currentTarget.value)}
+            required
           />
         </label>
       </div>
@@ -49,6 +51,7 @@ function contactInformation(
           data-test-id="checkout-email"
           placeholder="customer@email.com"
           onChange={(event) => setEmail(event.currentTarget.value)}
+          required
         />
       </label>
     </>
@@ -76,6 +79,7 @@ function shoppingInformation(
           value={adress}
           placeholder="Address"
           onChange={(event) => setAdress(event.currentTarget.value)}
+          required
         />
       </label>
       <div className={styles.addressContainer}>
@@ -86,6 +90,7 @@ function shoppingInformation(
             value={city}
             placeholder="City"
             onChange={(event) => setCity(event.currentTarget.value)}
+            required
           />
         </label>
         <label className={styles.labelFlex}>
@@ -95,6 +100,7 @@ function shoppingInformation(
             value={postCode}
             placeholder="Post Code"
             onChange={(event) => setPostCode(event.currentTarget.value)}
+            required
           />
         </label>
       </div>
@@ -105,6 +111,7 @@ function shoppingInformation(
           value={country}
           placeholder="Country"
           onChange={(event) => setCountry(event.currentTarget.value)}
+          required
         />
       </label>
     </>
@@ -129,6 +136,7 @@ function paymentInformation(
           value={creditCard}
           placeholder="Credit Card Number"
           onChange={(event) => setCreditCard(event.currentTarget.value)}
+          required
         />
       </label>
       <div className={styles.paymentInfo}>
@@ -137,9 +145,10 @@ function paymentInformation(
             className={`${styles.input} ${styles.card} ${styles.data}`}
             type="date"
             data-test-id="checkout-expiration-date"
-            placeholder="05/26"
+            placeholder="05/25"
             value={expiration}
             onChange={(event) => setExpiration(event.currentTarget.value)}
+            required
           />
         </label>
         <label className={styles.labelFlex}>
@@ -149,6 +158,7 @@ function paymentInformation(
             placeholder="Security Code"
             value={securityCode}
             onChange={(event) => setSecurityCode(event.currentTarget.value)}
+            required
           />
         </label>
       </div>
