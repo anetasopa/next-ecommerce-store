@@ -143,7 +143,7 @@ function paymentInformation(
         <label className={styles.labelFlex}>
           <input
             className={`${styles.input} ${styles.card} ${styles.data}`}
-            type="date"
+            // type="date"
             data-test-id="checkout-expiration-date"
             placeholder="05/25"
             value={expiration}
