@@ -19,7 +19,7 @@ function update(
 }
 
 export function updateQuantity(
-  productQuantityCookie: string,
+  productQuantityCookie: string | undefined,
   productId: number,
   quantity: number,
 ) {
