@@ -2,11 +2,8 @@ import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import { cardSum } from './cardSum';
 import styles from './Sum.module.scss';
-
-export function sum(subTotal: number, newValue: number) {
-  return subTotal + newValue;
-}
 
 export default async function TotalSum() {
   const products = await getProducts();
@@ -31,7 +28,7 @@ export default async function TotalSum() {
       {filteredProducts.map((product) => {
         const newSubTotal: number =
           Number(product.price) * Number(product.quantity);
-        total = sum(total, newSubTotal);
+        total = cardSum(total, newSubTotal);
         return (
           <div key={`product-div-${product.id}`}>
             <div className={styles.subtotal}>

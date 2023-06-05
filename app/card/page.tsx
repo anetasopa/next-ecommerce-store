@@ -5,6 +5,7 @@ import { Product } from '../../migrations/1684934780-createTableProducts';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 import { CookieItem } from '../products/[productId]/page';
+import { combines } from './combines';
 import styles from './page.module.scss';
 import QuantityCounter from './QuantityCounter';
 import Sum from './Sum';
@@ -23,7 +24,6 @@ export const metadata = {
 export default async function CardPage() {
   const products = await getProducts();
   const valueCookies = getCookie('cart'); // This is a string
-  console.log(valueCookies);
 
   const productsInCookie: CookieItem[] | undefined = valueCookies
     ? parseJson(valueCookies)
@@ -33,20 +33,7 @@ export default async function CardPage() {
     throw new Error('no cookies');
   }
 
-  const filteredProducts: ProductWithQuantity[] = [];
-
-  productsInCookie.forEach((item: CookieItem) => {
-    const product: Product | undefined = products.find(
-      (product1) => product1.id === item.id,
-    );
-
-    if (product) {
-      filteredProducts.push({
-        ...item,
-        ...product,
-      });
-    }
-  });
+  const filteredProducts = combines(products, productsInCookie);
 
   return (
     <main>
@@ -55,6 +42,7 @@ export default async function CardPage() {
         <div className={styles.containerCardProducts}>
           <div className={styles.cardsContainer}>
             {filteredProducts.map((product: ProductWithQuantity) => {
+              console.log(product);
               return (
                 <div
                   key={`product-div-${product.id}`}
