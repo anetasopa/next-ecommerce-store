@@ -11,8 +11,6 @@
     "migrate": "dotenv -- ley --require tsm"
   },
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "dotenv-cli": "^7.2.1",
     "dotenv-safe": "^8.2.0",
     "ley": "^0.8.1",
@@ -23,7 +21,6 @@
     "react-icons": "^4.8.0",
     "sass": "^1.62.1",
     "secure-json-parse": "^2.7.0",
-    "server-only": "^0.0.1",
     "sharp": "^0.32.1",
     "tsm": "^2.3.0"
   },
