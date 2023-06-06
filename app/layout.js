@@ -1,10 +1,20 @@
-import { Inter } from 'next/font/google';
+// import styles from './globals.scss';
+import './globals.scss';
+// import { Inter } from 'next/font/google';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
-import styles from './globals.scss';
 
-const inter = Inter({ subsets: ['latin'] });
-console.log(inter);
+// const inter = Inter({ subsets: ['latin'] });
+
+// export const inter = Inter({
+//   subsets: ['latin'],
+//   display: 'swap',
+// });
+
+// export const roboto_mono = Roboto_Mono({
+//   subsets: ['latin'],
+//   display: 'swap',
+// });
 
 export const metadata = {
   title: 'Coffeez | The best coffee',
