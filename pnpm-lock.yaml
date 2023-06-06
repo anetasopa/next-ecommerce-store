@@ -1,9 +1,6 @@
 lockfileVersion: '6.0'
 
 dependencies:
-  '@fortawesome/fontawesome-svg-core':
-    specifier: ^6.4.0
-    version: 6.4.0
   '@fortawesome/free-solid-svg-icons':
     specifier: ^6.4.0
     version: 6.4.0

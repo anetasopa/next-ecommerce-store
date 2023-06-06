@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { addQuantity, removeItem, removeQuantity } from './actions';
+import { addQuantity, CartItem, removeItem, removeQuantity } from './actions';
 import { ProductWithQuantity } from './page';
 import styles from './QuantityCounter.module.scss';
 
@@ -13,7 +13,7 @@ export default function QuantityCounter(props: Props) {
   const product: ProductWithQuantity = props.product;
 
   const router = useRouter();
-  const item = { id: product.id, quantity: product.quantity };
+  const item: CartItem = { id: product.id, quantity: product.quantity };
 
   return (
     <form className={styles.quantity}>

@@ -4,12 +4,12 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
 
-type Cart = {
+export type CartItem = {
   id: number;
-  quantity: number;
+  quantity: number | undefined;
 };
 
-export async function removeItem(item: Cart) {
+export async function removeItem(item: CartItem) {
   const productQuantityCookie = getCookie('cart'); // Get cookie from client as string
   const productQuantities = !productQuantityCookie
     ? []
@@ -21,14 +21,14 @@ export async function removeItem(item: Cart) {
   await cookies().set('cart', JSON.stringify(removeCart));
 }
 
-export async function addQuantity(item: Cart) {
+export async function addQuantity(item: CartItem) {
   const productQuantityCookie = getCookie('cart');
 
   const productQuantities = !productQuantityCookie
     ? []
     : parseJson(productQuantityCookie);
 
-  const addValueQuantity = productQuantities?.find((product: Cart) => {
+  const addValueQuantity = productQuantities?.find((product: CartItem) => {
     return product.id === item.id;
   });
 
@@ -40,7 +40,7 @@ export async function addQuantity(item: Cart) {
   await cookies().set('cart', JSON.stringify(productQuantities));
 }
 
-export async function removeQuantity(item: Cart) {
+export async function removeQuantity(item: CartItem) {
   const productQuantityCookie = getCookie('cart');
 
   const productQuantities = !productQuantityCookie

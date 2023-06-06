@@ -13,7 +13,7 @@ import Sum from './Sum';
 export const dynamic = 'force-dynamic';
 
 export type ProductWithQuantity = Product & {
-  quantity: number;
+  quantity: number | undefined;
 };
 
 export const metadata = {
