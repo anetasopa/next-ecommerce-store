@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { getProducts } from '../../database/products';
 import Filter from './Filter';
 import styles from './page.module.scss';

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import SelectProducts from './SelectProducts';
 import styles from './Summary.module.scss';
 
