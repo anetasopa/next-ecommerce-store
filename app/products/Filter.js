@@ -8,7 +8,7 @@ import styles from './Filter.module.scss';
 
 export default function Filter({ products }) {
   const [selectedType, setSelectedType] = useState('');
-  const [searchName, setSearchName] = useState(null);
+  const [searchName, setSearchName] = useState('');
 
   // Search products by name
   if (searchName) {

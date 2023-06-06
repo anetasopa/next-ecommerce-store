@@ -1,4 +1,3 @@
-// import styles from './globals.scss';
 import './globals.scss';
 // import { Inter } from 'next/font/google';
 import Footer from './components/Footer';
