@@ -78,7 +78,7 @@ export default async function CardPage() {
               );
             })}
           </div>
-          {/* @ts-expect-error Async Server Component */}
+
           <Sum />
         </div>
       </div>

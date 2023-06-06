@@ -27,7 +27,7 @@ export default function Filter({ products }) {
       <div className={styles.search}>
         <FaSearch className={styles.icon} />
         <input
-        className={styles.inputSearch}
+          className={styles.inputSearch}
           type=""
           value={searchName}
           onChange={(e) => setSearchName(e.target.value)}

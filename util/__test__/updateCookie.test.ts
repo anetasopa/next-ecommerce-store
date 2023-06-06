@@ -2,7 +2,7 @@ import { expect, test } from '@jest/globals';
 import { updateQuantity } from '../../app/products/[productId]/updateQuantity';
 
 test('Test updating quantity when there are no product in the cart for this product. In other words adding new product.', () => {
-  const result = updateQuantity(null, 1, 3);
+  const result = updateQuantity(undefined, 1, 3);
   console.log(result);
 
   expect(result).toStrictEqual('[{"id":1,"quantity":3}]');
