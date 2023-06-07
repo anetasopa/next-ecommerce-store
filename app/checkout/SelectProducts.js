@@ -10,7 +10,7 @@ export default function SelectProducts({ filteredProducts, numberOfProducts }) {
         return (
           <div key={`product-div-${product.id}`} className={styles.productCard}>
             <Image
-              alt=""
+              alt={filteredProducts.name}
               className={styles.img}
               src={`/images/${product.name}.png`}
               width={150}

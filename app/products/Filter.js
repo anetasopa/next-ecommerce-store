@@ -55,7 +55,7 @@ export default function Filter({ products }) {
             >
               <div className={styles.container}>
                 <Image
-                  alt=""
+                  alt={product.name}
                   data-test-id="product-image"
                   src={`/images/${product.name}.png`}
                   width={250}
