@@ -1,4 +1,6 @@
-# Ecommerce store next.js 
+# Ecommerce store next.js
+
+Hello World
 
 <img width="450" alt="Screenshot 2023-06-02 at 00 43 08" src="https://github.com/butterfly-123/next-ecommerce-store/assets/58802893/6bb934bd-30c9-49de-8bfc-e2668d25e37b">
 
@@ -7,7 +9,6 @@
 Coffeez, my Coffee e-commerce project built with next.js during the upLeveled bootcamp, provides a wide selection of coffee varieties to users. By exploring the store page, users can choose products, navigate to dedicated pages for more information, modify quantities in the basket, view the total amount, and complete the checkout process to complete their purchase.
 
 <img width="450" alt="Screenshot 2023-06-02 at 00 52 31" src="https://github.com/butterfly-123/next-ecommerce-store/assets/58802893/ad4ee797-4490-4320-993d-2d9801c70a70">
-
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
