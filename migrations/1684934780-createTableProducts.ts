@@ -7,7 +7,7 @@ export type Product = {
   text2: string;
   text3: string;
   type: string;
-  price: number;
+  price: number | null;
 };
 
 export async function up(sql: Sql) {
