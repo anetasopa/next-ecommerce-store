@@ -1,7 +1,5 @@
 # Ecommerce store next.js
 
-Hello World
-
 <img width="450" alt="Screenshot 2023-06-02 at 00 43 08" src="https://github.com/butterfly-123/next-ecommerce-store/assets/58802893/6bb934bd-30c9-49de-8bfc-e2668d25e37b">
 
 ### What is the project about? ❓
