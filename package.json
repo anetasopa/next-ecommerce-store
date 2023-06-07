@@ -21,6 +21,7 @@
     "react-icons": "^4.8.0",
     "sass": "^1.62.1",
     "secure-json-parse": "^2.7.0",
+    "server-only": "^0.0.1",
     "sharp": "^0.32.1",
     "tsm": "^2.3.0"
   },
