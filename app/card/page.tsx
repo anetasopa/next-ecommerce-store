@@ -50,7 +50,7 @@ export default async function CardPage() {
                 >
                   <div className={styles.productCard}>
                     <Image
-                      alt={filteredProducts.name}
+                      alt={product.name}
                       className={styles.img}
                       src={`/images/${product.name}.png`}
                       width={150}
