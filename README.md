@@ -1,7 +1,5 @@
 # Ecommerce store next.js
 
-Hello World
-
 <img width="450" alt="Screenshot 2023-06-02 at 00 43 08" src="https://github.com/butterfly-123/next-ecommerce-store/assets/58802893/6bb934bd-30c9-49de-8bfc-e2668d25e37b">
 
 ### What is the project about? ❓
@@ -14,17 +12,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### How to start? 🤔
 
-First, run the development server:
+To begin the repository setup, execute the following command:
+
+```bash
+pnpm install
+```
+
+To activate the localhost, run the command:
 
 ```bash
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ### Learn More 💡
 
@@ -35,8 +35,14 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-### Deploy on Vercel
+### Technologies ⚒️
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. [scss](https://www.npmjs.com/package/sass)
+2. [postgres](https://www.npmjs.com/package/postgres)
+3. [jest](https://www.npmjs.com/package/jest)
+4. [playwright](https://www.npmjs.com/package/playwright)
+5. [github actions](https://docs.github.com/en/actions)
+5. [vercel](https://vercel.com)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project has been deployed on [link](https://next-ecommerce-store-chi.vercel.app).
+
