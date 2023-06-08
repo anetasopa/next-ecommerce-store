@@ -93,6 +93,11 @@
       @media (max-width: 480px) {
         li {
           padding: 0 5px;
+          margin-left: 0;
+
+          .link {
+            font-size: 0.8rem;
+          }
         }
       }
     }

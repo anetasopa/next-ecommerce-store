@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaEnvelope, FaLocationArrow, FaPhone } from 'react-icons/fa';
 import styles from './Footer.module.scss';
 
@@ -39,16 +40,24 @@ export default function Footer() {
         <h6>Quick Links</h6>
         <ul>
           <li className={styles.li}>
-            <p>Home</p>
+            <Link className={styles.footerLinks} href="/#">
+              Home
+            </Link>
           </li>
           <li className={styles.li}>
-            <p>About Us</p>
+            <Link className={styles.footerLinks} href="#aboutUs">
+              About Us
+            </Link>
           </li>
           <li className={styles.li}>
-            <p>Benefits</p>
+            <Link className={styles.footerLinks} href="#benefits">
+              Benefits
+            </Link>
           </li>
           <li className={styles.li}>
-            <p>Hours</p>
+            <Link className={styles.footerLinks} href="#hours">
+              Hours
+            </Link>
           </li>
         </ul>
       </div>

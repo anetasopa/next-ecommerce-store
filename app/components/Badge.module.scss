@@ -11,4 +11,13 @@
   justify-content: center;
   z-index: 1;
   font-size: 0.8rem;
+
+  @media (max-width: 480px) {
+    & {
+      margin-top: -20px;
+      margin-left: 20px;
+      width: 18px;
+      height: 18px;
+    }
+  }
 }

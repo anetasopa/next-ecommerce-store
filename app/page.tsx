@@ -57,7 +57,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.containerSectionBenefits}>
+      <section id="benefits" className={styles.containerSectionBenefits}>
         <div>
           <div>
             <FaCoffee className={styles.icon} />
@@ -82,7 +82,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.containerHours}>
+      <section id="hours" className={styles.containerHours}>
         <div className={styles.hoursText}>
           <h3>We make the delicious coffee.</h3>
           <p>
