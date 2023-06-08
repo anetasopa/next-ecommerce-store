@@ -102,6 +102,7 @@
       color: var(--color-white);
       font-weight: bold;
       text-decoration: none;
+      text-align: center;
 
       &:hover {
         cursor: pointer;
@@ -120,6 +121,7 @@
       color: var(--button-color);
       font-weight: bold;
       text-decoration: none;
+      text-align: center;
 
       &:hover {
         cursor: pointer;
@@ -132,13 +134,14 @@
 
 @media (max-width: 480px) {
   .container {
+    height: auto;
     padding-left: 0;
-    height: 70vh;
+    margin-bottom: 30px !important;
 
     h1 {
       font-size: 2.125rem;
       padding: 0 50px;
-      margin-top: 50px;
+      margin-top: 30px;
 
       span {
         font-size: 2.5rem;
@@ -151,13 +154,19 @@
     }
 
     div {
+      display: grid;
+
       .heroButtonGoToProduct {
         padding: 10px 25px;
         margin-left: 50px;
+        width: 55%;
       }
 
       .heroButtonAboutUs {
         padding: 10px 25px;
+        margin-left: 50px;
+        width: 40%;
+        margin-bottom: 30px;
       }
     }
   }
@@ -186,6 +195,7 @@
       border: 1px solid var(--button-color);
       font-weight: bold;
       text-decoration: none;
+      text-align: center;
 
       &:hover {
         cursor: pointer;

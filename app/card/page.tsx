@@ -78,7 +78,6 @@ export default async function CardPage() {
               );
             })}
           </div>
-
           <Sum />
         </div>
       </div>
