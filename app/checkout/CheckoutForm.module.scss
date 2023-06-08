@@ -7,10 +7,6 @@ form {
       font-weight: bold;
       margin-top: 24px;
     }
-
-    .icon {
-      margin-top: 20px;
-    }
   }
 
   .labelFlex {
@@ -38,7 +34,7 @@ form {
     width: 100%;
     margin-top: 20px;
     padding-left: 20px;
-    color: var(--color-span);
+    color: var(--color-h);
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #ccc;
@@ -47,6 +43,21 @@ form {
 
     &:focus {
       outline: none;
+    }
+  }
+
+  .errorContainer {
+    display: flex;
+
+    .icon {
+      width: 10px;
+      color: red;
+      margin-left: 5px;
+    }
+    .errorMessage {
+      color: red;
+      font-size: 0.6rem;
+      margin-top: 5px;
     }
   }
 
