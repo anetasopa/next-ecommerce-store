@@ -37,13 +37,13 @@
 
 .filter {
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 85.5%;
   transform: translate(-50%, -50%);
 
   @media (max-width: 480px) {
     & {
-      top: 15%;
+      top: 20%;
       left: 85%;
     }
   }
