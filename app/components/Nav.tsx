@@ -14,13 +14,7 @@ export default function Nav() {
         </div>
         <ul>
           <li>
-            <Link
-              href="/"
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
-            >
+            <Link className={styles.link} href="/">
               Home
             </Link>
           </li>
@@ -28,10 +22,7 @@ export default function Nav() {
             <Link
               data-test-id="products-link"
               href="/products"
-              style={{
-                color: 'black',
-                textDecoration: 'none',
-              }}
+              className={styles.link}
             >
               Products
             </Link>
