@@ -9,10 +9,7 @@ export default function Footer() {
         <ul>
           <li className={styles.li}>
             <FaLocationArrow className={styles.icon} />
-            <p>
-              1001 Antoker Isle Apt. 896, Coffee Cafe Center, Melonilie 1001,
-              Vienna.
-            </p>
+            <p>123 Coffee Lane, Aroma City, Java County, Caffeine Kingdom</p>
           </li>
           <li className={styles.li}>
             <FaPhone className={styles.icon} />
