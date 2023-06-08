@@ -4,15 +4,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { Product } from '../../migrations/1684934780-createTableProducts';
 import styles from './Filter.module.scss';
 
-export default function Filter({ products }) {
+type Props = {
+  products: Product[];
+};
+
+export default function Filter(props: Props) {
+  let products: Product[] = props.products;
+
   const [selectedType, setSelectedType] = useState('');
   const [searchName, setSearchName] = useState('');
 
   // Search products by name
   if (searchName) {
-    const fn = (o) => o.name.includes(searchName);
+    const fn = (product: Product) => product.name.includes(searchName);
 
     products = products.filter(fn);
   }
@@ -24,7 +31,7 @@ export default function Filter({ products }) {
 
   return (
     <>
-      <div className={styles.search}>
+      <div>
         <FaSearch className={styles.icon} />
         <input
           className={styles.inputSearch}
@@ -33,6 +40,7 @@ export default function Filter({ products }) {
           onChange={(e) => setSearchName(e.target.value)}
         />
       </div>
+
       <div className={styles.filter}>
         <select
           id="typeFilter"
@@ -45,6 +53,7 @@ export default function Filter({ products }) {
           <option value="bean">Bean</option>
         </select>
       </div>
+
       <div className={styles.productsCardsContainer}>
         {filteredProducts.map((product) => {
           return (
@@ -67,10 +76,6 @@ export default function Filter({ products }) {
                     data-test-id={`product-${product.id}`}
                     className={styles.a}
                     href={`/products/${product.id}`}
-                    style={{
-                      color: 'black',
-                      textDecoration: 'none',
-                    }}
                   >
                     OPEN
                   </Link>
@@ -80,9 +85,6 @@ export default function Filter({ products }) {
                 data-test-id={`product-${product.id}`}
                 className={styles.productName}
                 href={`/products/${product.id}`}
-                style={{
-                  textDecoration: 'none',
-                }}
               >
                 {product.name}
               </Link>

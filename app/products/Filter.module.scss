@@ -1,55 +1,31 @@
-.search {
+.icon {
+  color: var(--color-icon);
   position: absolute;
-  top: 17%;
-  left: 4.5%;
-
-  @media (max-width: 480px) {
-    & {
-      top: 22%;
-      left: 20%;
-    }
-  }
-
-  .icon {
-    color: var(--color-icon);
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    margin-left: 12px;
-    margin-top: 12px;
-  }
-
-  .inputSearch {
-    background-color: var(--color-white);
-    color: var(--color-span);
-    padding: 12px;
-    width: 250px;
-    font-weight: 400;
-    border: none;
-    font-size: 20px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 20px;
-    border-radius: var(--border-radius);
-    outline: none;
-    font-family: var(--font-family-three);
-    padding-left: 45px;
-  }
+  width: 22px;
+  height: 22px;
+  margin-left: 12px;
+  margin-top: 12px;
 }
 
-.filter {
-  position: absolute;
-  top: 20%;
-  left: 85.5%;
-  transform: translate(-50%, -50%);
-
-  @media (max-width: 480px) {
-    & {
-      top: 15%;
-      left: 85%;
-    }
-  }
+.inputSearch {
+  background-color: var(--color-white);
+  color: var(--color-span);
+  padding: 12px;
+  width: 250px;
+  font-weight: 400;
+  border: none;
+  font-size: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 20px;
+  border-radius: var(--border-radius);
+  outline: none;
+  font-family: var(--font-family-three);
+  padding-left: 45px;
+  margin-bottom: 30px;
 }
 
 .filter select {
+  margin-bottom: 30px;
+
   background-color: var(--color-white);
   color: var(--color-span);
   padding: 12px;
@@ -63,12 +39,6 @@
   appearance: button;
   outline: none;
   font-family: var(--font-family-three);
-
-  @media (max-width: 480px) {
-    & {
-      width: 70px;
-    }
-  }
 }
 
 .filter select:hover {
@@ -152,9 +122,10 @@
   }
 
   .button .a {
+    text-decoration: none;
     width: 200px;
     text-align: center;
-    color: var(--color-white) !important;
+    color: var(--color-white);
     font-weight: bold;
     z-index: 1;
   }
@@ -174,11 +145,11 @@
     border-radius: var(--border-radius);
 
     .productName {
-      text-decoration: none;
       letter-spacing: 0.5px;
       font-size: 1.125rem;
       font-weight: bolder;
       color: var(--color-h);
+      text-decoration: none;
     }
 
     .productType {

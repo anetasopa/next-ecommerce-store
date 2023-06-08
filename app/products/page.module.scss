@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 24px;
   margin-bottom: 50px;
 
   h1 {
@@ -11,12 +10,6 @@
     float: left;
     color: var(--color-h);
     padding: 30px 0;
-
-    @media (max-width: 480px) {
-      & {
-        margin-bottom: 60px;
-      }
-    }
   }
 
   .productsCardsContainer {
@@ -25,12 +18,10 @@
     gap: 50px;
 
     .container {
-      position: relative;
       height: 500px;
     }
 
     .overlay {
-      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
@@ -45,7 +36,6 @@
     }
 
     .img {
-      position: absolute;
       width: 700px;
       height: 500px;
       left: 0;
@@ -58,11 +48,10 @@
       border-radius: var(--border-radius);
       color: white;
       font-weight: bold;
-      position: absolute;
       opacity: 0;
       transition: opacity 0.35s ease;
-      margin-top: -125px;
-      margin-left: 25px;
+      margin-top: -90px;
+      margin-left: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -73,7 +62,6 @@
     }
 
     .button .a {
-      width: 200px;
       text-align: center;
       color: var(--color-white) !important;
       font-weight: bold;
