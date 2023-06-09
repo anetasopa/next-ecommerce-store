@@ -186,7 +186,8 @@ function confirmButton(router, error) {
     <button
       data-test-id="checkout-confirm-order"
       className={styles.button}
-      onClick={error ? () => router.push('/thank') : null}
+      onClick={() => router.push('/thank')}
+      // onClick={error ? () => router.push('/thank') : null}
       // disabled={!isValid}
     >
       Confirm Order
