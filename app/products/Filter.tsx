@@ -72,6 +72,7 @@ export default function Filter(props: Props) {
                     src={`/images/${product.name}.png`}
                     width={250}
                     height={200}
+                    priority={true}
                   />
                 </Link>
                 <div className={styles.overlay}> </div>
