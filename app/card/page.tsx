@@ -14,6 +14,7 @@ export const dynamic = 'force-dynamic';
 
 export type ProductWithQuantity = Product & {
   quantity: number | undefined;
+  name: string;
 };
 
 export const metadata = {
@@ -42,7 +43,6 @@ export default async function CardPage() {
         <div className={styles.containerCardProducts}>
           <div className={styles.cardsContainer}>
             {filteredProducts.map((product: ProductWithQuantity) => {
-              console.log(product);
               return (
                 <div
                   key={`product-div-${product.id}`}
