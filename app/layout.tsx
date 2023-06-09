@@ -15,12 +15,16 @@ import Nav from './components/Nav';
 //   display: 'swap',
 // });
 
+type LayoutProps = {
+  children: string;
+};
+
 export const metadata = {
   title: 'Coffeez | The best coffee',
   description: 'The tastiest coffee ever.',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body>
