@@ -59,7 +59,6 @@ export default function Filter(props: Props) {
           return (
             <div
               key={`product-div-${product.id}`}
-              data-test-id={`product-${product.id}`}
               className={styles.productCard}
             >
               <div className={styles.container}>
@@ -77,11 +76,7 @@ export default function Filter(props: Props) {
                 </Link>
                 <div className={styles.overlay}> </div>
                 <div className={styles.button}>
-                  <Link
-                    data-test-id={`product-${product.id}`}
-                    className={styles.a}
-                    href={`/products/${product.id}`}
-                  >
+                  <Link className={styles.a} href={`/products/${product.id}`}>
                     OPEN
                   </Link>
                 </div>
