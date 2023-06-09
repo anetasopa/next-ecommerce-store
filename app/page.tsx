@@ -5,6 +5,11 @@ import coffee from '../public/images/cup.png';
 import makeCoffee from '../public/images/makeCoffee.png';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Homepage overview | Coffez',
+  description: 'Homepage',
+};
+
 export default function HomePage() {
   return (
     <main>
