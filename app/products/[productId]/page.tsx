@@ -7,6 +7,11 @@ import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 
+export const metadata = {
+  title: 'Product Overview | Coffez',
+  description: 'Product',
+};
+
 export type CookieItem = {
   id: number;
   quantity: number;
