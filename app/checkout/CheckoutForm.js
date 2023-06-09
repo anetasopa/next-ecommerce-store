@@ -180,20 +180,6 @@ function paymentInformation(
   );
 }
 
-function confirmButton(router, error) {
-  return (
-    <button
-      data-test-id="checkout-confirm-order"
-      className={styles.button}
-      // onClick={() => router.push('/thank')}
-      onClick={error ? () => router.push('/thank') : null}
-      // disabled={!isValid}
-    >
-      Confirm Order
-    </button>
-  );
-}
-
 const formValidationSchema = Yup.object().shape({
   firstName: Yup.string().required(),
   lastName: Yup.string().required(),
@@ -221,6 +207,23 @@ export default function CheckoutForm() {
   const [expiration, setExpiration] = useState('');
   const [securityCode, setSecurityCode] = useState('');
   const [error, setError] = useState();
+
+  function validate() {
+    return (
+      firstName.length &&
+      lastName.length &&
+      email.length &&
+      address.length &&
+      city.length &&
+      postCode.length &&
+      country.length &&
+      creditCard.length &&
+      expiration.length &&
+      securityCode.length
+    );
+  }
+
+  const isValid = validate();
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -295,7 +298,14 @@ export default function CheckoutForm() {
           error,
         )}
       </div>
-      {confirmButton(router, error)}
+      <button
+        data-test-id="checkout-confirm-order"
+        className={styles.button}
+        onClick={isValid ? () => router.push('/thank') : null}
+      >
+        Confirm Order
+      </button>
+      {/* {confirmButton(router, error)} */}
     </form>
   );
 }
