@@ -181,13 +181,12 @@ function paymentInformation(
 }
 
 function confirmButton(router, error) {
-  console.log({ error });
   return (
     <button
       data-test-id="checkout-confirm-order"
       className={styles.button}
-      onClick={() => router.push('/thank')}
-      // onClick={error ? () => router.push('/thank') : null}
+      // onClick={() => router.push('/thank')}
+      onClick={error ? () => router.push('/thank') : null}
       // disabled={!isValid}
     >
       Confirm Order
