@@ -17,6 +17,7 @@ type Props = {
 };
 
 export default async function ProductPage(props: Props) {
+  console.log(props);
   const singleProduct = await getProductById(Number(props.params.productId));
   const products = await getProducts();
 

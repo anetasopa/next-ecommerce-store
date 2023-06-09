@@ -63,13 +63,18 @@ export default function Filter(props: Props) {
               className={styles.productCard}
             >
               <div className={styles.container}>
-                <Image
-                  alt={product.name}
-                  data-test-id="product-image"
-                  src={`/images/${product.name}.png`}
-                  width={250}
-                  height={200}
-                />
+                <Link
+                  href={`/products/${product.id}`}
+                  data-test-id={`product-${product.id}`}
+                >
+                  <Image
+                    alt={product.name}
+                    data-test-id="product-image"
+                    src={`/images/${product.name}.png`}
+                    width={250}
+                    height={200}
+                  />
+                </Link>
                 <div className={styles.overlay}> </div>
                 <div className={styles.button}>
                   <Link
@@ -82,7 +87,6 @@ export default function Filter(props: Props) {
                 </div>
               </div>
               <Link
-                data-test-id={`product-${product.id}`}
                 className={styles.productName}
                 href={`/products/${product.id}`}
               >
