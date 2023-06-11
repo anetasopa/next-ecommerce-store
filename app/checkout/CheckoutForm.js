@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaExclamationCircle } from 'react-icons/fa';
 import * as Yup from 'yup';
+import { clearCookies } from './actions';
 import styles from './CheckoutForm.module.scss';
 
 const renderError = (error, key) => {
@@ -196,53 +197,24 @@ const formValidationSchema = Yup.object().shape({
 export default function CheckoutForm() {
   const router = useRouter();
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
-  const [postCode, setPostCode] = useState('');
-  const [city, setCity] = useState('');
-  const [country, setCountry] = useState('');
-  const [creditCard, setCreditCard] = useState('');
-  const [expiration, setExpiration] = useState('');
-  const [securityCode, setSecurityCode] = useState('');
-  const [error, setError] = useState();
+  const [firstName, setFirstName] = useState('asfasdf');
+  const [lastName, setLastName] = useState('asdfasdf');
+  const [email, setEmail] = useState('asdfasdf@asdfa.pl');
+  const [address, setAddress] = useState('asdfasdf');
+  const [postCode, setPostCode] = useState('asdfasd');
+  const [city, setCity] = useState('asdfasdf');
+  const [country, setCountry] = useState('asdfasdf');
+  const [creditCard, setCreditCard] = useState('asdfas');
+  const [expiration, setExpiration] = useState('asfasdf');
+  const [securityCode, setSecurityCode] = useState('asdfasdf');
+  const [error, setError] = useState(null);
 
-  function validate() {
-    return (
-      firstName.length &&
-      lastName.length &&
-      email.length &&
-      address.length &&
-      city.length &&
-      postCode.length &&
-      country.length &&
-      creditCard.length &&
-      expiration.length &&
-      securityCode.length
-    );
-  }
+  console.log({ ERROR: error });
 
-  const isValid = validate();
-
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     event.preventDefault();
 
     try {
-      // const result = formValidationSchema.validateSync({
-      //   firstName,
-      //   lastName,
-      //   email,
-      //   address,
-      //   // postCode,
-      //   // city,
-      //   // country,
-      //   // creditCard,
-      //   // expiration,
-      //   // securityCode,
-      // });
-
-      setError(null);
       formValidationSchema.validateSync(
         {
           firstName,
@@ -258,6 +230,12 @@ export default function CheckoutForm() {
         },
         { abortEarly: false },
       );
+
+      setError(null);
+
+      await clearCookies();
+      router.refresh();
+      router.push('/thank');
     } catch (e) {
       setError(e);
     }
@@ -298,11 +276,7 @@ export default function CheckoutForm() {
           error,
         )}
       </div>
-      <button
-        data-test-id="checkout-confirm-order"
-        className={styles.button}
-        onClick={isValid ? () => router.push('/thank') : null}
-      >
+      <button data-test-id="checkout-confirm-order" className={styles.button}>
         Confirm Order
       </button>
       {/* {confirmButton(router, error)} */}
