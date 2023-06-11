@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaExclamationCircle } from 'react-icons/fa';
-import * as Yup from 'yup';
+// import * as Yup from 'yup';
 import { clearCookies } from './actions';
 import styles from './CheckoutForm.module.scss';
 
@@ -181,18 +181,18 @@ function paymentInformation(
   );
 }
 
-const formValidationSchema = Yup.object().shape({
-  firstName: Yup.string().required(),
-  lastName: Yup.string().required(),
-  email: Yup.string().email().required(),
-  address: Yup.string().required(),
-  postCode: Yup.string().required(),
-  city: Yup.string().required(),
-  country: Yup.string().required(),
-  creditCard: Yup.string().required(),
-  expiration: Yup.string().trim().required(),
-  securityCode: Yup.string().required(),
-});
+// const formValidationSchema = Yup.object().shape({
+//   firstName: Yup.string().required(),
+//   lastName: Yup.string().required(),
+//   email: Yup.string().email().required(),
+//   address: Yup.string().required(),
+//   postCode: Yup.string().required(),
+//   city: Yup.string().required(),
+//   country: Yup.string().required(),
+//   creditCard: Yup.string().required(),
+//   expiration: Yup.string().trim().required(),
+//   securityCode: Yup.string().required(),
+// });
 
 export default function CheckoutForm() {
   const router = useRouter();
@@ -207,7 +207,8 @@ export default function CheckoutForm() {
   const [creditCard, setCreditCard] = useState('');
   const [expiration, setExpiration] = useState('');
   const [securityCode, setSecurityCode] = useState('');
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
+  const error = null;
 
   console.log({ ERROR: error });
 
