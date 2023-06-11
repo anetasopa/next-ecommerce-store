@@ -215,29 +215,29 @@ export default function CheckoutForm() {
     event.preventDefault();
 
     try {
-      formValidationSchema.validateSync(
-        {
-          firstName,
-          lastName,
-          email,
-          address,
-          postCode,
-          city,
-          country,
-          creditCard,
-          expiration,
-          securityCode,
-        },
-        { abortEarly: false },
-      );
+      // formValidationSchema.validateSync(
+      //   {
+      //     firstName,
+      //     lastName,
+      //     email,
+      //     address,
+      //     postCode,
+      //     city,
+      //     country,
+      //     creditCard,
+      //     expiration,
+      //     securityCode,
+      //   },
+      //   { abortEarly: false },
+      // );
 
-      setError(null);
+      // setError(null);
 
       await clearCookies();
       router.refresh();
       router.push('/thank');
     } catch (e) {
-      setError(e);
+      // setError(e);
     }
   };
 

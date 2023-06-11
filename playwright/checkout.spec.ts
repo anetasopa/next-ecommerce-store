@@ -11,7 +11,7 @@ test('checkout test', async ({ page }) => {
   await page.getByTestId('checkout-last-name').fill('last name');
 
   await expect(page.getByTestId('checkout-email')).toBeVisible();
-  await page.getByTestId('checkout-email').fill('email');
+  await page.getByTestId('checkout-email').fill('email@email.at');
 
   await expect(page.getByTestId('checkout-address')).toBeVisible();
   await page.getByTestId('checkout-address').fill('address');
