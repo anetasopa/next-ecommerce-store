@@ -22,7 +22,7 @@ export const metadata = {
   description: 'Checkout your shopping cart',
 };
 
-export default async function CardPage() {
+export default async function CartPage() {
   const products = await getProducts();
   const valueCookies = getCookie('cart'); // This is a string
 
@@ -40,15 +40,15 @@ export default async function CardPage() {
     <main>
       <div className={styles.container}>
         <h1>Shopping Cart</h1>
-        <div className={styles.containerCardProducts}>
-          <div className={styles.cardsContainer}>
+        <div className={styles.containerCartProducts}>
+          <div className={styles.cartsContainer}>
             {filteredProducts.map((product: ProductWithQuantity) => {
               return (
                 <div
                   key={`product-div-${product.id}`}
                   data-test-id={`cart-product-${product.id}`}
                 >
-                  <div className={styles.productCard}>
+                  <div className={styles.productCart}>
                     <Image
                       alt={product.name}
                       className={styles.img}

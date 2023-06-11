@@ -1,7 +1,6 @@
 import { expect, test } from '@playwright/test';
 
 test('checkout test', async ({ page }) => {
-  test.setTimeout(20000);
   await page.goto('http://localhost:3000/checkout');
 
   // Check checkout form

@@ -3,7 +3,7 @@ import { getProducts } from '../../database/products';
 import { Product } from '../../migrations/1684934780-createTableProducts';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import { cardSum } from './cardSum';
+import { cartSum } from './cartSum';
 import { ProductWithQuantity } from './page';
 import styles from './Sum.module.scss';
 
@@ -34,7 +34,7 @@ export default async function TotalSum() {
       {filteredProducts.map((product: ProductWithQuantity) => {
         const newSubTotal: number =
           Number(product.price) * Number(product.quantity);
-        total = cardSum(total, newSubTotal);
+        total = cartSum(total, newSubTotal);
         return (
           <div key={`product-div-${product.id}`}>
             <div className={styles.subtotal}>
