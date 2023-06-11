@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals';
-import { combines } from '../../app/card/combines';
+import { combines } from '../../app/cart/combines';
 
 test('Test combines products with quantities from the cookie items', () => {
   const products = [

@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals';
-import { cardSum } from '../../app/card/cardSum';
+import { cardSum } from '../../app/cart/cardSum';
 
 test('Testing sum function', () => {
   expect(cardSum(5, 3)).toBe(8);
