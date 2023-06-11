@@ -1,17 +1,17 @@
 import { expect, test } from '@jest/globals';
-import { cardSum } from '../../app/cart/cardSum';
+import { cartSum } from '../../app/cart/cartSum';
 
 test('Testing sum function', () => {
-  expect(cardSum(5, 3)).toBe(8);
-  expect(cardSum(0, 7)).toBe(7);
-  expect(cardSum(0, 0)).toBe(0);
+  expect(cartSum(5, 3)).toBe(8);
+  expect(cartSum(0, 7)).toBe(7);
+  expect(cartSum(0, 0)).toBe(0);
 });
 
 test('Throws an error', () => {
   // @ts-expect-error testing incorrect arguments
-  expect(() => cardSum(1, '1')).toThrow('Pass only numbers!');
+  expect(() => cartSum(1, '1')).toThrow('Pass only numbers!');
   // @ts-expect-error testing incorrect arguments
-  expect(() => cardSum('asd', '1')).toThrow('Pass only numbers!');
+  expect(() => cartSum('asd', '1')).toThrow('Pass only numbers!');
   // @ts-expect-error testing incorrect arguments
-  expect(() => cardSum(1, false)).toThrow('Pass only numbers!');
+  expect(() => cartSum(1, false)).toThrow('Pass only numbers!');
 });
