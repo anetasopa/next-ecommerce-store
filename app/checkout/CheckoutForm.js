@@ -197,16 +197,16 @@ const formValidationSchema = Yup.object().shape({
 export default function CheckoutForm() {
   const router = useRouter();
 
-  const [firstName, setFirstName] = useState('asfasdf');
-  const [lastName, setLastName] = useState('asdfasdf');
-  const [email, setEmail] = useState('asdfasdf@asdfa.pl');
-  const [address, setAddress] = useState('asdfasdf');
-  const [postCode, setPostCode] = useState('asdfasd');
-  const [city, setCity] = useState('asdfasdf');
-  const [country, setCountry] = useState('asdfasdf');
-  const [creditCard, setCreditCard] = useState('asdfas');
-  const [expiration, setExpiration] = useState('asfasdf');
-  const [securityCode, setSecurityCode] = useState('asdfasdf');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [address, setAddress] = useState('');
+  const [postCode, setPostCode] = useState('');
+  const [city, setCity] = useState('');
+  const [country, setCountry] = useState('');
+  const [creditCard, setCreditCard] = useState('');
+  const [expiration, setExpiration] = useState('');
+  const [securityCode, setSecurityCode] = useState('');
   const [error, setError] = useState(null);
 
   console.log({ ERROR: error });
