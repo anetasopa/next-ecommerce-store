@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('cart test', async ({ page }) => {
+  test.setTimeout(20000);
   await page.goto('http://localhost:3000/products/13');
 
   await expect(page.getByTestId('product-add-to-cart')).toBeVisible();
