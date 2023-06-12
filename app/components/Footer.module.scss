@@ -3,7 +3,7 @@
   grid-gap: 40px;
   grid-template-columns: 2fr 2fr 1fr;
   background: var(--background-color-footer);
-  padding: 1.5rem 50px;
+  padding: 30px 50px;
 
   .contactUs {
     h6 {
@@ -58,7 +58,7 @@
 
     form {
       display: flex;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
 
       input {
         background: rgba(255, 255, 255, 0.1);
@@ -100,6 +100,15 @@
       list-style: none;
       margin-bottom: 10px;
 
+      .footerLinks {
+        text-decoration: none;
+        color: #979797;
+      }
+
+      .footerLinks:hover {
+        cursor: pointer;
+      }
+
       p {
         font-weight: normal;
         font-size: 16px;
@@ -114,24 +123,26 @@
 @media (max-width: 480px) {
   .footer {
     display: block;
+    padding: 0 50px;
 
     .contactUs {
       h6 {
-        margin-top: 30px;
+        padding-top: 40px;
         margin-bottom: 10px;
       }
     }
 
     .newsletter {
       h6 {
-        margin-top: 30px;
+        padding-top: 40px;
         margin-bottom: 10px;
       }
     }
 
     .quickLinks {
+      padding-bottom: 30px;
       h6 {
-        margin-top: 30px;
+        padding-top: 40px;
         margin-bottom: 10px;
       }
     }

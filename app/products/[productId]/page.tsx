@@ -7,6 +7,11 @@ import QuantityCounter from './QuantityCounter';
 
 export const dynamic = 'force-dynamic';
 
+export const metadata = {
+  title: 'Product Overview | Coffez',
+  description: 'Product',
+};
+
 export type CookieItem = {
   id: number;
   quantity: number;
@@ -17,6 +22,7 @@ type Props = {
 };
 
 export default async function ProductPage(props: Props) {
+  console.log(props);
   const singleProduct = await getProductById(Number(props.params.productId));
   const products = await getProducts();
 
@@ -45,7 +51,7 @@ export default async function ProductPage(props: Props) {
           <div className={styles.flex}>
             <p className={styles.price}>
               Price:{' '}
-              <span data-test-id="product-price"> {singleProduct.price}</span>
+              <span data-test-id="product-price"> {singleProduct.price}</span>{' '}
               EUR
             </p>
           </div>

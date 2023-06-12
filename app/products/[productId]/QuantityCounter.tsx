@@ -37,7 +37,7 @@ export default function QuantityCounter(props: Props) {
           await createOrUpdateQuantity(props.productId, quantity);
         }}
       >
-        Add To Card
+        Add To Cart
       </button>
     </form>
   );

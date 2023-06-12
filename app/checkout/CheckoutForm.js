@@ -2,8 +2,25 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { FaQuestionCircle } from 'react-icons/fa';
+import { FaExclamationCircle } from 'react-icons/fa';
+// import * as Yup from 'yup';
+import { clearCookies } from './actions';
 import styles from './CheckoutForm.module.scss';
+
+const renderError = (error, key) => {
+  const errorName = error?.inner?.find((e) => e.path === key);
+
+  if (!errorName) {
+    return null;
+  }
+
+  return (
+    <div className={styles.errorContainer}>
+      <p className={styles.errorMessage}>{errorName.message}</p>{' '}
+      <FaExclamationCircle className={styles.icon} />
+    </div>
+  );
+};
 
 function contactInformation(
   firstName,
@@ -12,12 +29,12 @@ function contactInformation(
   setLastName,
   email,
   setEmail,
+  error,
 ) {
   return (
     <>
       <div className={styles.containerText}>
         <h2 className={styles.contactInformationText}>Contact Information</h2>{' '}
-        <FaQuestionCircle className={styles.icon} />
       </div>
       <div className={styles.nameContainer}>
         <label className={styles.labelFlex}>
@@ -27,59 +44,57 @@ function contactInformation(
             placeholder="First name"
             className={styles.input}
             onChange={(event) => setFirstName(event.currentTarget.value)}
-            required
           />
-          {/* <div className={styles.underline}></div> */}
+          {renderError(error, 'firstName')}
         </label>
         <label className={styles.labelFlex}>
           <input
             data-test-id="checkout-last-name"
             value={lastName}
-            placeholder="Last name"
+            placeholder="Last Name"
             className={styles.input}
             onChange={(event) => setLastName(event.currentTarget.value)}
-            required
           />
+          {renderError(error, 'lastName')}
         </label>
       </div>
       <label>
         <input
           className={styles.input}
-          type="email"
           value={email}
           data-test-id="checkout-email"
           placeholder="customer@email.com"
           onChange={(event) => setEmail(event.currentTarget.value)}
-          required
         />
+        {renderError(error, 'email')}
       </label>
     </>
   );
 }
 
 function shoppingInformation(
-  adress,
-  setAdress,
+  address,
+  setAddress,
   city,
   setCity,
   postCode,
   setPostCode,
   country,
   setCountry,
+  error,
 ) {
   return (
     <>
       <h2 className={styles.shippingInformationText}>Shipping Information</h2>
-
       <label>
         <input
           className={styles.input}
           data-test-id="checkout-address"
-          value={adress}
+          value={address}
           placeholder="Address"
-          onChange={(event) => setAdress(event.currentTarget.value)}
-          required
+          onChange={(event) => setAddress(event.currentTarget.value)}
         />
+        {renderError(error, 'address')}
       </label>
       <div className={styles.addressContainer}>
         <label className={styles.labelFlex}>
@@ -89,8 +104,8 @@ function shoppingInformation(
             value={city}
             placeholder="City"
             onChange={(event) => setCity(event.currentTarget.value)}
-            required
           />
+          {renderError(error, 'city')}
         </label>
         <label className={styles.labelFlex}>
           <input
@@ -99,8 +114,8 @@ function shoppingInformation(
             value={postCode}
             placeholder="Post Code"
             onChange={(event) => setPostCode(event.currentTarget.value)}
-            required
           />
+          {renderError(error, 'postCode')}
         </label>
       </div>
       <label>
@@ -110,8 +125,8 @@ function shoppingInformation(
           value={country}
           placeholder="Country"
           onChange={(event) => setCountry(event.currentTarget.value)}
-          required
         />
+        {renderError(error, 'country')}
       </label>
     </>
   );
@@ -124,6 +139,7 @@ function paymentInformation(
   setExpiration,
   securityCode,
   setSecurityCode,
+  error,
 ) {
   return (
     <>
@@ -135,8 +151,8 @@ function paymentInformation(
           value={creditCard}
           placeholder="Credit Card Number"
           onChange={(event) => setCreditCard(event.currentTarget.value)}
-          required
         />
+        {renderError(error, 'creditCard')}
       </label>
       <div className={styles.paymentInfo}>
         <label className={styles.labelFlex}>
@@ -147,8 +163,8 @@ function paymentInformation(
             placeholder="05/25"
             value={expiration}
             onChange={(event) => setExpiration(event.currentTarget.value)}
-            required
           />
+          {renderError(error, 'expiration')}
         </label>
         <label className={styles.labelFlex}>
           <input
@@ -157,32 +173,26 @@ function paymentInformation(
             placeholder="Security Code"
             value={securityCode}
             onChange={(event) => setSecurityCode(event.currentTarget.value)}
-            required
           />
+          {renderError(error, 'securityCode')}
         </label>
       </div>
     </>
   );
 }
 
-function confirmButton(isValid, router) {
-  return (
-    <button
-      type="button"
-      data-test-id="checkout-confirm-order"
-      className={isValid ? styles.button : styles.disabled}
-      // href="/thank"
-      // style={{
-      //   textDecoration: 'none',
-      // }}
-
-      disabled={!isValid}
-      onClick={() => router.push('/thank')}
-    >
-      Confirm Order
-    </button>
-  );
-}
+// const formValidationSchema = Yup.object().shape({
+//   firstName: Yup.string().required(),
+//   lastName: Yup.string().required(),
+//   email: Yup.string().email().required(),
+//   address: Yup.string().required(),
+//   postCode: Yup.string().required(),
+//   city: Yup.string().required(),
+//   country: Yup.string().required(),
+//   creditCard: Yup.string().required(),
+//   expiration: Yup.string().trim().required(),
+//   securityCode: Yup.string().required(),
+// });
 
 export default function CheckoutForm() {
   const router = useRouter();
@@ -190,33 +200,46 @@ export default function CheckoutForm() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [adress, setAdress] = useState('');
+  const [address, setAddress] = useState('');
   const [postCode, setPostCode] = useState('');
   const [city, setCity] = useState('');
   const [country, setCountry] = useState('');
   const [creditCard, setCreditCard] = useState('');
   const [expiration, setExpiration] = useState('');
   const [securityCode, setSecurityCode] = useState('');
+  // const [error, setError] = useState(null);
+  const error = null;
 
-  function dataValidation() {
-    return (
-      firstName.length &&
-      lastName.length &&
-      email.length &&
-      adress.length &&
-      city.length &&
-      postCode.length &&
-      country.length &&
-      creditCard.length &&
-      expiration.length &&
-      securityCode.length
-    );
-  }
+  console.log({ ERROR: error });
 
-  const isValid = dataValidation();
-
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     event.preventDefault();
+
+    try {
+      // formValidationSchema.validateSync(
+      //   {
+      //     firstName,
+      //     lastName,
+      //     email,
+      //     address,
+      //     postCode,
+      //     city,
+      //     country,
+      //     creditCard,
+      //     expiration,
+      //     securityCode,
+      //   },
+      //   { abortEarly: false },
+      // );
+
+      // setError(null);
+
+      await clearCookies();
+      router.refresh();
+      router.push('/thank');
+    } catch (e) {
+      // setError(e);
+    }
   };
 
   return (
@@ -228,17 +251,19 @@ export default function CheckoutForm() {
         setLastName,
         email,
         setEmail,
+        error,
       )}
       <div>
         {shoppingInformation(
-          adress,
-          setAdress,
+          address,
+          setAddress,
           city,
           setCity,
           postCode,
           setPostCode,
           country,
           setCountry,
+          error,
         )}
       </div>
       <div>
@@ -249,9 +274,13 @@ export default function CheckoutForm() {
           setExpiration,
           securityCode,
           setSecurityCode,
+          error,
         )}
       </div>
-      {confirmButton(isValid, router)}
+      <button data-test-id="checkout-confirm-order" className={styles.button}>
+        Confirm Order
+      </button>
+      {/* {confirmButton(router, error)} */}
     </form>
   );
 }

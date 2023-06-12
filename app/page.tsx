@@ -5,6 +5,11 @@ import coffee from '../public/images/cup.png';
 import makeCoffee from '../public/images/makeCoffee.png';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Homepage overview | Coffez',
+  description: 'Homepage',
+};
+
 export default function HomePage() {
   return (
     <main>
@@ -20,27 +25,19 @@ export default function HomePage() {
           Enjoy Your Moment With <span> Coffee</span>.
         </h1>
         <p className={styles.containerHeroText}>
-          When an unknown printer took a galley of type and scrambled it to
-          galley of type and.
+          We are passionate coffee enthusiasts who believe that a cup of coffee
+          has the power to transform ordinary moments into extraordinary
+          experiences.
         </p>
         <div>
           <Link
             data-test-id="products-link"
             className={styles.heroButtonGoToProduct}
             href="/products"
-            style={{
-              textDecoration: 'none',
-            }}
           >
-            Go To Product
+            Go To Products
           </Link>
-          <Link
-            className={styles.heroButtonAboutUs}
-            href="#aboutUs"
-            style={{
-              textDecoration: 'none',
-            }}
-          >
+          <Link className={styles.heroButtonAboutUs} href="#aboutUs">
             About Us
           </Link>
         </div>
@@ -51,19 +48,13 @@ export default function HomePage() {
           <span>About Us</span>
           <h3>We make the delicious coffee for the coffee lovers.</h3>
           <p>
-            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices
-            in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Non quae, fugiat consequatur
-            voluptatem nihil ad. Lorem ipsum dolor sit amet
+            Our mission is to connect coffee lovers with exceptional brews that
+            cater to a variety of preferences. Each coffee we offer has been
+            meticulously sourced, handpicked, and expertly roasted to preserve
+            its unique flavors and aromas.
           </p>
-          <Link
-            className={styles.knowMoreButtonAboutUs}
-            href="/#"
-            style={{
-              textDecoration: 'none',
-            }}
-          >
-            Know More
+          <Link className={styles.knowMoreButtonAboutUs} href="/products">
+            Products
           </Link>
         </div>
         <div className={styles.imageMakeCoffee}>
@@ -71,7 +62,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.containerSectionBenefits}>
+      <section id="benefits" className={styles.containerSectionBenefits}>
         <div>
           <div>
             <FaCoffee className={styles.icon} />
@@ -81,7 +72,7 @@ export default function HomePage() {
           <div>
             <FaGlassMartini className={styles.icon} />
             <h4>Bean Varieties</h4>
-            <p>choose the drink that suits you best.</p>
+            <p>Choose the drink that suits you best.</p>
           </div>
           <div>
             <FaCookie className={styles.icon} />
@@ -96,14 +87,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className={styles.containerHours}>
+      <section id="hours" className={styles.containerHours}>
         <div className={styles.hoursText}>
           <h3>We make the delicious coffee.</h3>
           <p>
-            Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices
-            in ligula. Semper at tempufddfel. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. dignissimos quis soluta sapiente
-            aperiam quod.
+            We understand the value of a well-deserved break amidst the hustle
+            and bustle of life. That's why our doors are open to welcome you and
+            serve our delightful coffee at any time of the day.
           </p>
         </div>
         <div className={styles.imageCoffee}>

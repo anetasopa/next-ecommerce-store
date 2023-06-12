@@ -55,7 +55,7 @@
 // }
 
 .container {
-  height: 100vh;
+  height: 85vh;
   background-image: linear-gradient(
       rgba(34, 34, 34, 0.3),
       rgba(34, 34, 34, 0.3)
@@ -83,7 +83,7 @@
   .containerHeroText {
     color: #ffffff;
     font-size: 1.5rem;
-    line-height: 3rem;
+    line-height: 2rem;
     margin-bottom: 50px;
     padding-right: 50px;
   }
@@ -101,6 +101,8 @@
       background-color: var(--button-color);
       color: var(--color-white);
       font-weight: bold;
+      text-decoration: none;
+      text-align: center;
 
       &:hover {
         cursor: pointer;
@@ -118,6 +120,8 @@
       background-color: var(--color-white);
       color: var(--button-color);
       font-weight: bold;
+      text-decoration: none;
+      text-align: center;
 
       &:hover {
         cursor: pointer;
@@ -130,13 +134,14 @@
 
 @media (max-width: 480px) {
   .container {
+    height: auto;
     padding-left: 0;
-    height: 60vh;
 
     h1 {
       font-size: 2.125rem;
       padding: 0 50px;
-      margin-top: 50px;
+      margin-top: 30px;
+      margin-bottom: 30px;
 
       span {
         font-size: 2.5rem;
@@ -145,17 +150,26 @@
 
     .containerHeroText {
       line-height: 1.75rem;
+      margin-bottom: 30px;
       padding: 0 50px;
+      font-size: 1.25rem;
     }
 
     div {
+      display: grid;
+      gap: 14px;
+
       .heroButtonGoToProduct {
         padding: 10px 25px;
         margin-left: 50px;
+        width: 55%;
       }
 
       .heroButtonAboutUs {
         padding: 10px 25px;
+        margin-left: 50px;
+        width: 55%;
+        margin-bottom: 50px;
       }
     }
   }
@@ -175,7 +189,7 @@
     .knowMoreButtonAboutUs {
       margin-top: 30px;
       padding: 10px 25px;
-      width: 32%;
+      width: 28%;
       font-size: 1.2rem;
       border-radius: 5px;
       letter-spacing: 0.5px;
@@ -183,6 +197,8 @@
       color: var(--button-color);
       border: 1px solid var(--button-color);
       font-weight: bold;
+      text-decoration: none;
+      text-align: center;
 
       &:hover {
         cursor: pointer;
@@ -237,6 +253,7 @@
 
     div {
       max-width: 100%;
+      padding: 70px 50px;
 
       .knowMoreButtonAboutUs {
         width: 55%;

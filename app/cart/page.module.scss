@@ -9,10 +9,10 @@ main {
     }
   }
 
-  .containerCardProducts {
+  .containerCartProducts {
     display: flex;
 
-    .cardsContainer {
+    .cartsContainer {
       width: 50%;
       display: block;
       align-items: center;
@@ -20,7 +20,7 @@ main {
       padding: 50px;
       border-radius: var(--border-radius);
 
-      .productCard {
+      .productCart {
         overflow: hidden;
         display: flex;
         gap: 20px;
@@ -75,15 +75,15 @@ main {
   }
 
   @media (max-width: 480px) {
-    .containerCardProducts {
+    .containerCartProducts {
       display: flex;
       flex-direction: column-reverse;
 
-      .cardsContainer {
+      .cartsContainer {
         width: 100%;
         padding: 0 50px 30px 50px;
 
-        .productCard {
+        .productCart {
           display: block;
 
           div {

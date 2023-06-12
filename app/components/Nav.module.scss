@@ -62,11 +62,42 @@
         margin-left: 5px;
         padding: 10px 20px;
         display: flex;
+
+        .link {
+          display: inline-block;
+          position: relative;
+          color: black;
+          text-decoration: none;
+          padding-bottom: 2px;
+        }
+
+        .link:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: var(--button-color);
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+
+        .link:hover:after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
       }
 
       @media (max-width: 480px) {
         li {
           padding: 0 5px;
+          margin-left: 0;
+
+          .link {
+            font-size: 0.8rem;
+          }
         }
       }
     }
